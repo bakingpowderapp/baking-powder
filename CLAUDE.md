@@ -28,26 +28,26 @@ A multi-platform DAW in Rust. Every rule here is 35 words at most.
 
 ## Sound
 
-18. Playback must be flawless; live playing and recording are low priority.
-19. Core aims for warm analogue hardware sound; CPU cost is not a primary concern.
+16. Playback must be flawless; live playing and recording are low priority.
+17. Core aims for warm analogue hardware sound; CPU cost is not a primary concern.
 
 ## Text
 
-20. Preset descriptions: twelve words at most, what the sound is.
+18. Preset descriptions: twelve words at most, what the sound is.
 
 ## Map
 
-21. `fx` and `coresynth` reach only `sdk`; `bp` re-exports all three.
-22. Nothing outside this tree is this repo's job: never check, read, edit or plan for it unless asked. [index.md](index.md) lists those folders.
+19. `fx` and `coresynth` reach only `sdk`; `bp` re-exports all three.
+20. Nothing outside this tree is this repo's job: never check, read, edit or plan for it unless asked. [index.md](index.md) lists those folders.
 
 ## Songs
 
-23. A saved song holds every sound it uses, so it opens on any platform without a sample library; disk files never change it.
+21. A saved song holds every sound it uses, so it opens on any platform without a sample library; disk files never change it.
 
 ## Behaviour
 
-24. No sometimes behaviour: an action always works or is never offered; never refuse it in some cases and allow it in others.
+22. No sometimes behaviour: an action always works or is never offered; never refuse it in some cases and allow it in others.
 
 ## Repos
 
-25. A new repo the owner asks you to push is always created private.
+23. A new repo the owner asks you to push is always created private.

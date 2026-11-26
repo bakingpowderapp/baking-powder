@@ -1,0 +1,17 @@
+[package]
+name = "mac"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[lib]
+name = "baking_powder"
+crate-type = ["rlib", "staticlib"]
+
+[[bin]]
+name = "baking-powder"
+path = "src/main.rs"
+
+[dependencies]
+bp = { path = "../bp" }

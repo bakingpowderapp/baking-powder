@@ -1,0 +1,83 @@
+{
+  "kind": "rack",
+  "description": "Two-bar resonant white-noise riser sweeping up ten octaves",
+  "rack": [
+    {
+      "kind": "core",
+      "voices": 4,
+      "freshVoice": true,
+      "osc1": {"level": 0},
+      "noise": {"on": true, "color": "white", "level": 1, "width": 1},
+      "ampEnv": {
+        "attackMs": 0.27,
+        "decayMs": 1,
+        "sustain": 1,
+        "releaseMs": 10.4,
+        "velocityAmount": 0,
+        "decayBend": -0.55,
+        "releaseBend": -0.55
+      },
+      "filter": {
+        "on": true,
+        "mode": "ladder",
+        "slopeDbPerOctave": 12,
+        "cutoffHz": 15.37,
+        "resonance": 0.75,
+        "envAmount": 2,
+        "env": {
+          "attackMs": 3700,
+          "decayMs": 1,
+          "sustain": 1,
+          "releaseMs": 30000,
+          "velocityAmount": 0,
+          "attackBend": 0.235,
+          "decayBend": -0.225,
+          "releaseBend": -0.225
+        }
+      },
+      "motion": {
+        "lfo1": {"target": "cutoff", "amount": 0.06, "sync": true, "division": "1/32"}
+      }
+    },
+    {
+      "kind": "eq",
+      "bands": [
+        {},
+        {"on": true, "shape": "low-shelf", "channel": "stereo", "frequencyHz": 188.3, "gainDb": -6.176, "q": 0.71},
+        {},
+        {"on": true, "shape": "bell", "channel": "stereo", "frequencyHz": 229.1, "gainDb": -4.534, "q": 0.535},
+        {},
+        {},
+        {"on": true, "shape": "high-shelf", "channel": "stereo", "frequencyHz": 129.5, "gainDb": 1.326, "q": 0.71},
+        {}
+      ],
+      "trimDb": -5.153
+    },
+    {
+      "kind": "delay",
+      "wet": 0.293,
+      "mode": "clean",
+      "leftSync": true,
+      "leftTimeMs": 375,
+      "leftDivision": "1/8.",
+      "rightSync": true,
+      "rightTimeMs": 500,
+      "rightDivision": "1/4",
+      "feedback": 0.4724,
+      "pingPong": 1,
+      "inputLean": -0.745,
+      "filter1": {"on": false},
+      "filter2": {"on": false},
+      "drive": 0,
+      "width": 1,
+      "wetTrimDb": -6.02
+    },
+    {
+      "kind": "utility",
+      "gainDb": 13.82,
+      "limiterOn": true,
+      "hardClip": true,
+      "ceilingDb": -1
+    }
+  ]
+}

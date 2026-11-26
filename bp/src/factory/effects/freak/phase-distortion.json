@@ -1,0 +1,14 @@
+{
+  "kind": "freak",
+  "description": "FM grit in the mids for arps and leads",
+  "bandCount": 3,
+  "crossoversHz": [250, 2995.3, 5000],
+  "oversample": false,
+  "driveDb": 5,
+  "bands": [
+    {"curve": "phase", "wet": 0, "phaseToneHz": 520.25, "phaseNormalize": 0.7966},
+    {"curve": "phase", "driveDb": -3.9, "phaseToneHz": 520.25, "phaseNormalize": 0.7966},
+    {"curve": "phase", "wet": 0, "phaseToneHz": 520.25, "phaseNormalize": 0.7966},
+    {}
+  ]
+}

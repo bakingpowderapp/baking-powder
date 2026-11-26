@@ -1,0 +1,146 @@
+{
+  "kind": "rack",
+  "description": "Crunchy plucked seven-step sixteenth sequence from one held key",
+  "author": "Aiyn Zahev",
+  "website": "https://www.aiynzahev-sounds.com/",
+  "rack": [
+    {
+      "kind": "midi",
+      "arp": {
+        "on": true,
+        "stepMode": true,
+        "fixedVelocity": true,
+        "style": "up",
+        "sync": true,
+        "division": "1/16",
+        "timeMs": 250,
+        "gate": 0.5,
+        "pattern": {
+          "length": 7,
+          "steps": [
+            {"velocity": 0.01},
+            {"semitones": 12, "velocity": 0.01},
+            {"semitones": -12, "velocity": 0.44, "gate": 1},
+            {"semitones": 12, "octaveShift": 1, "slide": true},
+            {"semitones": 12, "velocity": 0.49, "gate": 1},
+            {"slide": true},
+            {"semitones": 3, "octaveShift": 1, "velocity": 0.01}
+          ]
+        }
+      }
+    },
+    {
+      "kind": "core",
+      "voices": 1,
+      "osc2": {"level": 0.666, "tuneSemitones": -12, "phase": 0.09},
+      "osc3": {"levels": [0, 1, 0, 0], "level": 0.8426, "pulseWidth": 0.59},
+      "ampEnv": {"attackMs": 1.6, "decayMs": 1, "sustain": 1, "releaseMs": 10.8, "velocityAmount": 0, "releaseBend": -0.41},
+      "filter": {
+        "on": true,
+        "mode": "ladder",
+        "slopeDbPerOctave": 24,
+        "cutoffHz": 612.9,
+        "resonance": 0.472,
+        "fmAmount": 0.16,
+        "envAmount": 0.392,
+        "env": {
+          "attackMs": 1.2,
+          "decayMs": 899.2,
+          "sustain": 0.2,
+          "releaseMs": 544.2,
+          "velocityAmount": 0.19,
+          "decayBend": -1,
+          "releaseBend": -1
+        }
+      },
+      "mono": {"glideMs": 22.6, "glideCurve": "octave"},
+      "motion": {
+        "env1": {
+          "target": "amp",
+          "amount": -1,
+          "env": {"delayMs": 1.6, "attackMs": 230, "decayMs": 1, "sustain": 1, "releaseMs": 30000, "attackBend": 1}
+        },
+        "env2": {
+          "target": "amp",
+          "amount": 0.92,
+          "env": {"delayMs": 1.6, "attackMs": 230, "decayMs": 1, "sustain": 1, "releaseMs": 30000, "velocityAmount": 1, "attackBend": 1}
+        }
+      }
+    },
+    {"kind": "eq", "trimDb": 3.07},
+    {
+      "kind": "delay",
+      "wet": 0.37,
+      "mode": "clean",
+      "leftSync": true,
+      "leftTimeMs": 255.83,
+      "leftDivision": "1/16",
+      "leftSyncScale": 2.0467,
+      "rightSync": true,
+      "rightTimeMs": 127.92,
+      "rightDivision": "1/16",
+      "rightSyncScale": 1.0233,
+      "feedback": 0.118,
+      "pingPong": 1,
+      "evenPingPong": true,
+      "filter1": {"on": false},
+      "filter2": {"cutoffHz": 10000},
+      "feedbackFilter": {"on": true, "cutoffHz": 2500},
+      "drive": 0,
+      "width": 1,
+      "wetTrimDb": 0.8
+    },
+    {
+      "kind": "reverb",
+      "wet": 0.163,
+      "tank": "plate",
+      "preDelayMs": 0,
+      "earlyPattern": "scatter",
+      "age": "now",
+      "decayS": 8.5,
+      "sizeTimes": 1,
+      "diffusion": 0.7,
+      "dampingHz": 2350,
+      "modDepthMs": 0,
+      "modSync": false,
+      "modDivision": "1/4",
+      "modRateHz": 0.7,
+      "filter1": {"cutoffHz": 120},
+      "filter2": {"cutoffHz": 10000},
+      "forwardLevel": 0.9
+    },
+    {
+      "kind": "freak",
+      "bandCount": 1,
+      "driveDb": 12,
+      "outputDb": -7.4,
+      "biasLfoDepth": 1.04,
+      "bands": [
+        {"curve": "tube"},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "eq",
+      "bands": [
+        {},
+        {"on": true, "shape": "low-shelf", "channel": "stereo", "frequencyHz": 69.8, "gainDb": -3.38, "q": 0.71},
+        {"on": true, "shape": "low-shelf", "channel": "stereo", "frequencyHz": 189.6, "gainDb": -3.21, "q": 0.71},
+        {"on": true, "shape": "bell", "channel": "stereo", "frequencyHz": 975.9, "gainDb": 1.9, "q": 0.62},
+        {},
+        {"on": true, "shape": "high-shelf", "channel": "stereo", "frequencyHz": 4668, "gainDb": -0.9, "q": 0.71},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "utility",
+      "gainDb": 10,
+      "limiterOn": true,
+      "hardClip": true,
+      "ceilingDb": -1
+    }
+  ]
+}

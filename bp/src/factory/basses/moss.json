@@ -1,0 +1,62 @@
+{
+  "kind": "rack",
+  "description": "Gliding stereo saw bass under a dark detuned pad",
+  "rack": [
+    {
+      "kind": "core",
+      "level": 0.242563,
+      "osc1": {"levels": [0, 0, 0.06, 1], "unison": 7, "detuneCents": 45},
+      "ampEnv": {"attackMs": 80, "decayMs": 600, "sustain": 0.85, "releaseMs": 1400, "velocityAmount": 0.92},
+      "filter": {"on": true, "mode": "svf-low-pass", "slopeDbPerOctave": 12, "cutoffHz": 1100}
+    },
+    {
+      "kind": "core",
+      "voices": 1,
+      "osc1": {"tuneSemitones": -12, "unison": 2, "detuneCents": 19.6, "width": 0.73, "unisonAlternate": true},
+      "osc2": {"levels": [0, 0, 0, 1], "level": 0.0625, "tuneSemitones": -12},
+      "ampEnv": {"attackMs": 10, "decayMs": 300, "sustain": 1, "releaseMs": 250, "velocityAmount": 0},
+      "filter": {
+        "on": true,
+        "mode": "ladder",
+        "slopeDbPerOctave": 24,
+        "cutoffHz": 1170,
+        "resonance": 0.2,
+        "envAmount": 0.875,
+        "keyTrack": 0.41,
+        "env": {"attackMs": 5, "decayMs": 225, "sustain": 0, "releaseMs": 300, "velocityAmount": 0}
+      },
+      "mono": {"glideMs": 170}
+    },
+    {
+      "kind": "motion",
+      "wet": 0.3,
+      "bandCount": 1,
+      "bands": [
+        {
+          "mode": "chorus",
+          "chorus": {"mode": "standard", "sync": false, "division": "1/4", "rateHz": 0.31, "depth": 0.525, "centerMs": 6.4}
+        },
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "reverb",
+      "wet": 0.15,
+      "tank": "plate",
+      "preDelayMs": 20,
+      "earlyPattern": "scatter",
+      "age": "now",
+      "decayS": 3.2,
+      "sizeTimes": 1,
+      "dampingHz": 1000,
+      "modSync": false,
+      "modDivision": "1/4",
+      "modRateHz": 0.7,
+      "filter1": {"cutoffHz": 200},
+      "filter2": {"cutoffHz": 8000}
+    },
+    {"kind": "utility", "gainDb": -2.6, "limiterOn": true, "ceilingDb": -1}
+  ]
+}

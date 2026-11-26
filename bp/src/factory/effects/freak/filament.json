@@ -1,0 +1,14 @@
+{
+  "kind": "freak",
+  "description": "Warm tube drive for basses, leads, keys and chords",
+  "bandCount": 1,
+  "driveDb": 5.81,
+  "outputDb": -5.38,
+  "filter2": {"on": true, "cutoffHz": 19989.7, "q": 1.129},
+  "bands": [
+    {"curve": "op-amp", "bias": 0.0256, "biasPre": true, "bassDb": 0.3, "trebleDb": -0.12, "presenceDb": 1.15},
+    {},
+    {},
+    {}
+  ]
+}

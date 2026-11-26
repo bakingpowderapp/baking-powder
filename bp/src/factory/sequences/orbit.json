@@ -1,0 +1,142 @@
+{
+  "kind": "rack",
+  "description": "Soft synthwave chord arpeggio of eighth-note saw stabs",
+  "rack": [
+    {
+      "kind": "midi",
+      "arp": {"on": true, "style": "chord-trigger", "sync": true, "division": "1/8", "timeMs": 250, "gate": 0.696}
+    },
+    {
+      "kind": "core",
+      "voices": 24,
+      "freshVoice": true,
+      "osc1": {"unison": 2, "detuneCents": 5.65, "unisonAlternate": true, "phase": 0.25},
+      "osc2": {"level": 0.807, "tuneSemitones": -12, "unison": 3, "detuneCents": 0.25, "unisonAlternate": true, "phase": 0.25},
+      "analog": {"driftCents": 2.9},
+      "ampEnv": {
+        "attackMs": 1,
+        "decayMs": 1,
+        "sustain": 1,
+        "releaseMs": 444.5,
+        "velocityAmount": 0,
+        "decayBend": -0.55,
+        "releaseBend": -0.55
+      },
+      "filter": {
+        "on": true,
+        "mode": "ladder",
+        "slopeDbPerOctave": 24,
+        "cutoffHz": 2514.2,
+        "envAmount": -1.333,
+        "env": {
+          "attackMs": 780,
+          "decayMs": 1,
+          "sustain": 1,
+          "releaseMs": 30000,
+          "velocityAmount": 0,
+          "attackBend": 0.18,
+          "decayBend": -0.225,
+          "releaseBend": -0.225
+        }
+      }
+    },
+    {
+      "kind": "freak",
+      "wet": 0.492,
+      "bandCount": 1,
+      "outputDb": -5.6,
+      "bands": [
+        {"curve": "decimate", "decimateHz": 9485.2},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "motion",
+      "wet": 0.446,
+      "bandCount": 1,
+      "bands": [
+        {
+          "mode": "chorus",
+          "chorus": {"mode": "standard", "sync": false, "division": "1/4", "rateHz": 0.223, "depth": 0.52, "centerMs": 6.06, "spread": 0.5}
+        },
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "motion",
+      "wet": 0.446,
+      "bandCount": 1,
+      "bands": [
+        {
+          "mode": "chorus",
+          "chorus": {
+            "mode": "standard",
+            "sync": false,
+            "division": "1/4",
+            "rateHz": 0.223,
+            "depth": 0.52,
+            "centerMs": 9.08,
+            "spread": 0.5,
+            "startPhase": 0.5
+          }
+        },
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "delay",
+      "wet": 0.295,
+      "mode": "clean",
+      "leftSync": true,
+      "leftTimeMs": 375,
+      "leftDivision": "1/4",
+      "rightSync": true,
+      "rightTimeMs": 500,
+      "rightDivision": "1/8",
+      "feedback": 0.3515,
+      "pingPong": 1,
+      "inputLean": -0.5,
+      "filter1": {"on": false},
+      "filter2": {"cutoffHz": 20000},
+      "drive": 0,
+      "width": 0.5,
+      "wetTrimDb": -6.02
+    },
+    {
+      "kind": "reverb",
+      "wet": 0.208,
+      "preDelayMs": 110,
+      "decayS": 4.67,
+      "sizeTimes": 1,
+      "dampingHz": 20000,
+      "modDepthMs": 0,
+      "modSync": false,
+      "modDivision": "1/4",
+      "modRateHz": 0.7,
+      "filter1": {"cutoffHz": 20},
+      "filter2": {"cutoffHz": 6041.8},
+      "width": 1.2,
+      "forwardLevel": 0.45
+    },
+    {
+      "kind": "eq",
+      "bands": [
+        {"on": true, "shape": "low-shelf", "channel": "stereo", "frequencyHz": 120, "gainDb": 2, "q": 0.71},
+        {"on": true, "shape": "bell", "channel": "stereo", "frequencyHz": 4500, "gainDb": -2.5, "q": 1},
+        {"on": true, "shape": "bell", "channel": "stereo", "frequencyHz": 9500, "gainDb": 2.5, "q": 1.2},
+        {},
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {"kind": "utility", "gainDb": -3.03, "limiterOn": true, "ceilingDb": -1}
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "kind": "rack",
+  "description": "Steady pulse melody sequence in 32 dotted-sixteenth steps, no swing",
+  "rack": [
+    {
+      "kind": "midi",
+      "arp": {
+        "on": true,
+        "stepMode": true,
+        "fixedVelocity": true,
+        "retriggerEachNote": true,
+        "style": "up",
+        "sync": true,
+        "division": "1/16.",
+        "timeMs": 250,
+        "gate": 0.72,
+        "pattern": {
+          "length": 32,
+          "steps": [
+            {"velocity": 0.96, "gate": 0.8},
+            {"semitones": 7, "velocity": 0.72, "gate": 0.69},
+            {"octaveShift": 1, "velocity": 0.86, "gate": 0.72},
+            {"semitones": 3, "octaveShift": 1, "velocity": 0.77, "gate": 0.69},
+            {"semitones": 2, "octaveShift": 1, "velocity": 0.96, "gate": 0.8},
+            {"octaveShift": 1, "velocity": 0.72, "gate": 0.69},
+            {"semitones": 7, "velocity": 0.86, "gate": 0.72},
+            {"semitones": 3, "velocity": 0.77, "gate": 0.69},
+            {"semitones": -4, "velocity": 0.96, "gate": 0.8},
+            {"semitones": 3, "velocity": 0.72, "gate": 0.69},
+            {"semitones": 8, "velocity": 0.86, "gate": 0.72},
+            {"octaveShift": 1, "velocity": 0.77, "gate": 0.69},
+            {"semitones": 10, "velocity": 0.96, "gate": 0.8},
+            {"semitones": 8, "velocity": 0.72, "gate": 0.69},
+            {"semitones": 3, "velocity": 0.86, "gate": 0.72},
+            {"velocity": 0.77, "gate": 0.69},
+            {"semitones": 5, "velocity": 0.96, "gate": 0.8},
+            {"semitones": 8, "velocity": 0.72, "gate": 0.69},
+            {"octaveShift": 1, "velocity": 0.86, "gate": 0.72},
+            {"semitones": 5, "octaveShift": 1, "velocity": 0.77, "gate": 0.69},
+            {"semitones": 3, "octaveShift": 1, "velocity": 0.96, "gate": 0.8},
+            {"octaveShift": 1, "velocity": 0.72, "gate": 0.69},
+            {"semitones": 8, "velocity": 0.86, "gate": 0.72},
+            {"semitones": 5, "velocity": 0.77, "gate": 0.69},
+            {"semitones": 7, "velocity": 0.96, "gate": 0.8},
+            {"semitones": 10, "velocity": 0.72, "gate": 0.69},
+            {"semitones": 2, "octaveShift": 1, "velocity": 0.86, "gate": 0.72},
+            {"semitones": 7, "octaveShift": 1, "velocity": 0.77, "gate": 0.69},
+            {"semitones": 5, "octaveShift": 1, "velocity": 0.96, "gate": 0.8},
+            {"semitones": 2, "octaveShift": 1, "velocity": 0.72, "gate": 0.69},
+            {"semitones": 10, "velocity": 0.86, "gate": 0.72},
+            {"semitones": 7, "velocity": 0.77, "gate": 0.8}
+          ]
+        }
+      }
+    },
+    {
+      "kind": "core",
+      "level": 0.996184,
+      "voices": 8,
+      "freshVoice": true,
+      "osc1": {"levels": [0, 1, 0, 0]},
+      "osc2": {"levels": [0, 0, 0, 0]},
+      "ampEnv": {
+        "attackMs": 5,
+        "decayMs": 620,
+        "sustain": 0.28,
+        "releaseMs": 300,
+        "velocityAmount": 0.335,
+        "decayBend": -0.65,
+        "releaseBend": -0.45
+      },
+      "filter": {
+        "on": true,
+        "mode": "ladder",
+        "slopeDbPerOctave": 12,
+        "cutoffHz": 32,
+        "envAmount": 1.25,
+        "keyTrack": 0.209,
+        "env": {
+          "attackMs": 4,
+          "decayMs": 380,
+          "sustain": 0,
+          "releaseMs": 3000,
+          "velocityAmount": 0.1,
+          "decayBend": -0.3,
+          "releaseBend": -0.15
+        }
+      }
+    },
+    {
+      "kind": "eq",
+      "bands": [
+        {"on": true, "shape": "high-shelf", "channel": "stereo", "frequencyHz": 5000, "gainDb": -3, "q": 0.71},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "reverb",
+      "wet": 0.08,
+      "tank": "plate",
+      "preDelayMs": 12,
+      "earlyPattern": "scatter",
+      "age": "now",
+      "decayS": 2,
+      "sizeTimes": 0.1,
+      "diffusion": 0.7,
+      "dampingHz": 6000,
+      "modSync": false,
+      "modDivision": "1/4",
+      "modRateHz": 0.7,
+      "filter1": {"cutoffHz": 40},
+      "filter2": {"cutoffHz": 12000}
+    },
+    {
+      "kind": "eq",
+      "bands": [
+        {"on": true, "shape": "bell", "channel": "stereo", "frequencyHz": 281, "gainDb": -5, "q": 4},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "motion",
+      "wet": 0.7,
+      "bandCount": 1,
+      "bands": [
+        {
+          "mode": "chorus",
+          "chorus": {
+            "mode": "standard",
+            "sync": false,
+            "division": "1/4",
+            "rateHz": 0.65,
+            "depth": 0.62,
+            "centerMs": 4.93,
+            "startPhase": 0.25,
+            "width": 1.15
+          }
+        },
+        {},
+        {},
+        {}
+      ]
+    },
+    {"kind": "utility", "gainDb": 2, "limiterOn": false, "ceilingDb": -1}
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "kind": "delay",
+  "description": "Dark half-note delay with doubled, thinning repeats, for leads",
+  "wet": 0.9332,
+  "mode": "clean",
+  "leftSync": true,
+  "leftTimeMs": 375,
+  "leftDivision": "1/2",
+  "leftSyncScale": 1.00001071,
+  "rightSync": true,
+  "rightTimeMs": 500,
+  "rightDivision": "1/2",
+  "rightSyncScale": 1.00473988,
+  "feedback": 0.47808,
+  "rightFeedback": 0.43209,
+  "pingPong": 0.14089,
+  "rightPingPong": 0.12908,
+  "filter1": {"slopeDb": "12", "cutoffHz": 313.81},
+  "filter2": {"slopeDb": "12", "cutoffHz": 3068.45},
+  "width": 0,
+  "wetPan": 0.01515,
+  "dry": 1
+}

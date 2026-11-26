@@ -1,0 +1,97 @@
+{
+  "kind": "rack",
+  "description": "Crisp, lo-fi closed hat",
+  "rack": [
+    {
+      "kind": "core",
+      "voices": 8,
+      "freshVoice": true,
+      "osc1": {"level": 0},
+      "noise": {"on": true, "color": "white", "level": 1, "tone": -0.6, "width": 0.19, "highPassHz": 4500},
+      "ampEnv": {"attackMs": 0.25, "decayMs": 200, "sustain": 1, "releaseMs": 233.2, "velocityAmount": 0.6, "releaseBend": 1},
+      "filter": {"on": true, "mode": "ladder", "slopeDbPerOctave": 24, "cutoffHz": 9399.99, "resonance": 0.45},
+      "motion": {
+        "lfo1": {
+          "target": "amp",
+          "amount": 1,
+          "shape": "drawn",
+          "rateHz": 9.43396,
+          "mode": "once",
+          "points": [
+            {"x": 0, "y": 0, "bend": 0},
+            {"x": 0.00943, "y": 0.5, "bend": 0},
+            {"x": 0.04189, "y": 0.42664, "bend": 0},
+            {"x": 0.07623, "y": 0.3606, "bend": 0},
+            {"x": 0.11245, "y": 0.30188, "bend": 0},
+            {"x": 0.15132, "y": 0.24934, "bend": 0},
+            {"x": 0.19245, "y": 0.20353, "bend": 0},
+            {"x": 0.23623, "y": 0.16384, "bend": 0},
+            {"x": 0.2834, "y": 0.12951, "bend": 0},
+            {"x": 0.33472, "y": 0.10009, "bend": 0},
+            {"x": 0.3883, "y": 0.07625, "bend": 0},
+            {"x": 0.44717, "y": 0.0563, "bend": 0},
+            {"x": 0.51208, "y": 0.03998, "bend": 0},
+            {"x": 0.58453, "y": 0.02692, "bend": 0},
+            {"x": 0.66528, "y": 0.01686, "bend": 0},
+            {"x": 0.75849, "y": 0.00922, "bend": 0},
+            {"x": 1, "y": 0, "bend": 0}
+          ]
+        }
+      }
+    },
+    {
+      "kind": "core",
+      "voices": 8,
+      "freshVoice": true,
+      "osc1": {"level": 0},
+      "noise": {"on": true, "color": "white", "level": 0.05485, "highPassHz": 3620.4},
+      "ampEnv": {"attackMs": 0.25, "decayMs": 200, "sustain": 1, "releaseMs": 44, "velocityAmount": 0.6, "releaseBend": 1},
+      "motion": {
+        "lfo1": {
+          "target": "amp",
+          "amount": 1,
+          "shape": "drawn",
+          "rateHz": 50,
+          "mode": "once",
+          "points": [
+            {"x": 0, "y": 0.5, "bend": 0},
+            {"x": 0.002, "y": 0.45601, "bend": 0},
+            {"x": 0.004, "y": 0.41588, "bend": 0},
+            {"x": 0.006, "y": 0.37929, "bend": 0},
+            {"x": 0.01, "y": 0.31548, "bend": 0},
+            {"x": 0.014, "y": 0.2624, "bend": 0},
+            {"x": 0.018, "y": 0.21826, "bend": 0},
+            {"x": 0.022, "y": 0.18154, "bend": 0},
+            {"x": 0.026, "y": 0.151, "bend": 0},
+            {"x": 0.03, "y": 0.12559, "bend": 0},
+            {"x": 0.034, "y": 0.10446, "bend": 0},
+            {"x": 0.04, "y": 0.07924, "bend": 0},
+            {"x": 0.046, "y": 0.06011, "bend": 0},
+            {"x": 0.052, "y": 0.0456, "bend": 0},
+            {"x": 0.058, "y": 0.03459, "bend": 0},
+            {"x": 0.066, "y": 0.02393, "bend": 0},
+            {"x": 0.084, "y": 0.01045, "bend": 0},
+            {"x": 0.114, "y": 0.00262, "bend": 0},
+            {"x": 0.166, "y": 0.00024, "bend": 0},
+            {"x": 1, "y": 0, "bend": 0}
+          ]
+        }
+      }
+    },
+    {
+      "kind": "eq",
+      "bands": [
+        {"on": true, "shape": "bell", "channel": "stereo", "frequencyHz": 13163.693, "gainDb": -15.5, "q": 2.416},
+        {"on": true, "shape": "bell", "channel": "stereo", "frequencyHz": 14120.979, "gainDb": -16, "q": 2.215},
+        {"on": true, "shape": "bell", "channel": "stereo", "frequencyHz": 13754.151, "gainDb": -18, "q": 2.122},
+        {"on": true, "shape": "bell", "channel": "stereo", "frequencyHz": 13400, "gainDb": -18, "q": 1.863},
+        {"on": true, "shape": "notch", "channel": "stereo", "frequencyHz": 12654.646, "gainDb": 0, "q": 2.828},
+        {"on": true, "shape": "bell", "channel": "stereo", "frequencyHz": 2711.572, "gainDb": -5.5, "q": 0.5},
+        {"on": true, "shape": "notch", "channel": "stereo", "frequencyHz": 9790.362, "gainDb": 0, "q": 12.531},
+        {"on": true, "shape": "notch", "channel": "stereo", "frequencyHz": 10348.362, "gainDb": 0, "q": 8.354}
+      ],
+      "trimDb": 3.8
+    },
+    {"kind": "utility", "gainDb": 23.5, "limiterOn": true, "hardClip": true, "ceilingDb": -1}
+  ]
+}

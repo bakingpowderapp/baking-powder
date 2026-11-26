@@ -1,0 +1,100 @@
+{
+  "kind": "rack",
+  "description": "Bright trance pluck sequence in sixteenths from one held key",
+  "author": "Aiyn Zahev",
+  "website": "https://www.aiynzahev-sounds.com/",
+  "rack": [
+    {
+      "kind": "midi",
+      "arp": {
+        "on": true,
+        "stepMode": true,
+        "fixedVelocity": true,
+        "style": "up",
+        "sync": true,
+        "division": "1/16",
+        "timeMs": 250,
+        "gate": 0.5,
+        "pattern": {
+          "length": 8,
+          "steps": [
+            {},
+            {"semitones": 2, "octaveShift": 1},
+            {},
+            {"semitones": 10},
+            {"semitones": -12},
+            {},
+            {"semitones": 3, "octaveShift": 1},
+            {}
+          ]
+        }
+      }
+    },
+    {
+      "kind": "core",
+      "level": 0.6211,
+      "voices": 1,
+      "osc1": {"levels": [1, 0, 0.6321, 0], "level": 0.64, "fineCents": 0.22, "carryPhase": true},
+      "noise": {"on": true, "color": "white", "level": 0.174},
+      "ampEnv": {
+        "attackMs": 1.2,
+        "decayMs": 488,
+        "sustain": 0,
+        "releaseMs": 27.75,
+        "velocityAmount": 0,
+        "decayBend": -1,
+        "releaseBend": -0.369
+      },
+      "filter": {
+        "on": true,
+        "mode": "ladder",
+        "slopeDbPerOctave": 24,
+        "cutoffHz": 1162,
+        "envAmount": 0.335,
+        "env": {
+          "attackMs": 1.2,
+          "decayMs": 434.2,
+          "sustain": 0,
+          "releaseMs": 747.8,
+          "velocityAmount": 0,
+          "decayBend": -1,
+          "releaseBend": -1
+        }
+      }
+    },
+    {
+      "kind": "freak",
+      "bandCount": 1,
+      "driveDb": 18,
+      "outputDb": -4.82,
+      "filter1": {"on": true, "cutoffHz": 35},
+      "filter2": {"on": true},
+      "bands": [
+        {"inputDb": 3.57, "curve": "tape"},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "delay",
+      "wet": 0.3,
+      "mode": "clean",
+      "leftSync": true,
+      "leftTimeMs": 256.08,
+      "leftDivision": "1/16",
+      "leftSyncScale": 2.04864,
+      "rightSync": true,
+      "rightTimeMs": 383.87,
+      "rightDivision": "1/16",
+      "rightSyncScale": 3.07096,
+      "feedback": 0,
+      "filter1": {"on": false},
+      "filter2": {"cutoffHz": 11000},
+      "drive": 0,
+      "width": 1,
+      "wetTrimDb": 0.06
+    },
+    {"kind": "utility", "limiterOn": true, "hardClip": true, "ceilingDb": -1}
+  ]
+}

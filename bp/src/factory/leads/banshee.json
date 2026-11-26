@@ -1,0 +1,190 @@
+{
+  "kind": "rack",
+  "description": "Dirty, wide, screaming square lead with slapback and bright hall",
+  "rack": [
+    {
+      "kind": "core",
+      "level": 0.63,
+      "voices": 1,
+      "osc1": {"levels": [0, 1, 0, 0], "unison": 2, "detuneCents": 20, "unisonAlternate": true, "pulseWidth": 0.25},
+      "noise": {"on": true, "color": "white", "level": 0.03, "highPassHz": 300, "lowPassHz": 260},
+      "ampEnv": {"attackMs": 1, "decayMs": 1000, "sustain": 1, "releaseMs": 15, "velocityAmount": 0},
+      "filter": {"on": true, "mode": "svf-low-pass", "slopeDbPerOctave": 12, "cutoffHz": 450, "resonance": 0.35},
+      "mono": {"legato": false, "retrigger": true}
+    },
+    {
+      "kind": "freak",
+      "bandCount": 1,
+      "driveDb": 36,
+      "outputDb": -4.66,
+      "punish": 1,
+      "filter2": {"on": true, "cutoffHz": 2430, "q": 1.08},
+      "bands": [
+        {"curve": "hard-clip"},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "freak",
+      "bandCount": 1,
+      "driveDb": 18,
+      "outputDb": -7.1,
+      "bands": [
+        {"curve": "diode"},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "eq",
+      "bands": [
+        {"on": true, "shape": "high-pass", "channel": "stereo", "frequencyHz": 394, "gainDb": 0, "q": 0.92},
+        {"on": true, "shape": "bell", "channel": "stereo", "frequencyHz": 271, "gainDb": 3.8, "q": 0.64},
+        {"on": true, "shape": "bell", "channel": "stereo", "frequencyHz": 1810, "gainDb": 9.6, "q": 1.18},
+        {"on": true, "shape": "high-shelf", "channel": "stereo", "frequencyHz": 9000, "gainDb": 4.5, "q": 0.71},
+        {"on": true, "shape": "high-pass", "channel": "stereo", "frequencyHz": 280, "gainDb": 0, "q": 1.5},
+        {"on": true, "shape": "bell", "channel": "stereo", "frequencyHz": 800, "gainDb": 3.5, "q": 1},
+        {"on": true, "shape": "low-shelf", "channel": "stereo", "frequencyHz": 40, "gainDb": 14, "q": 0.71},
+        {}
+      ]
+    },
+    {
+      "kind": "motion",
+      "wet": 0.5,
+      "bandCount": 1,
+      "bands": [
+        {
+          "mode": "chorus",
+          "chorus": {"mode": "standard", "sync": false, "division": "1/4", "rateHz": 0.17, "depth": 0, "centerMs": 40, "feedback": 0.9}
+        },
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "freak",
+      "bandCount": 3,
+      "crossoversHz": [130, 2500, 20000],
+      "oversample": false,
+      "subCutSlope": "6",
+      "ceilingKneeDb": 3,
+      "bands": [
+        {
+          "order": "post",
+          "squeeze": {"thresholdDb": -14, "ratio": 8, "gainDb": 17.3, "attackMs": 0.5, "releaseMs": 15, "upDepth": 0, "downDepth": 1}
+        },
+        {
+          "order": "post",
+          "squeeze": {"thresholdDb": -14, "ratio": 8, "gainDb": 18.5, "attackMs": 0.5, "releaseMs": 15, "upDepth": 0, "downDepth": 1}
+        },
+        {
+          "order": "post",
+          "squeeze": {"thresholdDb": -14, "ratio": 8, "gainDb": 19.7, "attackMs": 0.5, "releaseMs": 15, "upDepth": 0, "downDepth": 1}
+        },
+        {}
+      ]
+    },
+    {
+      "kind": "delay",
+      "wet": 0.3,
+      "mode": "clean",
+      "leftSync": true,
+      "leftTimeMs": 375,
+      "leftDivision": "1/8",
+      "rightSync": true,
+      "rightTimeMs": 500,
+      "rightDivision": "1/4",
+      "feedback": 0.27,
+      "pingPong": 1,
+      "evenPingPong": true,
+      "filter1": {"cutoffHz": 650},
+      "filter2": {"cutoffHz": 14000},
+      "width": 1,
+      "wetTrimDb": 2.4
+    },
+    {
+      "kind": "reverb",
+      "wet": 0.12,
+      "tank": "plate",
+      "preDelayMs": 57,
+      "earlyPattern": "scatter",
+      "age": "now",
+      "decayS": 2.8,
+      "sizeTimes": 1,
+      "dampingHz": 10000,
+      "modSync": false,
+      "modDivision": "1/4",
+      "modRateHz": 0.7,
+      "width": 0.2
+    },
+    {
+      "kind": "freak",
+      "bandCount": 3,
+      "crossoversHz": [100, 2500, 20000],
+      "oversample": false,
+      "subCutSlope": "6",
+      "ceilingKneeDb": 3,
+      "bands": [
+        {
+          "order": "post",
+          "squeeze": {"thresholdDb": 0, "gainDb": -14.5, "attackMs": 0.5, "releaseMs": 50, "upDepth": 0.9, "downDepth": 1}
+        },
+        {
+          "order": "post",
+          "squeeze": {"thresholdDb": 0, "gainDb": -10, "attackMs": 0.5, "releaseMs": 50, "upDepth": 0.57, "downDepth": 1}
+        },
+        {
+          "order": "post",
+          "squeeze": {"thresholdDb": 0, "ratio": 3, "gainDb": -13.8, "attackMs": 0.5, "releaseMs": 50, "upDepth": 0.8, "downDepth": 1}
+        },
+        {}
+      ]
+    },
+    {
+      "kind": "utility",
+      "gainDb": -6.5,
+      "width": 1.12,
+      "limiterOn": true,
+      "ceilingDb": -3
+    }
+  ],
+  "lfos": [
+    {
+      "row": 0,
+      "param": "osc1.fineCents",
+      "amount": 0.275,
+      "center": 0,
+      "tempoSync": false,
+      "rateHz": 1.6,
+      "startPhase": 0.03,
+      "retrigger": true,
+      "shape": "triangle",
+      "audioRate": true
+    },
+    {
+      "row": 0,
+      "param": "osc1.fineCents",
+      "amount": 0.25,
+      "center": 0,
+      "tempoSync": true,
+      "division": "1/16",
+      "startPhase": 0.75,
+      "shape": "triangle",
+      "audioRate": true
+    },
+    {
+      "row": 0,
+      "param": "osc1.tuneSemitones",
+      "amount": 0.0208,
+      "center": 0,
+      "tempoSync": false,
+      "rateHz": 2000,
+      "shape": "random",
+      "audioRate": true
+    }
+  ]
+}

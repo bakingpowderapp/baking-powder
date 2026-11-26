@@ -1,0 +1,67 @@
+{
+  "kind": "freak",
+  "description": "Gentle three-band leveller for finished sounds and buses",
+  "bandCount": 3,
+  "crossoversHz": [97, 2900, 20000],
+  "crossoverSlope": "linear",
+  "oversample": false,
+  "subCutSlope": "6",
+  "ceilingKneeDb": 3,
+  "bands": [
+    {
+      "order": "post",
+      "squeeze": {
+        "thresholdDb": -39.25,
+        "ratio": 1.183,
+        "gainDb": 5.35,
+        "releaseMs": 44,
+        "upDepth": 0,
+        "downDepth": 1,
+        "expandThresholdDb": -62.24,
+        "expandRatio": 2.65,
+        "expandKneeDb": 12.5,
+        "expandAttackMs": 4.5,
+        "detectMs": 2,
+        "detectStereo": "mean"
+      }
+    },
+    {
+      "order": "post",
+      "squeeze": {
+        "thresholdDb": -42.75,
+        "ratio": 1.223,
+        "gainDb": 5.8,
+        "attackMs": 5.5,
+        "releaseMs": 46,
+        "upDepth": 0,
+        "downDepth": 1,
+        "expandThresholdDb": -60.87,
+        "expandRatio": 2.72,
+        "expandKneeDb": 14.2,
+        "expandAttackMs": 3,
+        "detectMs": 2,
+        "detectStereo": "mean"
+      }
+    },
+    {
+      "order": "post",
+      "squeeze": {
+        "thresholdDb": -42.75,
+        "ratio": 1.176,
+        "gainDb": 5.75,
+        "attackMs": 5.5,
+        "releaseMs": 44,
+        "upDepth": 0,
+        "downDepth": 1,
+        "expandThresholdDb": -60.72,
+        "expandRatio": 2.63,
+        "expandKneeDb": 12.2,
+        "expandAttackMs": 4.5,
+        "detectSlope": "12",
+        "detectMs": 2,
+        "detectStereo": "mean"
+      }
+    },
+    {}
+  ]
+}

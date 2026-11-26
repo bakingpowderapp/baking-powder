@@ -1,0 +1,26 @@
+{
+  "kind": "freak",
+  "description": "Fierce guitar-like drive with fizzy bite for synth leads",
+  "crossoversHz": [915.6, 5089.84, 6107.82],
+  "oversample": false,
+  "subCutHz": 77.8,
+  "driveDb": 36,
+  "outputDb": -8.41,
+  "filter1": {"on": true, "slopeDb": "24", "cutoffHz": 58.8, "q": 0.89},
+  "filter2": {"on": true, "slopeDb": "24", "cutoffHz": 5220, "q": 0.7},
+  "bands": [
+    {
+      "inputDb": 24,
+      "curve": "soft",
+      "driveDb": -13.225,
+      "thresholdDb": 0,
+      "lift": 2,
+      "rangeDb": 11.888,
+      "releaseMs": 5.024,
+      "outputDb": -7.86
+    },
+    {"inputDb": 24, "curve": "soft", "driveDb": 24, "outputDb": -18.29},
+    {"inputDb": 24, "curve": "soft", "driveDb": -19.276, "outputDb": -16.46},
+    {"inputDb": 24, "curve": "soft", "driveDb": 24, "outputDb": -16.43}
+  ]
+}

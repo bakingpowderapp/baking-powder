@@ -1,0 +1,99 @@
+{
+  "kind": "rack",
+  "description": "Master finishing rack of multiband levelling, sheen and limiting",
+  "rack": [
+    {
+      "kind": "freak",
+      "bandCount": 3,
+      "crossoversHz": [97, 2900, 20000],
+      "crossoverSlope": "linear",
+      "oversample": false,
+      "subCutSlope": "6",
+      "ceilingKneeDb": 3,
+      "bands": [
+        {
+          "order": "post",
+          "squeeze": {
+            "thresholdDb": -39.25,
+            "ratio": 1.183,
+            "gainDb": 5.35,
+            "releaseMs": 44,
+            "upDepth": 0,
+            "downDepth": 1,
+            "expandThresholdDb": -62.24,
+            "expandRatio": 2.65,
+            "expandKneeDb": 12.5,
+            "expandAttackMs": 4.5,
+            "detectMs": 2,
+            "detectStereo": "mean"
+          }
+        },
+        {
+          "order": "post",
+          "squeeze": {
+            "thresholdDb": -42.75,
+            "ratio": 1.223,
+            "gainDb": 5.8,
+            "attackMs": 5.5,
+            "releaseMs": 46,
+            "upDepth": 0,
+            "downDepth": 1,
+            "expandThresholdDb": -60.87,
+            "expandRatio": 2.72,
+            "expandKneeDb": 14.2,
+            "expandAttackMs": 3,
+            "detectMs": 2,
+            "detectStereo": "mean"
+          }
+        },
+        {
+          "order": "post",
+          "squeeze": {
+            "thresholdDb": -42.75,
+            "ratio": 1.176,
+            "gainDb": 5.75,
+            "attackMs": 5.5,
+            "releaseMs": 44,
+            "upDepth": 0,
+            "downDepth": 1,
+            "expandThresholdDb": -60.72,
+            "expandRatio": 2.63,
+            "expandKneeDb": 12.2,
+            "expandAttackMs": 4.5,
+            "detectSlope": "12",
+            "detectMs": 2,
+            "detectStereo": "mean"
+          }
+        },
+        {}
+      ]
+    },
+    {
+      "kind": "freak",
+      "bandCount": 3,
+      "crossoversHz": [100.29, 3253.36, 5000],
+      "crossoverSlope": "linear",
+      "oversample": false,
+      "subCutHz": 12.75,
+      "subCutSlope": "6",
+      "bands": [
+        {"curve": "diode", "driveDb": 3.833, "bias": 0.041, "wet": 0.06324, "outputDb": -1.107, "knee": 0.172},
+        {"curve": "diode", "driveDb": 4.731, "bias": 0.051, "wet": 0.05203, "outputDb": -1.024, "knee": 0.303},
+        {"curve": "diode", "driveDb": 2.964, "bias": 0.03, "wet": 0.0654, "outputDb": -1.306, "knee": 0.267},
+        {}
+      ]
+    },
+    {
+      "kind": "utility",
+      "gainDb": 1.29482624,
+      "limiterOn": true,
+      "ceilingDb": -0.26119402,
+      "releaseMs": 1,
+      "holdMs": 2.35,
+      "tailMs": 100,
+      "tailShare": 0.15,
+      "lookaheadMs": 2.4,
+      "lookaheadCurve": "smooth"
+    }
+  ]
+}

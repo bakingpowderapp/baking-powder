@@ -1,0 +1,102 @@
+{
+  "kind": "rack",
+  "description": "Syncopated retro-80s saw-stack sequence from one held key",
+  "rack": [
+    {
+      "kind": "midi",
+      "arp": {
+        "on": true,
+        "stepMode": true,
+        "fixedVelocity": true,
+        "retriggerEachNote": true,
+        "style": "up",
+        "sync": true,
+        "division": "1/16",
+        "timeMs": 250,
+        "gate": 0.8,
+        "pattern": {
+          "length": 16,
+          "steps": [
+            {"velocity": 0.85, "gate": 0.7},
+            {"velocity": 0.7, "rest": true},
+            {"velocity": 0.62, "gate": 0.58, "mod": 0.29},
+            {"velocity": 0.76, "gate": 0.74, "mod": 0.5},
+            {"velocity": 0.7, "rest": true},
+            {"velocity": 0.56, "gate": 0.54, "mod": 0.17},
+            {"velocity": 0.67, "gate": 0.64, "mod": 0.29},
+            {"velocity": 0.7, "rest": true},
+            {"velocity": 0.79, "gate": 0.7},
+            {"velocity": 0.69, "gate": 0.66, "mod": 0.5},
+            {"velocity": 0.7, "rest": true},
+            {"velocity": 0.62, "gate": 0.6, "mod": 0.29},
+            {"velocity": 0.58, "gate": 0.56, "mod": 0.17},
+            {"velocity": 0.7, "rest": true},
+            {"velocity": 0.61, "gate": 0.62, "mod": 0.08},
+            {"velocity": 0.74, "gate": 0.76, "mod": 0.29}
+          ]
+        }
+      }
+    },
+    {
+      "kind": "core",
+      "voices": 8,
+      "freshVoice": true,
+      "osc1": {"levels": [0, 1, 0, 0], "level": 0.03, "tuneSemitones": -12},
+      "osc2": {"level": 0.61, "unison": 7, "detuneCents": 22, "width": 0},
+      "ampEnv": {"attackMs": 11.6, "decayMs": 540, "sustain": 0.667, "releaseMs": 784, "decayBend": -0.35, "releaseBend": -0.4},
+      "filter": {
+        "on": true,
+        "mode": "ladder",
+        "slopeDbPerOctave": 24,
+        "cutoffHz": 231,
+        "resonance": 0.25,
+        "envAmount": 0.9,
+        "keyTrack": 0.218,
+        "env": {
+          "attackMs": 3,
+          "decayMs": 120,
+          "sustain": 0,
+          "releaseMs": 120,
+          "velocityAmount": 0.2222,
+          "decayBend": 0.05,
+          "releaseBend": 0.05
+        }
+      },
+      "mod": {"osc1Level": 0.85, "osc2Level": -0.6, "osc2Semitones": 24}
+    },
+    {
+      "kind": "motion",
+      "wet": 0.55,
+      "bandCount": 1,
+      "bands": [
+        {
+          "mode": "chorus",
+          "chorus": {"mode": "standard", "sync": false, "division": "1/4", "rateHz": 1.2, "depth": 0.22, "centerMs": 2.95}
+        },
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "delay",
+      "wet": 0.35,
+      "mode": "clean",
+      "link": true,
+      "leftSync": true,
+      "leftTimeMs": 875,
+      "leftDivision": "1/1",
+      "rightSync": false,
+      "rightTimeMs": 625,
+      "rightDivision": "1/4",
+      "feedback": 0.153333333333,
+      "pingPong": 0.566666666667,
+      "filter1": {"cutoffHz": 60},
+      "filter2": {"cutoffHz": 8000},
+      "drive": 0,
+      "modDepth": 0.03,
+      "width": 0.25
+    },
+    {"kind": "utility", "gainDb": 7.1, "limiterOn": false, "ceilingDb": -1}
+  ]
+}

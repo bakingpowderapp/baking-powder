@@ -1,0 +1,389 @@
+{
+  "kind": "rack",
+  "description": "Nine-bar resonant riser with a bright zap every bar",
+  "rack": [
+    {
+      "kind": "core",
+      "level": 0.8293,
+      "freshVoice": true,
+      "osc1": {
+        "levels": [0, 1, 0, 0],
+        "tuneSemitones": -34,
+        "fineCents": 40,
+        "unison": 2,
+        "detuneCents": 4.39,
+        "unisonAlternate": true,
+        "pulseWidth": 0.875,
+        "phase": 0.875
+      },
+      "phaseRandom": 0,
+      "noise": {"on": true, "color": "white", "level": 0.3852, "width": 0.18},
+      "ampEnv": {
+        "attackMs": 15326.2,
+        "decayMs": 9607.7,
+        "sustain": 1,
+        "releaseMs": 35.1,
+        "velocityAmount": 0,
+        "attackBend": 0.1,
+        "decayBend": -0.55,
+        "releaseBend": -0.55
+      },
+      "filter": {
+        "on": true,
+        "mode": "ladder",
+        "slopeDbPerOctave": 24,
+        "oversample": 2,
+        "cutoffHz": 50.75,
+        "resonance": 0.7,
+        "drive": 0.148,
+        "envAmount": 1.296,
+        "env": {
+          "attackMs": 15500,
+          "decayMs": 11234.8,
+          "sustain": 1,
+          "releaseMs": 41.1,
+          "velocityAmount": 0,
+          "attackBend": 0.24,
+          "decayBend": -0.225,
+          "releaseBend": -0.225
+        }
+      },
+      "motion": {
+        "lfo1": {"target": "amp", "amount": -1, "shape": "saw", "rateHz": 50, "mode": "once"},
+        "env1": {
+          "target": "amp",
+          "amount": -1,
+          "env": {"attackMs": 1, "decayMs": 30000, "sustain": 0, "releaseMs": 30000, "decayBend": -1}
+        },
+        "env2": {
+          "target": "amp",
+          "amount": -1,
+          "env": {"attackMs": 0.25, "decayMs": 1, "sustain": 1, "releaseMs": 30000}
+        }
+      }
+    },
+    {
+      "kind": "core",
+      "level": 0.8896,
+      "freshVoice": true,
+      "osc1": {
+        "levels": [0, 1, 0, 0],
+        "tuneSemitones": -34,
+        "fineCents": 40,
+        "unison": 2,
+        "detuneCents": 4.39,
+        "unisonAlternate": true,
+        "pulseWidth": 0.875,
+        "phase": 0.875
+      },
+      "phaseRandom": 0,
+      "noise": {"on": true, "color": "white", "level": 0.2651, "width": 0.18},
+      "ampEnv": {
+        "attackMs": 15326.2,
+        "decayMs": 9607.7,
+        "sustain": 1,
+        "releaseMs": 35.1,
+        "velocityAmount": 0,
+        "attackBend": 0.1,
+        "decayBend": -0.55,
+        "releaseBend": -0.55
+      },
+      "filter": {
+        "on": true,
+        "mode": "ladder",
+        "slopeDbPerOctave": 24,
+        "oversample": 2,
+        "cutoffHz": 119.62,
+        "resonance": 0.92,
+        "drive": 0.148,
+        "envAmount": 1.296,
+        "env": {
+          "attackMs": 15500,
+          "decayMs": 11234.8,
+          "sustain": 1,
+          "releaseMs": 41.1,
+          "velocityAmount": 0,
+          "attackBend": 0.24,
+          "decayBend": -0.225,
+          "releaseBend": -0.225
+        }
+      },
+      "motion": {
+        "lfo1": {"target": "amp", "amount": -1, "shape": "ramp", "rateHz": 50, "mode": "once"},
+        "env1": {
+          "target": "amp",
+          "amount": -1,
+          "env": {"attackMs": 1, "decayMs": 20106.8, "sustain": 0, "releaseMs": 30000, "decayBend": -0.6}
+        },
+        "env2": {
+          "target": "amp",
+          "amount": -1,
+          "env": {"attackMs": 0.25, "decayMs": 1, "sustain": 1, "releaseMs": 30000}
+        }
+      }
+    },
+    {
+      "kind": "core",
+      "freshVoice": true,
+      "osc1": {"level": 0.7, "tuneSemitones": 12, "unison": 2, "detuneCents": 1.23, "unisonAlternate": true, "phase": 0.5},
+      "osc2": {
+        "level": 0.2394,
+        "tuneSemitones": 22,
+        "unison": 2,
+        "detuneCents": 0.96,
+        "width": 0.769,
+        "unisonAlternate": true,
+        "phase": 0.5
+      },
+      "phaseRandom": 0,
+      "ampEnv": {
+        "attackMs": 16340.5,
+        "decayMs": 9607.7,
+        "sustain": 1,
+        "releaseMs": 35.1,
+        "velocityAmount": 0,
+        "decayBend": -0.55,
+        "releaseBend": -0.55
+      },
+      "filter": {
+        "on": true,
+        "mode": "ladder-band-pass",
+        "slopeDbPerOctave": 24,
+        "cutoffHz": 741,
+        "resonance": 0.5875,
+        "drive": 0.7,
+        "envAmount": 1.3154,
+        "env": {
+          "attackMs": 0.27,
+          "decayMs": 4333.4,
+          "sustain": 0,
+          "releaseMs": 1,
+          "velocityAmount": 0,
+          "attackBend": 0.18,
+          "decayBend": -0.225,
+          "releaseBend": -0.225
+        }
+      },
+      "motion": {
+        "lfo1": {"target": "pitch", "amount": 0.0025, "shape": "random", "rateHz": 0.05},
+        "env1": {
+          "target": "amp",
+          "amount": -0.894,
+          "env": {"attackMs": 1, "decayMs": 18362.3, "sustain": 0, "releaseMs": 30000, "decayBend": -0.231}
+        },
+        "env2": {
+          "target": "resonance",
+          "amount": 0.1,
+          "env": {"attackMs": 7000, "decayMs": 1, "sustain": 1, "releaseMs": 30000}
+        }
+      }
+    },
+    {"kind": "utility", "gainDb": 2.53, "limiterOn": false, "ceilingDb": -1},
+    {
+      "kind": "motion",
+      "wet": 0.5,
+      "bandCount": 1,
+      "bands": [
+        {
+          "mode": "chorus",
+          "chorus": {
+            "mode": "standard",
+            "sync": false,
+            "division": "1/4",
+            "rateHz": 0.608,
+            "depth": 0.1203,
+            "centerMs": 8.8,
+            "spread": 0.5,
+            "startPhase": 0.75,
+            "crossfade": true,
+            "dual": true
+          }
+        },
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "eq",
+      "bands": [
+        {},
+        {},
+        {},
+        {"on": true, "shape": "bell", "channel": "stereo", "frequencyHz": 622.4, "gainDb": -6.81, "q": 0.253},
+        {},
+        {},
+        {},
+        {}
+      ],
+      "trimDb": 3.77
+    },
+    {
+      "kind": "delay",
+      "wet": 0.3097,
+      "mode": "clean",
+      "leftSync": true,
+      "leftTimeMs": 375,
+      "leftDivision": "1/4",
+      "rightSync": true,
+      "rightTimeMs": 500,
+      "rightDivision": "1/8.",
+      "feedback": 0.3524,
+      "pingPong": 1,
+      "inputLean": -0.5,
+      "filter1": {"cutoffHz": 46.6},
+      "filter2": {"cutoffHz": 1098.7},
+      "drive": 0,
+      "width": 0.5,
+      "wetTrimDb": -6.7
+    },
+    {
+      "kind": "reverb",
+      "wet": 0.378,
+      "tank": "plate",
+      "preDelayMs": 19.5,
+      "earlyPattern": "scatter",
+      "age": "now",
+      "stereoInput": 0.6,
+      "decayS": 4.34,
+      "sizeTimes": 1,
+      "diffusion": 0.7,
+      "dampingHz": 2767.6,
+      "lowDecayTimes": 1.6,
+      "lowCrossoverHz": 180,
+      "highDecayTimes": 1.675,
+      "highCrossoverHz": 2000,
+      "modDepthMs": 0.3,
+      "modSync": false,
+      "modDivision": "1/4",
+      "modRateHz": 0.7,
+      "filter1": {"cutoffHz": 56.5},
+      "filter2": {"cutoffHz": 20000},
+      "width": 0.6,
+      "forwardLevel": 0.4166
+    },
+    {
+      "kind": "compressor",
+      "sumDetector": true,
+      "autoReleaseMakeup": false,
+      "thresholdDb": -22,
+      "ratio": 2.843,
+      "kneeDb": 0,
+      "attackMs": 15.1,
+      "releaseMs": 150.7,
+      "makeupDb": 2.17
+    },
+    {"kind": "utility", "gainDb": 0.7, "limiterOn": false, "ceilingDb": -1}
+  ],
+  "lfos": [
+    {
+      "row": 0,
+      "param": "motion.lfo1.amount",
+      "amount": 1,
+      "center": -1,
+      "tempoSync": false,
+      "rateHz": 32,
+      "retrigger": true,
+      "once": true,
+      "shape": "saw",
+      "lagMs": 3
+    },
+    {
+      "row": 0,
+      "param": "motion.lfo1.amount",
+      "amount": 1,
+      "center": -1,
+      "tempoSync": true,
+      "division": "1/1",
+      "retrigger": true,
+      "shape": "square",
+      "lagMs": 3
+    },
+    {
+      "row": 0,
+      "param": "motion.lfo1.amount",
+      "amount": 1,
+      "center": -1,
+      "tempoSync": true,
+      "division": "1/2",
+      "retrigger": true,
+      "shape": "square",
+      "lagMs": 3
+    },
+    {
+      "row": 0,
+      "param": "motion.lfo1.amount",
+      "amount": 1,
+      "center": -1,
+      "tempoSync": true,
+      "division": "1/4",
+      "retrigger": true,
+      "shape": "square",
+      "lagMs": 3
+    },
+    {
+      "row": 1,
+      "param": "motion.lfo1.amount",
+      "amount": 1,
+      "center": -1,
+      "tempoSync": false,
+      "rateHz": 32,
+      "retrigger": true,
+      "once": true,
+      "shape": "saw",
+      "lagMs": 3
+    },
+    {
+      "row": 1,
+      "param": "motion.lfo1.amount",
+      "amount": 1,
+      "center": -1,
+      "tempoSync": true,
+      "division": "1/1",
+      "retrigger": true,
+      "shape": "square",
+      "lagMs": 3
+    },
+    {
+      "row": 1,
+      "param": "motion.lfo1.amount",
+      "amount": 1,
+      "center": -1,
+      "tempoSync": true,
+      "division": "1/2",
+      "retrigger": true,
+      "shape": "square",
+      "lagMs": 3
+    },
+    {
+      "row": 1,
+      "param": "motion.lfo1.amount",
+      "amount": 1,
+      "center": -1,
+      "tempoSync": true,
+      "division": "1/4",
+      "retrigger": true,
+      "shape": "square",
+      "lagMs": 3
+    },
+    {
+      "row": 3,
+      "param": "pan",
+      "amount": 0.245,
+      "center": 0,
+      "tempoSync": false,
+      "rateHz": 4.963,
+      "startPhase": 0.332
+    },
+    {
+      "row": 3,
+      "param": "gainDb",
+      "amount": 0.01094,
+      "center": 3.05499999998,
+      "tempoSync": false,
+      "rateHz": 9.926,
+      "startPhase": 0.414,
+      "shape": "triangle"
+    }
+  ]
+}

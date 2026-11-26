@@ -1,0 +1,127 @@
+{
+  "kind": "rack",
+  "description": "Punchy electronic kick with a deep body and soft click",
+  "rack": [
+    {
+      "kind": "core",
+      "level": 0.84,
+      "voices": 8,
+      "freshVoice": true,
+      "osc1": {
+        "levels": [0, 0, 0.025, 1],
+        "tuneSemitones": 12
+      },
+      "ampEnv": {"attackMs": 0.25, "decayMs": 200, "sustain": 1, "releaseMs": 684.2, "releaseBend": 1},
+      "motion": {
+        "lfo1": {
+          "target": "amp",
+          "amount": 1,
+          "shape": "drawn",
+          "rateHz": 3.21543,
+          "mode": "once",
+          "points": [
+            {"x": 0, "y": 0, "bend": 0},
+            {"x": 0.00317, "y": 0.49242, "bend": 0},
+            {"x": 0.00333, "y": 0.49979, "bend": 0},
+            {"x": 0.042, "y": 0.43652, "bend": 0},
+            {"x": 0.0825, "y": 0.37852, "bend": 0},
+            {"x": 0.12483, "y": 0.32579, "bend": 0},
+            {"x": 0.16933, "y": 0.2779, "bend": 0},
+            {"x": 0.21617, "y": 0.23469, "bend": 0},
+            {"x": 0.2655, "y": 0.19598, "bend": 0},
+            {"x": 0.31783, "y": 0.16137, "bend": 0},
+            {"x": 0.37333, "y": 0.13077, "bend": 0},
+            {"x": 0.43167, "y": 0.10421, "bend": 0},
+            {"x": 0.494, "y": 0.08106, "bend": 0},
+            {"x": 0.561, "y": 0.06103, "bend": 0},
+            {"x": 0.6335, "y": 0.0439, "bend": 0},
+            {"x": 0.712, "y": 0.02951, "bend": 0},
+            {"x": 0.79817, "y": 0.01753, "bend": 0},
+            {"x": 1, "y": 0, "bend": 0}
+          ]
+        },
+        "lfo2": {
+          "target": "pitch",
+          "amount": 1,
+          "shape": "drawn",
+          "rateHz": 20.83333,
+          "mode": "once",
+          "points": [
+            {"x": 0, "y": 1, "bend": 0},
+            {"x": 0.17, "y": 0.99999, "bend": 0},
+            {"x": 0.21083, "y": 0.90315, "bend": 0},
+            {"x": 0.2525, "y": 0.81217, "bend": 0},
+            {"x": 0.295, "y": 0.72686, "bend": 0},
+            {"x": 0.33917, "y": 0.64556, "bend": 0},
+            {"x": 0.38417, "y": 0.56979, "bend": 0},
+            {"x": 0.43083, "y": 0.49809, "bend": 0},
+            {"x": 0.47917, "y": 0.43057, "bend": 0},
+            {"x": 0.52917, "y": 0.36725, "bend": 0},
+            {"x": 0.63333, "y": 0.25403, "bend": 0},
+            {"x": 0.74583, "y": 0.15554, "bend": 0},
+            {"x": 0.8675, "y": 0.07124, "bend": 0},
+            {"x": 1, "y": 0, "bend": 0}
+          ]
+        },
+        "env1": {
+          "target": "pitch",
+          "amount": 1,
+          "env": {"attackMs": 0.25, "decayMs": 8.16, "sustain": 0, "releaseMs": 8.16, "decayBend": -0.05}
+        }
+      }
+    },
+    {
+      "kind": "core",
+      "voices": 8,
+      "freshVoice": true,
+      "osc1": {"level": 0},
+      "noise": {"on": true, "color": "white", "level": 0.07738, "tone": 0.35},
+      "ampEnv": {"attackMs": 0.25, "decayMs": 200, "sustain": 1, "releaseMs": 44, "releaseBend": 1},
+      "motion": {
+        "lfo1": {
+          "target": "amp",
+          "amount": 1,
+          "shape": "drawn",
+          "rateHz": 50,
+          "mode": "once",
+          "points": [
+            {"x": 0, "y": 0, "bend": 0},
+            {"x": 0.05, "y": 0.5, "bend": 0},
+            {"x": 0.062, "y": 0.45034, "bend": 0},
+            {"x": 0.074, "y": 0.40558, "bend": 0},
+            {"x": 0.086, "y": 0.36525, "bend": 0},
+            {"x": 0.098, "y": 0.3289, "bend": 0},
+            {"x": 0.11, "y": 0.29614, "bend": 0},
+            {"x": 0.124, "y": 0.26198, "bend": 0},
+            {"x": 0.138, "y": 0.23173, "bend": 0},
+            {"x": 0.152, "y": 0.20494, "bend": 0},
+            {"x": 0.166, "y": 0.1812, "bend": 0},
+            {"x": 0.182, "y": 0.15738, "bend": 0},
+            {"x": 0.198, "y": 0.13664, "bend": 0},
+            {"x": 0.216, "y": 0.11651, "bend": 0},
+            {"x": 0.252, "y": 0.08454, "bend": 0},
+            {"x": 0.294, "y": 0.0579, "bend": 0},
+            {"x": 0.336, "y": 0.03939, "bend": 0},
+            {"x": 0.384, "y": 0.02504, "bend": 0},
+            {"x": 0.44, "y": 0.01434, "bend": 0},
+            {"x": 0.508, "y": 0.00672, "bend": 0},
+            {"x": 0.65, "y": 0, "bend": 0},
+            {"x": 1, "y": 0, "bend": 0}
+          ]
+        }
+      }
+    },
+    {"kind": "utility", "gainDb": 3, "width": 0, "limiterOn": false, "ceilingDb": -1},
+    {
+      "kind": "freak",
+      "bandCount": 1,
+      "driveDb": 14.16,
+      "bands": [
+        {"curve": "soft"},
+        {},
+        {},
+        {}
+      ]
+    }
+  ]
+}

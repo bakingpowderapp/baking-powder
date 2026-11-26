@@ -1,0 +1,34 @@
+{
+  "kind": "freak",
+  "description": "Gritty, wide lead distortion that keeps the low end clean",
+  "bandCount": 2,
+  "crossoversHz": [125.7, 800, 5000],
+  "crossoverSlope": "30",
+  "oversample": false,
+  "outputDb": -8,
+  "bands": [
+    {
+      "curve": "limit",
+      "driveDb": 8.65,
+      "thresholdDb": -19.9,
+      "lift": 0.817,
+      "rangeDb": 47,
+      "releaseMs": 67,
+      "linked": false,
+      "outputDb": -7.6
+    },
+    {
+      "curve": "diode",
+      "stereo": "mid-side",
+      "driveDb": 11.75,
+      "thresholdDb": -16.6,
+      "sharpen": 0.415,
+      "rangeDb": 6.02,
+      "attackMs": 1.5,
+      "releaseMs": 50,
+      "outputDb": -8.75
+    },
+    {},
+    {}
+  ]
+}

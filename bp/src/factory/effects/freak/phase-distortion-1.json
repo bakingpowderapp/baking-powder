@@ -1,0 +1,28 @@
+{
+  "kind": "freak",
+  "description": "Single-band FM grit: dark, muffled noise under chords and arps",
+  "wet": 0.39,
+  "bandCount": 1,
+  "oversample": false,
+  "driveDb": 5,
+  "filter2": {"on": true, "cutoffHz": 5000, "q": 0.7071},
+  "biasLfoRateHz": 0.1,
+  "bands": [
+    {
+      "curve": "phase",
+      "driveDb": -3.9,
+      "bias": -0.8,
+      "thresholdDb": -39.2,
+      "lift": 0.5867,
+      "times": 2,
+      "midDb": 2.56,
+      "presenceDb": -24,
+      "phaseToneHz": 520.25,
+      "phaseNormalize": 0.7966,
+      "phaseSpread": 0.1117
+    },
+    {},
+    {},
+    {}
+  ]
+}

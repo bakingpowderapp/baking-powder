@@ -1,0 +1,141 @@
+{
+  "kind": "rack",
+  "description": "Snappy eight-step riff sequence from one held key",
+  "author": "Aiyn Zahev",
+  "website": "https://www.aiynzahev-sounds.com/",
+  "rack": [
+    {
+      "kind": "midi",
+      "arp": {
+        "on": true,
+        "stepMode": true,
+        "fixedVelocity": true,
+        "style": "up",
+        "sync": true,
+        "division": "1/16",
+        "timeMs": 250,
+        "gate": 0.5,
+        "pattern": {
+          "length": 8,
+          "steps": [
+            {"rest": true},
+            {"semitones": 7},
+            {"semitones": 2, "octaveShift": 1, "slide": true},
+            {"octaveShift": -1, "gate": 1},
+            {"rest": true},
+            {},
+            {"semitones": 3, "octaveShift": 1},
+            {}
+          ]
+        }
+      }
+    },
+    {
+      "kind": "core",
+      "level": 0.7,
+      "voices": 1,
+      "osc1": {"fineCents": 20},
+      "osc2": {"levels": [0, 1, 0, 0], "level": 0.75, "fineCents": 20, "pulseWidth": 0.24},
+      "ampEnv": {
+        "attackMs": 3.7,
+        "decayMs": 1990,
+        "sustain": 0,
+        "releaseMs": 224,
+        "velocityAmount": 0,
+        "decayBend": -1,
+        "releaseBend": -0.41
+      },
+      "filter": {
+        "on": true,
+        "mode": "ladder",
+        "slopeDbPerOctave": 24,
+        "cutoffHz": 413,
+        "resonance": 0.3,
+        "envAmount": 0.69,
+        "keyTrack": 0.44,
+        "env": {
+          "attackMs": 1.8,
+          "decayMs": 535,
+          "sustain": 0,
+          "releaseMs": 605,
+          "velocityAmount": 0,
+          "decayBend": -0.98,
+          "releaseBend": -1
+        }
+      },
+      "mono": {"glideMs": 60, "glideCurve": "octave"},
+      "motion": {
+        "lfo1": {"target": "pulseWidth2", "amount": 0.2556, "shape": "triangle", "rateHz": 3.132, "keyTrack": 1, "mode": "run"}
+      }
+    },
+    {
+      "kind": "freak",
+      "bandCount": 1,
+      "driveDb": 23.3,
+      "outputDb": -15,
+      "bands": [
+        {"curve": "tube"},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "reverb",
+      "wet": 0.07,
+      "tank": "plate",
+      "preDelayMs": 112,
+      "earlyPattern": "scatter",
+      "age": "now",
+      "decayS": 0.65,
+      "sizeTimes": 1,
+      "diffusion": 0.296,
+      "dampingHz": 12000,
+      "modDepthMs": 0,
+      "modSync": false,
+      "modDivision": "1/4",
+      "modRateHz": 0.7,
+      "filter1": {"cutoffHz": 70},
+      "width": 0.67
+    },
+    {
+      "kind": "eq",
+      "bands": [
+        {},
+        {},
+        {},
+        {},
+        {},
+        {"on": true, "shape": "high-shelf", "channel": "stereo", "frequencyHz": 400, "gainDb": 3, "q": 0.71},
+        {"on": true, "shape": "high-shelf", "channel": "stereo", "frequencyHz": 1300, "gainDb": 3, "q": 0.71},
+        {"on": true, "shape": "high-shelf", "channel": "stereo", "frequencyHz": 9000, "gainDb": 2, "q": 0.71}
+      ]
+    },
+    {
+      "kind": "delay",
+      "wet": 0.2,
+      "mode": "clean",
+      "leftSync": true,
+      "leftTimeMs": 375,
+      "leftDivision": "1/8",
+      "rightSync": true,
+      "rightTimeMs": 500,
+      "rightDivision": "1/8.",
+      "feedback": 0.235,
+      "pingPong": 0.35,
+      "filter1": {"on": false},
+      "filter2": {"cutoffHz": 10000},
+      "drive": 0,
+      "width": 1,
+      "duckGate": 0.9,
+      "duckThresholdDb": -18,
+      "duckAttackMs": 10,
+      "duckReleaseMs": 116,
+      "wetTrimDb": 4.5
+    },
+    {"kind": "utility", "gainDb": 1.6, "limiterOn": false, "ceilingDb": -1}
+  ],
+  "lfos": [
+    {"row": 2, "param": "bands[0].bias", "amount": 0.7, "center": 0, "tempoSync": false, "rateHz": 2.05}
+  ]
+}

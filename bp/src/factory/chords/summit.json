@@ -1,0 +1,83 @@
+{
+  "kind": "rack",
+  "description": "Wide trance saw pad with a resonant eight-bar filter sweep",
+  "rack": [
+    {
+      "kind": "core",
+      "level": 0.26,
+      "freshVoice": true,
+      "osc1": {"unison": 8, "detuneCents": 12.2, "unisonAlternate": true, "bright": true},
+      "osc2": {"level": 1, "fineCents": 10, "unison": 8, "detuneCents": 27.48, "unisonAlternate": true, "bright": true},
+      "ampEnv": {
+        "attackMs": 671.97,
+        "decayMs": 1000,
+        "sustain": 1,
+        "releaseMs": 3466.12,
+        "velocityAmount": 0,
+        "attackBend": 0.3,
+        "decayBend": -0.44,
+        "releaseBend": -0.42
+      },
+      "filter": {"on": true, "mode": "svf-low-pass", "slopeDbPerOctave": 12, "cutoffHz": 394.6, "resonance": 0.473}
+    },
+    {"kind": "utility", "gainDb": 9.03, "limiterOn": false, "ceilingDb": -1},
+    {
+      "kind": "compressor",
+      "autoReleaseMakeup": false,
+      "thresholdDb": -8,
+      "ratio": 2.2,
+      "kneeDb": 3,
+      "attackMs": 0.1,
+      "releaseMs": 100
+    },
+    {
+      "kind": "motion",
+      "wet": 0.283,
+      "bandCount": 1,
+      "bands": [
+        {
+          "mode": "chorus",
+          "chorus": {
+            "mode": "standard",
+            "sync": false,
+            "division": "1/4",
+            "rateHz": 0.4875,
+            "depth": 1,
+            "centerMs": 34,
+            "filter2": {"cutoffHz": 4000},
+            "crossfade": true
+          }
+        },
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "eq",
+      "bands": [
+        {"on": true, "shape": "high-shelf", "channel": "stereo", "frequencyHz": 1400, "gainDb": -1, "q": 0.707},
+        {"on": true, "shape": "high-shelf", "channel": "stereo", "frequencyHz": 15000, "gainDb": 9, "q": 0.707},
+        {"on": true, "shape": "bell", "channel": "stereo", "frequencyHz": 700, "gainDb": 0.8, "q": 1},
+        {"on": true, "shape": "bell", "channel": "stereo", "frequencyHz": 220, "gainDb": -0.7, "q": 1},
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {"kind": "utility", "gainDb": -8.59, "limiterOn": false, "ceilingDb": -1}
+  ],
+  "lfos": [
+    {
+      "row": 0,
+      "param": "filter.cutoffHz",
+      "amount": 0.4912,
+      "center": 2152.43510001,
+      "tempoSync": true,
+      "division": "8/1",
+      "startPhase": 0.75,
+      "shape": "triangle"
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "kind": "rack",
+  "description": "Soft drifting three-step eighth-note sequence from one held key",
+  "author": "Aiyn Zahev",
+  "website": "https://www.aiynzahev-sounds.com/",
+  "rack": [
+    {
+      "kind": "midi",
+      "arp": {
+        "on": true,
+        "stepMode": true,
+        "fixedVelocity": true,
+        "style": "up",
+        "sync": true,
+        "division": "1/8",
+        "timeMs": 250,
+        "gate": 0.5,
+        "pattern": {
+          "length": 3,
+          "steps": [
+            {"velocity": 0.71, "tie": true},
+            {"semitones": 7, "octaveShift": 1, "velocity": 0.71},
+            {"velocity": 0.71, "gate": 1}
+          ]
+        }
+      }
+    },
+    {
+      "kind": "core",
+      "level": 0.799,
+      "voices": 1,
+      "osc1": {"level": 0.4207, "fineCents": -0.141, "carryPhase": true, "phase": 0.1325},
+      "osc2": {"levels": [0, 0, 1, 0], "level": 1, "fineCents": 0.368, "carryPhase": true, "phase": 0.47},
+      "noise": {"on": true, "color": "white", "level": 0.1},
+      "ampEnv": {
+        "attackMs": 1.2,
+        "decayMs": 362,
+        "sustain": 1,
+        "releaseMs": 910,
+        "velocityAmount": 0,
+        "decayBend": -1,
+        "releaseBend": -0.37
+      },
+      "filter": {
+        "on": true,
+        "mode": "ladder",
+        "slopeDbPerOctave": 24,
+        "cutoffHz": 1594.1,
+        "envAmount": 0.098,
+        "keyTrack": 1.005,
+        "env": {
+          "attackMs": 1.2,
+          "decayMs": 330.5,
+          "sustain": 0,
+          "releaseMs": 3296.7,
+          "velocityAmount": 0,
+          "decayBend": -1,
+          "releaseBend": -1
+        }
+      }
+    },
+    {
+      "kind": "delay",
+      "wet": 0.35,
+      "mode": "clean",
+      "leftSync": true,
+      "leftTimeMs": 416.45,
+      "leftDivision": "1/16",
+      "leftSyncScale": 3.33,
+      "rightSync": true,
+      "rightTimeMs": 416.45,
+      "rightDivision": "1/16",
+      "rightSyncScale": 3.33,
+      "feedback": 0.643,
+      "filter1": {"on": false},
+      "filter2": {"cutoffHz": 12000},
+      "feedbackFilter": {"on": true, "cutoffHz": 2200},
+      "drive": 0,
+      "modDepth": 0.4345,
+      "modRateHz": 1,
+      "modFlutter": 0,
+      "modSpread": -0.25,
+      "modStartPhase": 0.0531,
+      "width": 1,
+      "wetTrimDb": 0.18
+    },
+    {
+      "kind": "reverb",
+      "wet": 0.252,
+      "tank": "plate",
+      "preDelayMs": 0,
+      "earlyPattern": "scatter",
+      "age": "now",
+      "decayS": 1.5,
+      "sizeTimes": 1,
+      "dampingHz": 2350,
+      "modDepthMs": 0,
+      "modSync": false,
+      "modDivision": "1/4",
+      "modRateHz": 0.7,
+      "filter1": {"cutoffHz": 50},
+      "filter2": {"cutoffHz": 10000},
+      "forwardLevel": 0.45
+    },
+    {
+      "kind": "utility",
+      "gainDb": 7,
+      "width": 0.47,
+      "plainWidth": true,
+      "limiterOn": true,
+      "ceilingDb": -1
+    }
+  ],
+  "lfos": [
+    {
+      "row": 1,
+      "param": "osc1.fineCents",
+      "amount": 0.235,
+      "center": 1.56,
+      "tempoSync": false,
+      "rateHz": 4.4685,
+      "startPhase": 0.24,
+      "retrigger": true,
+      "shape": "triangle"
+    },
+    {
+      "row": 1,
+      "param": "osc2.fineCents",
+      "amount": 0.235,
+      "center": 2.07,
+      "tempoSync": false,
+      "rateHz": 4.4685,
+      "startPhase": 0.24,
+      "retrigger": true,
+      "shape": "triangle"
+    },
+    {
+      "row": 1,
+      "param": "filter.cutoffHz",
+      "amount": 0.009,
+      "center": 1594.1,
+      "tempoSync": false,
+      "rateHz": 4.4685,
+      "startPhase": 0.24,
+      "retrigger": true,
+      "shape": "triangle"
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "kind": "rack",
+  "description": "Gliding three-octave sixteenth-note sequence from one held key",
+  "rack": [
+    {
+      "kind": "midi",
+      "arp": {
+        "on": true,
+        "stepMode": true,
+        "fixedVelocity": true,
+        "style": "up",
+        "sync": true,
+        "division": "1/16",
+        "timeMs": 250,
+        "gate": 0.5,
+        "pattern": {
+          "length": 16,
+          "steps": [
+            {"semitones": -12, "velocity": 0.74, "gate": 0.45},
+            {"velocity": 0.42, "gate": 0.3},
+            {"rest": true},
+            {"semitones": -12, "velocity": 0.63, "gate": 0.4},
+            {"semitones": 7, "velocity": 0.55, "gate": 0.6},
+            {"rest": true},
+            {"semitones": 12, "velocity": 0.46, "gate": 0.35},
+            {"semitones": -12, "velocity": 0.68, "gate": 0.45},
+            {"velocity": 0.38, "gate": 0.3},
+            {"rest": true},
+            {"semitones": -12, "velocity": 0.65, "gate": 0.4, "slide": true},
+            {"semitones": 4, "octaveShift": 1, "velocity": 0.51, "gate": 0.75},
+            {"semitones": 7, "velocity": 0.4, "gate": 0.3},
+            {"semitones": -12, "velocity": 0.71},
+            {"semitones": 12, "octaveShift": 1, "velocity": 0.34, "gate": 1, "slide": true},
+            {"semitones": 4, "velocity": 0.58, "gate": 0.4}
+          ]
+        }
+      }
+    },
+    {
+      "kind": "core",
+      "voices": 1,
+      "osc1": {"level": 0.2565, "fineCents": 12.86, "bright": true, "carryPhase": true, "phase": 0.425},
+      "osc2": {
+        "levels": [0, 1, 0, 0],
+        "level": 0.1395,
+        "fineCents": -6.63,
+        "pulseWidth": 0.695,
+        "bright": true,
+        "carryPhase": true,
+        "phase": 0.215
+      },
+      "ampEnv": {
+        "delayMs": 1.75,
+        "attackMs": 0.8,
+        "decayMs": 100,
+        "sustain": 1,
+        "releaseMs": 2300,
+        "velocityAmount": 0,
+        "releaseBend": -0.7
+      },
+      "filter": {
+        "on": true,
+        "mode": "ladder",
+        "slopeDbPerOctave": 24,
+        "cutoffHz": 63,
+        "drive": 0.2,
+        "feedback": 0.36,
+        "envAmount": 1.65,
+        "keyTrack": 0.2345,
+        "env": {"delayMs": 1.75, "attackMs": 0.5, "decayMs": 1720, "sustain": 0, "releaseMs": 1064, "decayBend": -1, "releaseBend": -1}
+      },
+      "mono": {"glideMs": 6, "legato": false, "glideCurve": "octave"}
+    },
+    {
+      "kind": "delay",
+      "wet": 0.515,
+      "mode": "clean",
+      "leftSync": true,
+      "leftTimeMs": 375,
+      "leftDivision": "1/8",
+      "leftSyncScale": 1.0105,
+      "rightSync": true,
+      "rightTimeMs": 500,
+      "rightDivision": "1/8",
+      "rightSyncScale": 1.0102,
+      "feedback": 0.04,
+      "pingPong": 1,
+      "evenPingPong": true,
+      "evenStereo": true,
+      "evenSway": true,
+      "filter1": {"on": false},
+      "filter2": {"slopeDb": "12", "cutoffHz": 7000},
+      "feedbackFilter": {"on": true, "cutoffHz": 10000},
+      "drive": 0,
+      "modDepth": 0.43,
+      "modRateHz": 0.595,
+      "modFlutter": 0,
+      "modSpread": -0.33,
+      "modStartPhase": 0.05,
+      "width": 1
+    },
+    {
+      "kind": "eq",
+      "bands": [
+        {"on": true, "shape": "low-shelf", "channel": "stereo", "frequencyHz": 79.8, "gainDb": 3.08, "q": 0.71},
+        {"on": true, "shape": "low-shelf", "channel": "stereo", "frequencyHz": 221.3, "gainDb": 3.19, "q": 0.71},
+        {"on": true, "shape": "bell", "channel": "stereo", "frequencyHz": 2367, "gainDb": 8.24, "q": 0.376},
+        {"on": true, "shape": "high-shelf", "channel": "stereo", "frequencyHz": 4983, "gainDb": 9.87, "q": 0.71},
+        {"on": true, "shape": "high-shelf", "channel": "stereo", "frequencyHz": 10584, "gainDb": 4.52, "q": 0.71},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "reverb",
+      "wet": 0.275,
+      "tank": "plate",
+      "preDelayMs": 28,
+      "earlyPattern": "scatter",
+      "age": "now",
+      "decayS": 5.11,
+      "sizeTimes": 1,
+      "dampingHz": 5466,
+      "lowDecayTimes": 0.7,
+      "lowCrossoverHz": 455,
+      "highDecayTimes": 0.45,
+      "highCrossoverHz": 2456,
+      "modDepthMs": 0,
+      "modSync": false,
+      "modDivision": "1/4",
+      "modRateHz": 0.7,
+      "filter1": {"cutoffHz": 260},
+      "forwardLevel": 0.6
+    },
+    {"kind": "transient", "attackDb": 4},
+    {"kind": "utility", "gainDb": 1.7, "limiterOn": true, "ceilingDb": -1}
+  ]
+}

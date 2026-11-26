@@ -1,0 +1,156 @@
+{
+  "kind": "rack",
+  "description": "Descending retro-80s harp sequence with shimmer and gentle panning",
+  "rack": [
+    {
+      "kind": "midi",
+      "arp": {
+        "on": true,
+        "stepMode": true,
+        "retriggerEachNote": true,
+        "style": "up",
+        "sync": true,
+        "division": "1/16",
+        "timeMs": 250,
+        "gate": 0.98,
+        "copies": 3,
+        "stackSemitones": [12.03, 19, 36],
+        "pattern": {
+          "length": 8,
+          "steps": [
+            {"octaveShift": 2, "velocity": 0.95, "gate": 0.82, "mod": 1},
+            {"semitones": 7, "octaveShift": 1, "velocity": 0.86, "gate": 0.72, "mod": 1},
+            {"octaveShift": 1, "velocity": 0.81, "gate": 0.7, "mod": 1},
+            {"semitones": 7, "velocity": 0.84, "gate": 0.72, "mod": 1},
+            {"velocity": 0.94, "gate": 0.84, "mod": 1},
+            {"semitones": 7, "velocity": 0.81, "gate": 0.7, "mod": 1},
+            {"octaveShift": 1, "velocity": 0.86, "gate": 0.76, "mod": 1},
+            {"semitones": 7, "octaveShift": 1, "velocity": 0.91, "gate": 0.82, "mod": 1}
+          ]
+        }
+      }
+    },
+    {
+      "kind": "core",
+      "level": 0.971989,
+      "voices": 15,
+      "freshVoice": true,
+      "osc1": {"levels": [0, 1, 0, 0], "level": 0.55, "pulseWidth": 0.3, "freeRunning": true},
+      "osc2": {"level": 0.275, "fineCents": 4, "freeRunning": true},
+      "osc3": {"levels": [0, 1, 0, 0], "level": 0.35, "tuneSemitones": 4, "fineCents": 3, "pulseWidth": 0.3, "freeRunning": true},
+      "osc4": {"levels": [0, 1, 0, 0], "level": 0.25, "tuneSemitones": 19, "pulseWidth": 0.3, "freeRunning": true},
+      "ampEnv": {
+        "attackMs": 8,
+        "decayMs": 2520,
+        "sustain": 0,
+        "releaseMs": 2780,
+        "velocityAmount": 0.427,
+        "decayBend": -0.5,
+        "releaseBend": -0.15
+      },
+      "filter": {
+        "on": true,
+        "mode": "ladder",
+        "slopeDbPerOctave": 12,
+        "cutoffHz": 32.5,
+        "envAmount": 1.18,
+        "keyTrack": 0.314,
+        "env": {
+          "attackMs": 8,
+          "decayMs": 1830,
+          "sustain": 0,
+          "releaseMs": 1830,
+          "velocityAmount": 0.3,
+          "decayBend": -0.5,
+          "releaseBend": -0.5
+        }
+      },
+      "mod": {"osc1Level": 0.225, "osc2Level": 0.1125}
+    },
+    {
+      "kind": "eq",
+      "bands": [
+        {"on": true, "shape": "high-pass", "channel": "stereo", "frequencyHz": 110, "gainDb": 0, "q": 0.5},
+        {"on": true, "shape": "low-shelf", "channel": "stereo", "frequencyHz": 600, "gainDb": -5, "q": 0.71},
+        {"on": true, "shape": "high-shelf", "channel": "stereo", "frequencyHz": 6000, "gainDb": -4, "q": 0.71},
+        {},
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "delay",
+      "wet": 0.49,
+      "mode": "clean",
+      "leftSync": false,
+      "leftTimeMs": 7,
+      "leftDivision": "1/4",
+      "rightSync": false,
+      "rightTimeMs": 11,
+      "rightDivision": "1/4",
+      "feedback": 0,
+      "filter1": {"cutoffHz": 40},
+      "filter2": {"cutoffHz": 12000},
+      "drive": 0,
+      "diffusion": 1,
+      "width": 0.65
+    },
+    {
+      "kind": "reverb",
+      "wet": 0.32,
+      "tank": "plate",
+      "preDelayMs": 88,
+      "earlyPattern": "scatter",
+      "age": "now",
+      "decayS": 3.8,
+      "sizeTimes": 1,
+      "dampingHz": 4000,
+      "modSync": false,
+      "modDivision": "1/4",
+      "modRateHz": 0.7,
+      "filter1": {"cutoffHz": 30},
+      "filter2": {"cutoffHz": 7000},
+      "width": 0.85
+    },
+    {
+      "kind": "eq",
+      "bands": [
+        {"on": true, "shape": "bell", "channel": "stereo", "frequencyHz": 400, "gainDb": -3, "q": 1.5},
+        {"on": true, "shape": "low-shelf", "channel": "stereo", "frequencyHz": 120, "gainDb": 2, "q": 0.71},
+        {"on": true, "shape": "bell", "channel": "stereo", "frequencyHz": 794, "gainDb": -6, "q": 2.5},
+        {"on": true, "shape": "high-shelf", "channel": "stereo", "frequencyHz": 4000, "gainDb": -3, "q": 0.71},
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {"kind": "utility", "gainDb": 1, "limiterOn": false, "ceilingDb": -1}
+  ],
+  "lfos": [
+    {
+      "row": 1,
+      "param": "filter.cutoffHz",
+      "amount": 0.0466666666667,
+      "center": 32.5,
+      "tempoSync": true,
+      "division": "3/1",
+      "startPhase": 0.75,
+      "retrigger": true,
+      "shape": "triangle"
+    },
+    {
+      "row": 1,
+      "param": "filter.envAmount",
+      "amount": 0.0666666666667,
+      "center": 1.18,
+      "tempoSync": true,
+      "division": "3/1",
+      "startPhase": 0.75,
+      "retrigger": true,
+      "shape": "triangle"
+    }
+  ]
+}

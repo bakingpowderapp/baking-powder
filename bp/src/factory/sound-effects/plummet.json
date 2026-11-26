@@ -1,0 +1,97 @@
+{
+  "kind": "rack",
+  "description": "Driven sine sub-bass downlifter falling over eight bars",
+  "rack": [
+    {
+      "kind": "core",
+      "level": 0.334,
+      "voices": 3,
+      "freshVoice": true,
+      "osc1": {"levels": [0, 0, 0, 1], "tuneSemitones": -15, "fineCents": -42.5, "unison": 2, "width": 0, "unisonAlternate": true},
+      "phaseRandom": 0,
+      "ampEnv": {
+        "attackMs": 0.27,
+        "decayMs": 1,
+        "sustain": 1,
+        "releaseMs": 1.95,
+        "velocityAmount": 0,
+        "decayBend": -0.55,
+        "releaseBend": -0.475
+      },
+      "motion": {
+        "lfo1": {"target": "pitch", "amount": 1, "shape": "saw", "rateHz": 0.07728, "mode": "once"},
+        "lfo2": {"target": "pitch", "amount": 0.7175, "shape": "saw", "rateHz": 0.07728, "mode": "once"},
+        "env1": {
+          "target": "pitch",
+          "amount": 1,
+          "env": {"attackMs": 0.27, "decayMs": 25.76, "sustain": 0, "releaseMs": 1}
+        },
+        "env2": {
+          "target": "pitch",
+          "amount": 1,
+          "env": {"attackMs": 0.27, "decayMs": 25.76, "sustain": 0, "releaseMs": 1}
+        }
+      }
+    },
+    {
+      "kind": "freak",
+      "bandCount": 1,
+      "driveDb": 11.194,
+      "outputDb": -3.656,
+      "bands": [
+        {"curve": "diode", "wet": 0.1847, "knee": 0.79},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "eq",
+      "bands": [
+        {},
+        {"on": true, "shape": "low-shelf", "channel": "stereo", "frequencyHz": 31, "gainDb": 0.682, "q": 0.71},
+        {},
+        {"on": true, "shape": "bell", "channel": "stereo", "frequencyHz": 628.1, "gainDb": -6.899, "q": 0.256},
+        {},
+        {},
+        {},
+        {}
+      ],
+      "trimDb": 3.777
+    },
+    {
+      "kind": "delay",
+      "wet": 0.464,
+      "mode": "clean",
+      "leftSync": true,
+      "leftTimeMs": 375,
+      "leftDivision": "1/64.",
+      "leftSyncScale": 0.99982222,
+      "rightSync": true,
+      "rightTimeMs": 500,
+      "rightDivision": "1/32",
+      "rightSyncScale": 0.99982222,
+      "feedback": 0.7982,
+      "pingPong": 1,
+      "inputLean": -0.907,
+      "filter1": {"cutoffHz": 255.5},
+      "filter2": {"on": false},
+      "drive": 0,
+      "diffusion": 0.72,
+      "width": 1,
+      "wetTrimDb": -7.38
+    },
+    {
+      "kind": "compressor",
+      "sumDetector": true,
+      "autoReleaseMakeup": false,
+      "thresholdDb": -24.3,
+      "ratio": 7.33,
+      "kneeDb": 0,
+      "attackMs": 33.58,
+      "releaseMs": 150.7,
+      "makeupDb": 6.05
+    },
+    {"kind": "utility", "gainDb": 1.97, "limiterOn": false, "ceilingDb": -1}
+  ]
+}

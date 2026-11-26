@@ -1,0 +1,168 @@
+{
+  "kind": "rack",
+  "description": "Layered saw lead that velocity opens from muffled to bright",
+  "rack": [
+    {
+      "kind": "core",
+      "level": 0.7627,
+      "voices": 3,
+      "freshVoice": true,
+      "osc1": {"level": 0.9647, "tuneSemitones": 4, "unison": 2, "unisonAlternate": true, "bright": true, "phase": 0.5},
+      "osc2": {"level": 1, "tuneSemitones": -24, "unison": 2, "unisonAlternate": true, "bright": true, "phase": 0.5},
+      "ampEnv": {
+        "attackMs": 1,
+        "decayMs": 1,
+        "sustain": 1,
+        "releaseMs": 927.3,
+        "velocityAmount": 0,
+        "decayBend": -0.55,
+        "releaseBend": -0.55
+      },
+      "filter": {
+        "on": true,
+        "mode": "ladder",
+        "slopeDbPerOctave": 24,
+        "cutoffHz": 20,
+        "resonance": 0.217,
+        "envAmount": 1.8864,
+        "keyTrack": 0.4966,
+        "env": {"attackMs": 1, "decayMs": 1, "sustain": 1, "releaseMs": 30000, "releaseBend": 1}
+      },
+      "mono": {"glideMs": 66.4, "glideCurve": "linear"},
+      "motion": {
+        "lfo1": {"target": "pitch", "amount": 0.002417, "shape": "random", "rateHz": 0.05},
+        "lfo2": {"target": "cutoff", "amount": -0.3379, "shape": "square", "rateHz": 50, "mode": "once"},
+        "env1": {
+          "target": "cutoff",
+          "amount": 0.5754,
+          "env": {"attackMs": 1, "decayMs": 1974, "sustain": 0, "releaseMs": 111, "decayBend": -0.225, "releaseBend": -0.225}
+        },
+        "env2": {
+          "target": "cutoff",
+          "amount": 0.6,
+          "env": {"attackMs": 1, "decayMs": 53.9, "sustain": 0, "releaseMs": 33.6, "decayBend": -0.225, "releaseBend": -0.225}
+        }
+      }
+    },
+    {
+      "kind": "core",
+      "level": 0.8525,
+      "voices": 3,
+      "freshVoice": true,
+      "osc1": {"level": 0.8957, "tuneSemitones": -36, "unison": 2, "width": 0, "unisonAlternate": true, "bright": true, "phase": 0.5},
+      "osc2": {
+        "levels": [0, 0, 1, 0],
+        "level": 1,
+        "tuneSemitones": -8,
+        "unison": 2,
+        "detuneCents": 0.268,
+        "width": 0,
+        "unisonAlternate": true,
+        "phase": 0.5
+      },
+      "ampEnv": {
+        "attackMs": 1,
+        "decayMs": 1,
+        "sustain": 1,
+        "releaseMs": 1191.7,
+        "velocityAmount": 0,
+        "decayBend": -0.55,
+        "releaseBend": -0.55
+      },
+      "filter": {
+        "on": true,
+        "mode": "ladder",
+        "slopeDbPerOctave": 24,
+        "cutoffHz": 20,
+        "resonance": 0.339,
+        "envAmount": 1.5298,
+        "keyTrack": 0.4966,
+        "env": {"attackMs": 1, "decayMs": 1, "sustain": 1, "releaseMs": 30000, "releaseBend": 1}
+      },
+      "mono": {"glideMs": 66.4, "glideCurve": "linear"},
+      "motion": {
+        "lfo1": {"target": "pitch", "amount": 0.002417, "shape": "random", "rateHz": 0.05},
+        "lfo2": {"target": "cutoff", "amount": -0.2888, "shape": "square", "rateHz": 50, "mode": "once"},
+        "env1": {
+          "target": "cutoff",
+          "amount": 0.5754,
+          "env": {"attackMs": 1, "decayMs": 1974, "sustain": 0, "releaseMs": 111, "decayBend": -0.225, "releaseBend": -0.225}
+        },
+        "env2": {
+          "target": "cutoff",
+          "amount": 0.6,
+          "env": {"attackMs": 1, "decayMs": 53.9, "sustain": 0, "releaseMs": 33.6, "decayBend": -0.225, "releaseBend": -0.225}
+        }
+      }
+    },
+    {
+      "kind": "motion",
+      "wet": 0.115,
+      "bandCount": 1,
+      "bands": [
+        {
+          "mode": "chorus",
+          "chorus": {
+            "mode": "standard",
+            "sync": false,
+            "division": "1/4",
+            "rateHz": 0.306,
+            "depth": 1,
+            "centerMs": 29.92,
+            "spread": 0.5,
+            "startPhase": 0.326,
+            "width": 0.525,
+            "crossfade": true,
+            "dual": true
+          }
+        },
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "eq",
+      "bands": [
+        {},
+        {"on": true, "shape": "low-shelf", "channel": "stereo", "frequencyHz": 219.1, "gainDb": -2.41, "q": 0.71},
+        {},
+        {},
+        {},
+        {},
+        {"on": true, "shape": "high-shelf", "channel": "stereo", "frequencyHz": 2158.5, "gainDb": -0.78, "q": 0.71},
+        {}
+      ],
+      "trimDb": 6.54
+    },
+    {
+      "kind": "reverb",
+      "wet": 0.0995,
+      "tank": "plate",
+      "preDelayMs": 89.7,
+      "earlyPattern": "scatter",
+      "age": "now",
+      "decayS": 2.75,
+      "sizeTimes": 1,
+      "dampingHz": 5000,
+      "modDepthMs": 0,
+      "modSync": false,
+      "modDivision": "1/4",
+      "modRateHz": 0.7,
+      "width": 0.6,
+      "forwardLevel": 0.45
+    },
+    {
+      "kind": "compressor",
+      "sumDetector": true,
+      "autoReleaseMakeup": false,
+      "thresholdDb": -16,
+      "ratio": 1.683,
+      "kneeDb": 0,
+      "attackMs": 100,
+      "releaseMs": 81,
+      "makeupDb": 0.7
+    },
+    {"kind": "utility", "gainDb": -6.57, "limiterOn": true, "ceilingDb": -1}
+  ]
+}

@@ -1,0 +1,175 @@
+{
+  "kind": "rack",
+  "description": "Tense two-bar melodic sequence in sixteenths from one held key",
+  "author": "Aiyn Zahev",
+  "website": "https://www.aiynzahev-sounds.com/",
+  "rack": [
+    {
+      "kind": "midi",
+      "arp": {
+        "on": true,
+        "stepMode": true,
+        "fixedVelocity": true,
+        "style": "up",
+        "sync": true,
+        "division": "1/16",
+        "timeMs": 250,
+        "gate": 0.5,
+        "pattern": {
+          "length": 32,
+          "steps": [
+            {"semitones": -12, "velocity": 0.79, "gate": 1},
+            {"semitones": 7, "slide": true},
+            {"semitones": 2, "octaveShift": 1, "velocity": 0.79},
+            {"velocity": 0.79},
+            {"semitones": 7, "velocity": 0.79},
+            {"semitones": 2, "octaveShift": 1, "velocity": 0.79},
+            {"semitones": 3, "octaveShift": 1, "velocity": 0.79},
+            {"velocity": 0.79},
+            {"semitones": 7, "velocity": 0.79},
+            {"velocity": 0.79},
+            {"semitones": 7, "velocity": 0.79},
+            {"semitones": 2, "octaveShift": 1, "velocity": 0.79},
+            {"semitones": 3, "octaveShift": 1, "velocity": 0.79},
+            {"semitones": 5, "octaveShift": 1, "velocity": 0.79},
+            {"semitones": 7, "velocity": 0.79},
+            {"semitones": 2, "octaveShift": 1, "velocity": 0.79},
+            {"semitones": 7, "velocity": 0.79},
+            {"semitones": 2, "octaveShift": 1, "velocity": 0.79},
+            {"velocity": 0.79},
+            {"semitones": 7, "velocity": 0.79},
+            {"semitones": 2, "octaveShift": 1, "velocity": 0.79},
+            {"semitones": 3, "octaveShift": 1, "velocity": 0.79},
+            {"velocity": 0.79},
+            {"semitones": 7, "velocity": 0.79},
+            {"velocity": 0.79},
+            {"semitones": 7, "velocity": 0.79},
+            {"semitones": 2, "octaveShift": 1, "velocity": 0.79},
+            {"semitones": 3, "octaveShift": 1, "velocity": 0.79},
+            {"semitones": 5, "octaveShift": 1, "velocity": 0.79},
+            {"semitones": 7, "velocity": 0.79},
+            {"semitones": 2, "octaveShift": 1, "velocity": 0.79},
+            {"velocity": 0.79}
+          ]
+        }
+      }
+    },
+    {
+      "kind": "core",
+      "level": 0.696,
+      "voices": 1,
+      "osc1": {"tuneSemitones": 12, "fineCents": -3.6, "freeRunning": true},
+      "osc2": {"levels": [0, 1, 0, 0], "level": 0.4274, "tuneSemitones": -12, "fineCents": 3.1, "freeRunning": true},
+      "ampEnv": {
+        "attackMs": 4.2,
+        "decayMs": 984.9,
+        "sustain": 0,
+        "releaseMs": 343.1,
+        "velocityAmount": 0,
+        "decayBend": -1,
+        "releaseBend": -0.41
+      },
+      "filter": {
+        "on": true,
+        "mode": "ladder",
+        "slopeDbPerOctave": 24,
+        "cutoffHz": 203.5,
+        "envAmount": 0.941,
+        "env": {
+          "attackMs": 4.5,
+          "decayMs": 749.6,
+          "sustain": 0,
+          "releaseMs": 831.4,
+          "velocityAmount": 0,
+          "decayBend": -1,
+          "releaseBend": -1
+        }
+      },
+      "mono": {"glideMs": 45.5, "glideCurve": "octave"}
+    },
+    {
+      "kind": "reverb",
+      "wet": 0.21,
+      "tank": "plate",
+      "preDelayMs": 88,
+      "earlyPattern": "scatter",
+      "age": "now",
+      "decayS": 2.8,
+      "sizeTimes": 1,
+      "dampingHz": 2800,
+      "modDepthMs": 0,
+      "modSync": false,
+      "modDivision": "1/4",
+      "modRateHz": 0.7,
+      "filter1": {"cutoffHz": 20},
+      "width": 0.9,
+      "forwardLevel": 0.82,
+      "duckGate": 0.632,
+      "duckThresholdDb": -18,
+      "duckAttackMs": 1,
+      "duckReleaseMs": 80
+    },
+    {
+      "kind": "delay",
+      "wet": 0.43,
+      "mode": "clean",
+      "leftSync": true,
+      "leftTimeMs": 375,
+      "leftDivision": "1/8.",
+      "rightSync": true,
+      "rightTimeMs": 500,
+      "rightDivision": "1/8.",
+      "feedback": 0.097,
+      "pingPong": 1,
+      "evenPingPong": true,
+      "filter1": {"on": false},
+      "filter2": {"slopeDb": "12", "cutoffHz": 4600},
+      "feedbackFilter": {"on": true, "cutoffHz": 1300},
+      "drive": 0,
+      "modDepth": 0.296,
+      "modRateHz": 0.3,
+      "modFlutter": 0,
+      "modSpread": -0.25,
+      "modStartPhase": 0.697,
+      "width": 1
+    },
+    {
+      "kind": "eq",
+      "bands": [
+        {},
+        {},
+        {},
+        {"on": true, "shape": "bell", "channel": "stereo", "frequencyHz": 999.3, "gainDb": 1.5, "q": 0.51},
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {"kind": "utility", "gainDb": 10.4, "limiterOn": true, "ceilingDb": -1}
+  ],
+  "lfos": [
+    {
+      "row": 1,
+      "param": "osc1.fineCents",
+      "amount": 0.0725,
+      "center": 3.65,
+      "tempoSync": false,
+      "rateHz": 0.7576,
+      "retrigger": true,
+      "shape": "square",
+      "lagMs": 65
+    },
+    {
+      "row": 1,
+      "param": "osc1.fmAmount",
+      "amount": 0.0038,
+      "center": 0.0019,
+      "tempoSync": false,
+      "rateHz": 0.7576,
+      "retrigger": true,
+      "shape": "square",
+      "lagMs": 65
+    }
+  ]
+}

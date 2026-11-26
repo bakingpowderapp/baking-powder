@@ -1,0 +1,27 @@
+{
+  "kind": "rack",
+  "description": "Dark triangle pad with slow wide chorus and mono sub",
+  "rack": [
+    {
+      "kind": "core",
+      "level": 0.418031,
+      "osc1": {"levels": [0, 0, 1, 0]},
+      "ampEnv": {"attackMs": 20, "decayMs": 1000, "sustain": 1, "releaseMs": 60},
+      "filter": {"on": true, "mode": "svf-low-pass", "slopeDbPerOctave": 12, "cutoffHz": 450, "resonance": 0.056, "keyTrack": 0.72}
+    },
+    {
+      "kind": "motion",
+      "wet": 0.97,
+      "bandCount": 1,
+      "bands": [
+        {
+          "mode": "chorus",
+          "chorus": {"mode": "standard", "sync": false, "division": "1/4", "rateHz": 0.079, "depth": 0.75, "centerMs": 2.87, "filter1": {"on": true, "cutoffHz": 65}}
+        },
+        {},
+        {},
+        {}
+      ]
+    }
+  ]
+}

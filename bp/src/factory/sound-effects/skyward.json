@@ -1,0 +1,113 @@
+{
+  "kind": "rack",
+  "description": "Screaming eight-bar saw riser with eighth-note pitch sweeps",
+  "rack": [
+    {
+      "kind": "core",
+      "level": 0.364,
+      "voices": 3,
+      "freshVoice": true,
+      "osc1": {"tuneSemitones": 12, "unison": 8, "detuneCents": 31.95, "unisonAlternate": true},
+      "ampEnv": {
+        "attackMs": 0.96,
+        "decayMs": 1,
+        "sustain": 1,
+        "releaseMs": 1.8,
+        "velocityAmount": 0,
+        "decayBend": -0.55,
+        "releaseBend": -0.55
+      },
+      "filter": {
+        "on": true,
+        "mode": "svf-high-pass",
+        "slopeDbPerOctave": 24,
+        "oversample": 4,
+        "cutoffHz": 32.703,
+        "envAmount": 1.990767,
+        "keyTrack": 1,
+        "env": {"attackMs": 30000, "decayMs": 1, "sustain": 1, "releaseMs": 30000, "velocityAmount": 0, "attackBend": 0.25281}
+      },
+      "motion": {
+        "lfo1": {"target": "pitch", "amount": 1, "shape": "ramp", "rateHz": 0.08333, "mode": "once"},
+        "lfo2": {"target": "pitch", "amount": 0.935546, "shape": "saw", "sync": true, "division": "1/8"},
+        "env1": {
+          "target": "cutoff",
+          "amount": 0.4,
+          "env": {"delayMs": 3000, "attackMs": 3000, "decayMs": 1, "sustain": 1, "releaseMs": 30000}
+        },
+        "env2": {
+          "target": "pitch",
+          "amount": 1,
+          "env": {"attackMs": 12000, "decayMs": 1, "sustain": 1, "releaseMs": 30000, "attackBend": 0.25281}
+        }
+      }
+    },
+    {
+      "kind": "freak",
+      "wet": 0.65,
+      "bandCount": 1,
+      "driveDb": 24,
+      "outputDb": -17.89,
+      "bands": [
+        {"curve": "fold", "foldRipples": 1, "foldRippleCount": 3},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "motion",
+      "wet": 0.227,
+      "bandCount": 1,
+      "bands": [
+        {
+          "mode": "chorus",
+          "chorus": {
+            "mode": "standard",
+            "sync": false,
+            "division": "1/4",
+            "rateHz": 0.608,
+            "depth": 0.1203,
+            "centerMs": 9.3,
+            "spread": 0.5,
+            "startPhase": 0.326,
+            "width": 0.78,
+            "crossfade": true,
+            "dual": true
+          }
+        },
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "eq",
+      "bands": [
+        {},
+        {"on": true, "shape": "low-shelf", "channel": "stereo", "frequencyHz": 382.6, "gainDb": -7.71, "q": 0.71},
+        {},
+        {"on": true, "shape": "bell", "channel": "stereo", "frequencyHz": 335.2, "gainDb": -3.39, "q": 0.334},
+        {},
+        {},
+        {"on": true, "shape": "high-shelf", "channel": "stereo", "frequencyHz": 20000, "gainDb": -1.02, "q": 0.71},
+        {}
+      ],
+      "trimDb": 7.99
+    },
+    {"kind": "utility", "gainDb": -1.474, "limiterOn": false, "ceilingDb": -1}
+  ],
+  "lfos": [
+    {
+      "row": 4,
+      "param": "gainDb",
+      "amount": 0.119167,
+      "center": -1.47399999998,
+      "tempoSync": false,
+      "rateHz": 0.05,
+      "retrigger": true,
+      "once": true,
+      "shape": "saw"
+    }
+  ]
+}

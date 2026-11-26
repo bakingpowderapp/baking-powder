@@ -1,0 +1,96 @@
+{
+  "kind": "rack",
+  "description": "Four-bar screaming white-noise downlifter that pulses in sixteenths",
+  "rack": [
+    {
+      "kind": "core",
+      "voices": 4,
+      "freshVoice": true,
+      "osc1": {"level": 0},
+      "noise": {"on": true, "color": "white", "level": 1, "width": 1},
+      "ampEnv": {
+        "attackMs": 0.27,
+        "decayMs": 1,
+        "sustain": 1,
+        "releaseMs": 4.7,
+        "velocityAmount": 0,
+        "decayBend": -0.55,
+        "releaseBend": -0.55
+      },
+      "filter": {
+        "on": true,
+        "mode": "ladder",
+        "slopeDbPerOctave": 12,
+        "oversample": 2,
+        "cutoffHz": 12.25,
+        "resonance": 0.86,
+        "drive": 0.18,
+        "envAmount": 2,
+        "env": {
+          "attackMs": 0.27,
+          "decayMs": 8500,
+          "sustain": 0,
+          "releaseMs": 30000,
+          "velocityAmount": 0,
+          "attackBend": 0.18,
+          "decayBend": -0.256,
+          "releaseBend": -0.225
+        }
+      },
+      "motion": {
+        "lfo1": {"target": "cutoff", "amount": 0.24, "sync": true, "division": "8/1.", "phase": 0.82},
+        "lfo2": {"target": "noise", "amount": 0.51, "shape": "square", "sync": true, "division": "1/16"},
+        "env1": {
+          "target": "resonance",
+          "amount": 0.06,
+          "env": {"attackMs": 0.27, "decayMs": 2000, "sustain": 0, "releaseMs": 30000, "decayBend": -0.256}
+        },
+        "env2": {
+          "target": "lfo1Rate",
+          "amount": 1,
+          "env": {"attackMs": 0.27, "decayMs": 11420, "sustain": 0, "releaseMs": 30000, "decayBend": -0.2375}
+        }
+      }
+    },
+    {
+      "kind": "eq",
+      "bands": [
+        {},
+        {"on": true, "shape": "low-shelf", "channel": "stereo", "frequencyHz": 125.38, "gainDb": -2.27, "q": 0.7071},
+        {"on": true, "shape": "bell", "channel": "stereo", "frequencyHz": 133.67, "gainDb": -0.392, "q": 0.9212},
+        {"on": true, "shape": "bell", "channel": "stereo", "frequencyHz": 232.48, "gainDb": -4.339, "q": 0.5333},
+        {},
+        {},
+        {"on": true, "shape": "high-shelf", "channel": "stereo", "frequencyHz": 198.71, "gainDb": 5.23, "q": 0.7071},
+        {}
+      ],
+      "trimDb": -5.46
+    },
+    {
+      "kind": "delay",
+      "wet": 0.293,
+      "mode": "clean",
+      "leftSync": true,
+      "leftTimeMs": 375,
+      "leftDivision": "1/8.",
+      "rightSync": true,
+      "rightTimeMs": 500,
+      "rightDivision": "1/4",
+      "feedback": 0.4724,
+      "pingPong": 1,
+      "inputLean": -0.745,
+      "filter1": {"on": false},
+      "filter2": {"on": false},
+      "drive": 0,
+      "width": 1,
+      "wetTrimDb": -6.02
+    },
+    {
+      "kind": "utility",
+      "gainDb": 6.1,
+      "limiterOn": true,
+      "ceilingDb": -1,
+      "releaseMs": 50
+    }
+  ]
+}

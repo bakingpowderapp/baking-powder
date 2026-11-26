@@ -1,0 +1,280 @@
+{
+  "kind": "rack",
+  "description": "Gated snare with a deep body and swelling noise",
+  "rack": [
+    {
+      "kind": "core",
+      "voices": 8,
+      "freshVoice": true,
+      "osc1": {
+        "levels": [0, 0, 0, 1],
+        "level": 0.87404,
+        "tuneSemitones": 10
+      },
+      "osc2": {
+        "levels": [0, 0, 0, 1],
+        "level": 0.15173,
+        "tuneSemitones": 26,
+        "fineCents": -13.69
+      },
+      "osc3": {
+        "levels": [0, 0, 0, 1],
+        "level": 0.09469,
+        "tuneSemitones": 29,
+        "fineCents": 1.96
+      },
+      "osc4": {
+        "levels": [0, 0, 0, 1],
+        "level": 0.06118,
+        "tuneSemitones": 34
+      },
+      "ampEnv": {"attackMs": 0.25, "decayMs": 200, "sustain": 1, "releaseMs": 211.2, "velocityAmount": 0.8, "releaseBend": 1},
+      "filter": {
+        "on": true,
+        "mode": "svf-low-pass",
+        "slopeDbPerOctave": 12,
+        "cutoffHz": 320.75472,
+        "envAmount": 1.25,
+        "keyTrack": 1,
+        "env": {"attackMs": 1, "decayMs": 30, "sustain": 0, "releaseMs": 30, "velocityAmount": 0.5, "decayBend": -1, "releaseBend": -1}
+      },
+      "motion": {
+        "lfo1": {
+          "target": "amp",
+          "amount": 1,
+          "shape": "drawn",
+          "rateHz": 10.41667,
+          "mode": "once",
+          "points": [
+            {"x": 0, "y": 0, "bend": 0},
+            {"x": 0.00042, "y": 0.03752, "bend": 0},
+            {"x": 0.00083, "y": 0.1118, "bend": 0},
+            {"x": 0.00125, "y": 0.19054, "bend": 0},
+            {"x": 0.00167, "y": 0.26079, "bend": 0},
+            {"x": 0.00208, "y": 0.3187, "bend": 0},
+            {"x": 0.0025, "y": 0.36438, "bend": 0},
+            {"x": 0.00292, "y": 0.39948, "bend": 0},
+            {"x": 0.00333, "y": 0.42597, "bend": 0},
+            {"x": 0.00375, "y": 0.44574, "bend": 0},
+            {"x": 0.00417, "y": 0.46038, "bend": 0},
+            {"x": 0.00458, "y": 0.47115, "bend": 0},
+            {"x": 0.00542, "y": 0.48484, "bend": 0},
+            {"x": 0.00625, "y": 0.49213, "bend": 0},
+            {"x": 0.00708, "y": 0.496, "bend": 0},
+            {"x": 0.01042, "y": 0.5, "bend": 0},
+            {"x": 0.16708, "y": 0.46354, "bend": 0},
+            {"x": 0.31125, "y": 0.42076, "bend": 0},
+            {"x": 0.445, "y": 0.3711, "bend": 0},
+            {"x": 0.57, "y": 0.3139, "bend": 0},
+            {"x": 0.68708, "y": 0.24875, "bend": 0},
+            {"x": 0.7975, "y": 0.17492, "bend": 0},
+            {"x": 0.85042, "y": 0.13459, "bend": 0},
+            {"x": 0.90167, "y": 0.09209, "bend": 0},
+            {"x": 0.95167, "y": 0.04709, "bend": 0},
+            {"x": 1, "y": 0, "bend": 0}
+          ]
+        },
+        "lfo2": {
+          "target": "pitch",
+          "amount": 0.83333,
+          "shape": "drawn",
+          "rateHz": 50,
+          "mode": "once",
+          "points": [
+            {"x": 0, "y": 1, "bend": 0},
+            {"x": 0.018, "y": 0.91966, "bend": 0},
+            {"x": 0.038, "y": 0.83692, "bend": 0},
+            {"x": 0.058, "y": 0.76054, "bend": 0},
+            {"x": 0.08, "y": 0.68329, "bend": 0},
+            {"x": 0.122, "y": 0.55341, "bend": 0},
+            {"x": 0.168, "y": 0.4341, "bend": 0},
+            {"x": 0.216, "y": 0.33092, "bend": 0},
+            {"x": 0.268, "y": 0.23939, "bend": 0},
+            {"x": 0.322, "y": 0.16248, "bend": 0},
+            {"x": 0.382, "y": 0.09441, "bend": 0},
+            {"x": 0.438, "y": 0.04405, "bend": 0},
+            {"x": 0.5, "y": 0, "bend": 0},
+            {"x": 1, "y": 0, "bend": 0}
+          ]
+        }
+      }
+    },
+    {
+      "kind": "core",
+      "voices": 8,
+      "freshVoice": true,
+      "osc1": {"level": 0},
+      "noise": {
+        "on": true,
+        "color": "white",
+        "level": 0.26728,
+        "tone": 0.1,
+        "width": 0.325,
+        "highPassHz": 1470,
+        "lowPassHz": 11428.57143
+      },
+      "ampEnv": {"attackMs": 0.25, "decayMs": 200, "sustain": 1, "releaseMs": 525.01, "velocityAmount": 0.8, "releaseBend": 1},
+      "motion": {
+        "lfo1": {
+          "target": "amp",
+          "amount": 1,
+          "shape": "drawn",
+          "rateHz": 4.19038,
+          "mode": "once",
+          "points": [
+            {"x": 0, "y": 0, "bend": 0},
+            {"x": 0.01844, "y": 0.0602, "bend": 0},
+            {"x": 0.03771, "y": 0.11579, "bend": 0},
+            {"x": 0.05783, "y": 0.16674, "bend": 0},
+            {"x": 0.07895, "y": 0.21344, "bend": 0},
+            {"x": 0.10107, "y": 0.25587, "bend": 0},
+            {"x": 0.1242, "y": 0.29409, "bend": 0},
+            {"x": 0.14868, "y": 0.32866, "bend": 0},
+            {"x": 0.17449, "y": 0.35956, "bend": 0},
+            {"x": 0.23031, "y": 0.41084, "bend": 0},
+            {"x": 0.29383, "y": 0.4503, "bend": 0},
+            {"x": 0.36742, "y": 0.47946, "bend": 0},
+            {"x": 0.45525, "y": 0.5, "bend": 0},
+            {"x": 0.46849, "y": 0.41164, "bend": 0},
+            {"x": 0.48257, "y": 0.33471, "bend": 0},
+            {"x": 0.49782, "y": 0.26751, "bend": 0},
+            {"x": 0.51425, "y": 0.21013, "bend": 0},
+            {"x": 0.53201, "y": 0.16184, "bend": 0},
+            {"x": 0.55146, "y": 0.1216, "bend": 0},
+            {"x": 0.57291, "y": 0.08869, "bend": 0},
+            {"x": 0.59688, "y": 0.06232, "bend": 0},
+            {"x": 0.62119, "y": 0.04356, "bend": 0},
+            {"x": 0.64884, "y": 0.02897, "bend": 0},
+            {"x": 0.71824, "y": 0.01035, "bend": 0},
+            {"x": 0.81596, "y": 0.00234, "bend": 0},
+            {"x": 1, "y": 0, "bend": 0}
+          ]
+        }
+      }
+    },
+    {
+      "kind": "core",
+      "voices": 8,
+      "freshVoice": true,
+      "osc1": {"level": 0},
+      "noise": {"on": true, "color": "white", "level": 0.18, "tone": 0.1, "width": 0.325, "highPassHz": 378},
+      "ampEnv": {"attackMs": 0.25, "decayMs": 200, "sustain": 1, "releaseMs": 530.2, "velocityAmount": 0.8, "releaseBend": 1},
+      "filter": {
+        "on": true,
+        "mode": "svf-low-pass",
+        "slopeDbPerOctave": 12,
+        "cutoffHz": 320.75472,
+        "envAmount": 1.25,
+        "keyTrack": 1,
+        "env": {"attackMs": 1, "decayMs": 30, "sustain": 0, "releaseMs": 30, "velocityAmount": 0.5, "decayBend": -1, "releaseBend": -1}
+      },
+      "motion": {
+        "lfo1": {
+          "target": "amp",
+          "amount": 1,
+          "shape": "drawn",
+          "rateHz": 4.14938,
+          "mode": "once",
+          "points": [
+            {"x": 0, "y": 0, "bend": 0},
+            {"x": 0.00017, "y": 0.13746, "bend": 0},
+            {"x": 0.00033, "y": 0.23714, "bend": 0},
+            {"x": 0.0005, "y": 0.30942, "bend": 0},
+            {"x": 0.00067, "y": 0.36184, "bend": 0},
+            {"x": 0.00083, "y": 0.39986, "bend": 0},
+            {"x": 0.001, "y": 0.42742, "bend": 0},
+            {"x": 0.00117, "y": 0.44742, "bend": 0},
+            {"x": 0.0015, "y": 0.47243, "bend": 0},
+            {"x": 0.002, "y": 0.48959, "bend": 0},
+            {"x": 0.00283, "y": 0.49805, "bend": 0},
+            {"x": 0.00417, "y": 0.5, "bend": 0},
+            {"x": 0.45217, "y": 0.5, "bend": 0},
+            {"x": 0.468, "y": 0.41597, "bend": 0},
+            {"x": 0.484, "y": 0.3449, "bend": 0},
+            {"x": 0.50133, "y": 0.28151, "bend": 0},
+            {"x": 0.51983, "y": 0.22662, "bend": 0},
+            {"x": 0.53983, "y": 0.17922, "bend": 0},
+            {"x": 0.5615, "y": 0.13895, "bend": 0},
+            {"x": 0.58517, "y": 0.10518, "bend": 0},
+            {"x": 0.61133, "y": 0.07725, "bend": 0},
+            {"x": 0.63833, "y": 0.05612, "bend": 0},
+            {"x": 0.6685, "y": 0.0392, "bend": 0},
+            {"x": 0.74183, "y": 0.01616, "bend": 0},
+            {"x": 0.84067, "y": 0.00452, "bend": 0},
+            {"x": 1, "y": 0, "bend": 0}
+          ]
+        }
+      }
+    },
+    {
+      "kind": "core",
+      "voices": 8,
+      "freshVoice": true,
+      "osc1": {"level": 0},
+      "noise": {"on": true, "color": "white", "level": 1, "lowPassHz": 10240},
+      "ampEnv": {"attackMs": 0.25, "decayMs": 200, "sustain": 1, "releaseMs": 44, "velocityAmount": 0.8, "releaseBend": 1},
+      "motion": {
+        "lfo1": {
+          "target": "amp",
+          "amount": 1,
+          "shape": "drawn",
+          "rateHz": 50,
+          "mode": "once",
+          "points": [
+            {"x": 0, "y": 0.5, "bend": 0},
+            {"x": 0.01, "y": 0.45339, "bend": 0},
+            {"x": 0.022, "y": 0.40315, "bend": 0},
+            {"x": 0.032, "y": 0.36557, "bend": 0},
+            {"x": 0.044, "y": 0.32506, "bend": 0},
+            {"x": 0.056, "y": 0.28905, "bend": 0},
+            {"x": 0.068, "y": 0.25702, "bend": 0},
+            {"x": 0.082, "y": 0.22411, "bend": 0},
+            {"x": 0.096, "y": 0.19542, "bend": 0},
+            {"x": 0.11, "y": 0.1704, "bend": 0},
+            {"x": 0.126, "y": 0.1457, "bend": 0},
+            {"x": 0.142, "y": 0.12459, "bend": 0},
+            {"x": 0.158, "y": 0.10653, "bend": 0},
+            {"x": 0.194, "y": 0.0749, "bend": 0},
+            {"x": 0.234, "y": 0.05064, "bend": 0},
+            {"x": 0.274, "y": 0.03423, "bend": 0},
+            {"x": 0.32, "y": 0.02183, "bend": 0},
+            {"x": 0.374, "y": 0.01287, "bend": 0},
+            {"x": 0.44, "y": 0.00674, "bend": 0},
+            {"x": 0.614, "y": 0.00123, "bend": 0},
+            {"x": 1, "y": 0, "bend": 0}
+          ]
+        }
+      }
+    },
+    {
+      "kind": "reverb",
+      "wet": 0.06667,
+      "tank": "plate",
+      "preDelayMs": 0,
+      "earlyPattern": "scatter",
+      "age": "now",
+      "decayS": 0.13,
+      "sizeTimes": 0.3,
+      "modSync": false,
+      "modDivision": "1/4",
+      "modRateHz": 0.7,
+      "filter1": {"cutoffHz": 120},
+      "filter2": {"cutoffHz": 2000},
+      "width": 0.43478
+    },
+    {
+      "kind": "freak",
+      "bandCount": 1,
+      "driveDb": 19,
+      "outputDb": -1,
+      "filter1": {"on": true, "cutoffHz": 24.46571},
+      "bands": [
+        {"curve": "hard-clip"},
+        {},
+        {},
+        {}
+      ]
+    },
+    {"kind": "utility", "gainDb": -0.4, "limiterOn": true, "ceilingDb": -1, "releaseMs": 16.9}
+  ]
+}

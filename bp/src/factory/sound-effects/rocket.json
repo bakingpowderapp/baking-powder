@@ -1,0 +1,136 @@
+{
+  "kind": "rack",
+  "description": "Big four-bar saw riser climbing three and a half octaves",
+  "rack": [
+    {
+      "kind": "core",
+      "level": 0.475,
+      "freshVoice": true,
+      "osc1": {"level": 0.25, "unison": 7, "detuneCents": 75.29, "width": 0.844, "unisonAlternate": true, "bright": true},
+      "osc2": {
+        "level": 0.23325,
+        "fineCents": 8.6,
+        "unison": 7,
+        "detuneCents": 36.28,
+        "width": 0.844,
+        "unisonAlternate": true,
+        "bright": true
+      },
+      "osc3": {
+        "level": 0.101,
+        "tuneSemitones": -12,
+        "fineCents": 3.8,
+        "unison": 7,
+        "detuneCents": 75.29,
+        "width": 0.844,
+        "unisonAlternate": true,
+        "bright": true
+      },
+      "noise": {"on": true, "color": "white", "level": 0.02575},
+      "ampEnv": {
+        "attackMs": 0.96,
+        "decayMs": 1,
+        "sustain": 1,
+        "releaseMs": 71.6,
+        "velocityAmount": 0,
+        "decayBend": -0.55,
+        "releaseBend": -0.55
+      },
+      "filter": {
+        "on": true,
+        "mode": "ladder",
+        "slopeDbPerOctave": 24,
+        "oversample": 4,
+        "cutoffHz": 625,
+        "resonance": 0.515,
+        "envAmount": 0.338,
+        "env": {"attackMs": 0.25, "decayMs": 1, "sustain": 1, "releaseMs": 30000, "velocityAmount": 0}
+      },
+      "motion": {
+        "lfo1": {"target": "pitch", "amount": -0.8875, "shape": "saw", "sync": true, "division": "4/1"},
+        "lfo2": {"target": "pitch", "amount": -0.8875, "shape": "saw", "sync": true, "division": "4/1"},
+        "env1": {
+          "target": "cutoff",
+          "amount": 1,
+          "env": {"attackMs": 7500, "decayMs": 1, "sustain": 1, "releaseMs": 30000}
+        }
+      }
+    },
+    {
+      "kind": "motion",
+      "wet": 0.171,
+      "bandCount": 1,
+      "bands": [
+        {
+          "mode": "chorus",
+          "chorus": {
+            "mode": "classic",
+            "sync": false,
+            "division": "1/4",
+            "rateHz": 0.608,
+            "depth": 0.0055,
+            "centerMs": 8.8,
+            "spread": 0.5,
+            "feedback": 0.167,
+            "filter2": {"cutoffHz": 20000},
+            "crossfade": true
+          }
+        },
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "eq",
+      "bands": [
+        {},
+        {"on": true, "shape": "low-shelf", "channel": "stereo", "frequencyHz": 146.4, "gainDb": -2.5, "q": 0.71},
+        {},
+        {"on": true, "shape": "bell", "channel": "stereo", "frequencyHz": 349.3, "gainDb": -3.66, "q": 0.516},
+        {},
+        {},
+        {"on": true, "shape": "high-shelf", "channel": "stereo", "frequencyHz": 282, "gainDb": 5.21, "q": 0.71},
+        {}
+      ],
+      "trimDb": 1.76
+    },
+    {
+      "kind": "delay",
+      "wet": 0.261,
+      "mode": "clean",
+      "leftSync": true,
+      "leftTimeMs": 375,
+      "leftDivision": "1/4",
+      "rightSync": true,
+      "rightTimeMs": 500,
+      "rightDivision": "1/8.",
+      "feedback": 0.602,
+      "filter1": {"cutoffHz": 729.7},
+      "filter2": {"cutoffHz": 11800},
+      "drive": 0,
+      "width": 0.676
+    },
+    {
+      "kind": "reverb",
+      "wet": 0.0975,
+      "tank": "plate",
+      "preDelayMs": 43.3,
+      "earlyPattern": "scatter",
+      "age": "now",
+      "stereoInput": 1,
+      "decayS": 3.46,
+      "sizeTimes": 1,
+      "dampingHz": 2400,
+      "modDepthMs": 0,
+      "modSync": false,
+      "modDivision": "1/4",
+      "modRateHz": 0.7,
+      "filter1": {"cutoffHz": 20},
+      "filter2": {"cutoffHz": 7000},
+      "width": 0.986,
+      "forwardLevel": 0.45
+    },
+    {"kind": "utility", "gainDb": 15.84, "limiterOn": false, "ceilingDb": -1}
+  ]
+}

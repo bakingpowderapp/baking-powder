@@ -1,0 +1,59 @@
+{
+  "kind": "rack",
+  "description": "Sixteenth-note detuned saw chord pluck that repeats while held",
+  "rack": [
+    {
+      "kind": "midi",
+      "arp": {"on": true, "style": "chord-trigger", "sync": true, "division": "1/16", "timeMs": 250, "gate": 1}
+    },
+    {
+      "kind": "core",
+      "level": 0.220472,
+      "voices": 8,
+      "osc1": {"unison": 16, "detuneCents": 2.75},
+      "osc2": {"level": 1},
+      "ampEnv": {"attackMs": 1, "decayMs": 1000, "sustain": 1, "releaseMs": 15},
+      "filter": {
+        "on": true,
+        "mode": "ladder",
+        "slopeDbPerOctave": 12,
+        "cutoffHz": 180,
+        "envAmount": 1,
+        "env": {"attackMs": 1, "decayMs": 160, "sustain": 0, "releaseMs": 15}
+      }
+    },
+    {
+      "kind": "delay",
+      "wet": 0.2,
+      "mode": "tape",
+      "leftSync": true,
+      "leftTimeMs": 375,
+      "leftDivision": "1/8.",
+      "rightSync": true,
+      "rightTimeMs": 500,
+      "rightDivision": "1/8.",
+      "feedback": 0.27,
+      "filter1": {"cutoffHz": 500},
+      "filter2": {"cutoffHz": 12000},
+      "drive": 0,
+      "width": 1
+    },
+    {
+      "kind": "reverb",
+      "wet": 0.12,
+      "tank": "plate",
+      "preDelayMs": 20,
+      "earlyPattern": "scatter",
+      "age": "now",
+      "decayS": 1.6,
+      "sizeTimes": 1,
+      "modDepthMs": 0.0416666666667,
+      "modSync": false,
+      "modDivision": "1/4",
+      "modRateHz": 0.7,
+      "filter1": {"cutoffHz": 90},
+      "filter2": {"cutoffHz": 4500}
+    },
+    {"kind": "utility", "width": 1.2, "limiterOn": true, "ceilingDb": -0.5}
+  ]
+}

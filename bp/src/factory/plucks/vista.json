@@ -1,0 +1,117 @@
+{
+  "kind": "rack",
+  "description": "Wide plucked trance saw chord with pitch zap and echoes",
+  "rack": [
+    {
+      "kind": "core",
+      "freshVoice": true,
+      "osc1": {"tuneSemitones": -12, "unison": 8, "detuneCents": 16.08, "unisonAlternate": true, "bright": true},
+      "ampEnv": {
+        "attackMs": 1,
+        "decayMs": 1068.03,
+        "sustain": 0,
+        "releaseMs": 253.17,
+        "velocityAmount": 0,
+        "decayBend": -0.44,
+        "releaseBend": -0.42
+      },
+      "filter": {
+        "on": true,
+        "mode": "ladder",
+        "slopeDbPerOctave": 12,
+        "cutoffHz": 20.2,
+        "resonance": 0.2,
+        "envAmount": 1.612,
+        "env": {
+          "attackMs": 3.38,
+          "decayMs": 964.2,
+          "sustain": 0,
+          "releaseMs": 946.77,
+          "velocityAmount": 0,
+          "decayBend": -0.44,
+          "releaseBend": -0.42
+        }
+      },
+      "motion": {
+        "env1": {
+          "target": "pitch",
+          "amount": 1,
+          "env": {"attackMs": 0.27, "decayMs": 8.49, "sustain": 0, "releaseMs": 15, "decayBend": -0.44}
+        },
+        "env2": {
+          "target": "pitch",
+          "amount": 1,
+          "env": {"attackMs": 0.27, "decayMs": 8.49, "sustain": 0, "releaseMs": 15, "decayBend": -0.44}
+        }
+      }
+    },
+    {
+      "kind": "utility",
+      "gainDb": 3.53,
+      "swap": true,
+      "limiterOn": false,
+      "ceilingDb": -1
+    },
+    {
+      "kind": "compressor",
+      "autoReleaseMakeup": false,
+      "thresholdDb": -5.4,
+      "ratio": 4,
+      "kneeDb": 0,
+      "attackMs": 90.09,
+      "releaseMs": 100
+    },
+    {
+      "kind": "eq",
+      "bands": [
+        {"on": true, "shape": "high-pass", "channel": "stereo", "frequencyHz": 135.8, "gainDb": 0, "q": 0.77},
+        {"on": true, "shape": "bell", "channel": "stereo", "frequencyHz": 5313.1, "gainDb": 3.33, "q": 0.598},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "reverb",
+      "wet": 0.3,
+      "tank": "plate",
+      "preDelayMs": 294,
+      "earlyLevel": 0.5,
+      "earlySpanMs": 60,
+      "earlyPattern": "scatter",
+      "age": "now",
+      "decayS": 1.95,
+      "sizeTimes": 1,
+      "dampingHz": 6500,
+      "lowDecayTimes": 1.1,
+      "modDepthMs": 1.5,
+      "modSync": false,
+      "modDivision": "1/4",
+      "modRateHz": 0.7,
+      "filter1": {"cutoffHz": 150},
+      "filter2": {"cutoffHz": 20000},
+      "dry": 1
+    },
+    {
+      "kind": "delay",
+      "wet": 0.538,
+      "mode": "clean",
+      "leftSync": true,
+      "leftTimeMs": 375,
+      "leftDivision": "1/8.",
+      "rightSync": true,
+      "rightTimeMs": 500,
+      "rightDivision": "1/8",
+      "feedback": 0.623,
+      "filter1": {"cutoffHz": 190},
+      "filter2": {"cutoffHz": 5000},
+      "drive": 0,
+      "width": 1,
+      "dry": 1
+    },
+    {"kind": "utility", "gainDb": -9.8, "limiterOn": true, "ceilingDb": -1}
+  ]
+}

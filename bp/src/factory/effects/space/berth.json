@@ -1,0 +1,8 @@
+{
+  "kind": "space",
+  "description": "Deep spectral sidechain duck on a pad from the drums' signal",
+  "depthDb": 18,
+  "q": 3,
+  "attackMs": 10,
+  "recoveryMs": 65
+}

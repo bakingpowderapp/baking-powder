@@ -1,0 +1,22 @@
+{
+  "kind": "rack",
+  "description": "Wide bright detuned saw pluck for chords and fast runs",
+  "rack": [
+    {
+      "kind": "core",
+      "level": 0.72,
+      "osc1": {"level": 0.88, "unison": 16, "detuneCents": 8},
+      "osc2": {"level": 1},
+      "ampEnv": {"attackMs": 1, "decayMs": 1000, "sustain": 1, "releaseMs": 15, "velocityAmount": 0},
+      "filter": {
+        "on": true,
+        "mode": "ladder",
+        "slopeDbPerOctave": 12,
+        "cutoffHz": 42,
+        "resonance": 0.1,
+        "envAmount": 1,
+        "env": {"attackMs": 1, "decayMs": 293, "sustain": 0, "releaseMs": 15, "velocityAmount": 0, "decayBend": -0.45}
+      }
+    }
+  ]
+}

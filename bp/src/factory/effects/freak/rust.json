@@ -1,0 +1,28 @@
+{
+  "kind": "freak",
+  "description": "Light parallel crunch adding an upper-mid edge to sustained leads",
+  "wet": 0.06364,
+  "bandCount": 3,
+  "crossoversHz": [68.75, 6600, 20000],
+  "driveDb": 9,
+  "outputDb": -9.84,
+  "dryPlain": true,
+  "filter1": {"on": true, "slopeDb": "6", "cutoffHz": 220, "resonant": false},
+  "filter2": {"on": true, "cutoffHz": 5930, "q": 1.35},
+  "bands": [
+    {"curve": "tube", "driveDb": -24, "bias": 1.75, "attackMs": 1, "releaseMs": 5, "outputDb": -24},
+    {
+      "curve": "tube",
+      "driveDb": 3.4,
+      "bias": 1.75,
+      "thresholdDb": 0,
+      "lift": 0.811,
+      "sharpen": 0.128,
+      "rangeDb": 16.1,
+      "attackMs": 1,
+      "releaseMs": 5
+    },
+    {"curve": "tube", "driveDb": -24, "bias": 1.75, "attackMs": 1, "releaseMs": 5, "outputDb": -24},
+    {}
+  ]
+}

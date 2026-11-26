@@ -1,0 +1,81 @@
+{
+  "kind": "rack",
+  "description": "Growling mono bass, resonant filter swell over a steady sub",
+  "rack": [
+    {
+      "kind": "core",
+      "level": 0.645669,
+      "voices": 1,
+      "osc1": {"levels": [0, 0, 0, 1], "fmAmount": 0.5},
+      "osc2": {"levels": [0, 0, 0, 1], "tuneSemitones": 12},
+      "ampEnv": {"attackMs": 29, "decayMs": 344, "sustain": 0.8, "releaseMs": 145},
+      "filter": {
+        "on": true,
+        "mode": "ladder",
+        "slopeDbPerOctave": 24,
+        "cutoffHz": 411,
+        "resonance": 0.55,
+        "drive": 0.78,
+        "envAmount": 0.96,
+        "env": {"attackMs": 280, "decayMs": 754, "sustain": 0.9, "releaseMs": 25}
+      },
+      "mono": {"retrigger": true}
+    },
+    {
+      "kind": "core",
+      "level": 0.464567,
+      "voices": 1,
+      "osc1": {"levels": [0, 0, 0, 1]},
+      "ampEnv": {"attackMs": 5, "decayMs": 200, "sustain": 1, "releaseMs": 369},
+      "mono": {"retrigger": true}
+    },
+    {
+      "kind": "motion",
+      "wet": 0.45,
+      "bandCount": 1,
+      "bands": [
+        {
+          "mode": "chorus",
+          "chorus": {"mode": "standard", "sync": false, "division": "1/4", "rateHz": 0.6, "depth": 0.5, "filter1": {"on": true, "cutoffHz": 160}, "width": 1.2}
+        },
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "freak",
+      "bandCount": 1,
+      "driveDb": 4,
+      "bands": [
+        {"curve": "tube", "bias": 0.4},
+        {},
+        {},
+        {}
+      ]
+    },
+    {"kind": "utility", "gainDb": 8.8, "limiterOn": true, "ceilingDb": -1}
+  ],
+  "lfos": [
+    {
+      "row": 0,
+      "param": "osc1.fmAmount",
+      "amount": 0.32,
+      "center": 0.75,
+      "tempoSync": false,
+      "rateHz": 0.5,
+      "startPhase": 0.75,
+      "retrigger": true
+    },
+    {
+      "row": 0,
+      "param": "osc1.levels[0]",
+      "amount": 0.55,
+      "center": 0.275,
+      "tempoSync": false,
+      "rateHz": 0.5,
+      "startPhase": 0.75,
+      "retrigger": true
+    }
+  ]
+}

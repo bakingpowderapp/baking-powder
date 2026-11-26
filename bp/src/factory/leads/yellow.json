@@ -1,0 +1,125 @@
+{
+  "kind": "rack",
+  "description": "Bright saw lead with filter snap, ping-pong echoes and hall",
+  "rack": [
+    {
+      "kind": "core",
+      "level": 0.689456,
+      "osc1": {"bright": true},
+      "osc2": {"level": 0.85, "unison": 6, "detuneCents": 30, "unisonAlternate": true, "bright": true},
+      "noise": {"on": true, "color": "pink", "level": 0.147, "width": 1, "lowPassHz": 1640},
+      "ampEnv": {
+        "attackMs": 1,
+        "decayMs": 1000,
+        "sustain": 0.1108,
+        "releaseMs": 265,
+        "velocityAmount": 0.91,
+        "decayBend": -0.3,
+        "releaseBend": -0.29
+      },
+      "filter": {
+        "on": true,
+        "mode": "svf-low-pass",
+        "slopeDbPerOctave": 12,
+        "cutoffHz": 181.7505,
+        "resonance": 0.1,
+        "envAmount": 1.74,
+        "keyTrack": 0.404,
+        "env": {"attackMs": 1, "decayMs": 1000, "sustain": 0.401, "releaseMs": 665, "decayBend": -0.29}
+      }
+    },
+    {
+      "kind": "freak",
+      "wet": 0.8,
+      "bandCount": 1,
+      "driveDb": 25.6,
+      "outputDb": -2.1,
+      "filter1": {"on": true, "cutoffHz": 90},
+      "bands": [
+        {"curve": "tube"},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "eq",
+      "bands": [
+        {"on": true, "shape": "low-shelf", "channel": "stereo", "frequencyHz": 210, "gainDb": 2, "q": 0.7},
+        {"on": true, "shape": "bell", "channel": "stereo", "frequencyHz": 500, "gainDb": 3.4, "q": 0.8},
+        {"on": true, "shape": "bell", "channel": "stereo", "frequencyHz": 1300, "gainDb": 6, "q": 0.5},
+        {},
+        {"on": true, "shape": "low-shelf", "channel": "side", "frequencyHz": 120, "gainDb": -8, "q": 0.7},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "freak",
+      "bandCount": 3,
+      "crossoversHz": [128, 2500, 20000],
+      "oversample": false,
+      "subCutSlope": "6",
+      "ceilingKneeDb": 3,
+      "bands": [
+        {
+          "order": "post",
+          "squeeze": {"thresholdDb": -24.7, "ratio": 1.3, "gainDb": 12.5, "attackMs": 3, "releaseMs": 150, "upDepth": 1, "downDepth": 1}
+        },
+        {
+          "order": "post",
+          "squeeze": {"thresholdDb": 0, "ratio": 1.3, "gainDb": 7.5, "attackMs": 2, "upDepth": 1, "downDepth": 1}
+        },
+        {
+          "order": "post",
+          "squeeze": {"thresholdDb": -18.7, "ratio": 1.8, "gainDb": 12.9, "attackMs": 1, "releaseMs": 50, "upDepth": 1, "downDepth": 1}
+        },
+        {}
+      ]
+    },
+    {
+      "kind": "delay",
+      "wet": 0.5,
+      "mode": "clean",
+      "leftSync": true,
+      "leftTimeMs": 107.1,
+      "leftDivision": "1/16",
+      "rightSync": true,
+      "rightTimeMs": 214.3,
+      "rightDivision": "1/8",
+      "feedback": 0.74,
+      "pingPong": 1,
+      "evenPingPong": true,
+      "filter1": {"type": "band-pass", "slopeDb": "12", "cutoffHz": 1880, "q": 1.05},
+      "filter2": {"on": false},
+      "width": 1,
+      "wetTrimDb": -3.7
+    },
+    {
+      "kind": "reverb",
+      "wet": 0.3,
+      "tank": "plate",
+      "preDelayMs": 20,
+      "earlyPattern": "scatter",
+      "age": "now",
+      "decayS": 3.9,
+      "sizeTimes": 1,
+      "dampingHz": 9000,
+      "lowDecayTimes": 0.8,
+      "lowCrossoverHz": 150,
+      "modSync": false,
+      "modDivision": "1/4",
+      "modRateHz": 0.7,
+      "filter1": {"cutoffHz": 100},
+      "filter2": {"cutoffHz": 20000}
+    },
+    {
+      "kind": "utility",
+      "gainDb": -13.8,
+      "width": 1.1,
+      "limiterOn": false,
+      "ceilingDb": -1
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "kind": "delay",
+  "description": "Long drifting bar-length delay for piano, keys and soft pads",
+  "wet": 0.5,
+  "mode": "clean",
+  "leftSync": true,
+  "leftTimeMs": 375,
+  "leftDivision": "1/1",
+  "rightSync": true,
+  "rightTimeMs": 500,
+  "rightDivision": "1/3",
+  "feedback": 1,
+  "feedbackCeiling": 1.0527,
+  "rightFeedback": 0.311516,
+  "pingPong": 0.2045,
+  "rightPingPong": 0,
+  "filter1": {"on": false},
+  "filter2": {"slopeDb": "12", "cutoffHz": 3104.1, "resonant": true, "q": 0.7722},
+  "width": 1,
+  "leftPan": 0,
+  "rightPan": 0,
+  "linePanBalance": true,
+  "wetTrimDb": 1.8253,
+  "dry": 1,
+  "lfos": [
+    {
+      "row": 0,
+      "param": "filter2.cutoffHz",
+      "amount": 0.155457586507,
+      "center": 3104.09999999,
+      "tempoSync": true,
+      "division": "2/1",
+      "startPhase": 0.7576
+    },
+    {
+      "row": 0,
+      "param": "rightSyncScale",
+      "amount": 0.0006975,
+      "center": 0.999987500001,
+      "tempoSync": false,
+      "rateHz": 2.2558,
+      "startPhase": 0.6158
+    },
+    {
+      "row": 0,
+      "param": "rightPan",
+      "amount": 0.9525,
+      "center": 0,
+      "tempoSync": true,
+      "division": "1/2.",
+      "startPhase": 0.7703
+    }
+  ]
+}

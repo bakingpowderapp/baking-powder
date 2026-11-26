@@ -1,0 +1,27 @@
+{
+  "kind": "motion",
+  "description": "Quick warbling warm stereo chorus that widens keys, pads and leads",
+  "wet": 0.5904,
+  "bandCount": 1,
+  "bands": [
+    {
+      "mode": "chorus",
+      "chorus": {
+        "mode": "standard",
+        "sync": false,
+        "division": "1/4",
+        "rateHz": 0.8298,
+        "depth": 0.42,
+        "centerMs": 3.4984,
+        "startPhase": 0.5,
+        "filter1": {"on": true, "cutoffHz": 26.35},
+        "filter2": {"cutoffHz": 4000},
+        "trimDb": 4.438,
+        "crossfade": true
+      }
+    },
+    {},
+    {},
+    {}
+  ]
+}

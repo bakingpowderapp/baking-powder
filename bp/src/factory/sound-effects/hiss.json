@@ -1,0 +1,86 @@
+{
+  "kind": "rack",
+  "description": "Bright wide white-noise wash to lay under builds and transitions",
+  "rack": [
+    {
+      "kind": "core",
+      "level": 0.1696,
+      "voices": 1,
+      "osc1": {"level": 0},
+      "noise": {"on": true, "color": "white", "level": 1, "width": 1},
+      "ampEnv": {
+        "attackMs": 1.05,
+        "decayMs": 1,
+        "sustain": 1,
+        "releaseMs": 2.175,
+        "velocityAmount": 0,
+        "attackBend": -0.175,
+        "decayBend": -0.55,
+        "releaseBend": -0.55
+      },
+      "filter": {"on": true, "mode": "ladder-band-pass", "slopeDbPerOctave": 12, "oversample": 2, "cutoffHz": 16000},
+      "mono": {"legato": false}
+    },
+    {
+      "kind": "eq",
+      "bands": [
+        {"on": true, "shape": "high-shelf", "channel": "stereo", "frequencyHz": 392.5, "gainDb": 1.424, "q": 0.71},
+        {"on": true, "shape": "high-shelf", "channel": "stereo", "frequencyHz": 1108.2, "gainDb": 6.981, "q": 0.71},
+        {"on": true, "shape": "high-shelf", "channel": "stereo", "frequencyHz": 2422.3, "gainDb": 4.808, "q": 0.71},
+        {"on": true, "shape": "high-shelf", "channel": "stereo", "frequencyHz": 4945.6, "gainDb": 1.501, "q": 0.71},
+        {"on": true, "shape": "high-shelf", "channel": "stereo", "frequencyHz": 17763.8, "gainDb": 0.434, "q": 0.71},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "reverb",
+      "wet": 0.2123,
+      "tank": "plate",
+      "preDelayMs": 125.75,
+      "earlyPattern": "scatter",
+      "inputDiffusion": 0.9,
+      "age": "now",
+      "stereoInput": 1,
+      "decayS": 4.8318,
+      "sizeTimes": 1.1838,
+      "diffusion": 0.66,
+      "dampingHz": 4282.0914,
+      "lowDecayTimes": 0.7788,
+      "highDecayTimes": 0.3127,
+      "highCrossoverHz": 15219.6708,
+      "modDepthMs": 0,
+      "modSync": false,
+      "modDivision": "1/4",
+      "modRateHz": 0.7,
+      "filter1": {"cutoffHz": 26.2},
+      "filter2": {"on": false},
+      "forwardLevel": 0.5887
+    },
+    {
+      "kind": "reverb",
+      "wet": 0.1025,
+      "tank": "hall",
+      "preDelayMs": 128.75,
+      "earlyPattern": "scatter",
+      "inputDiffusion": 0.925,
+      "hallFront": 0.33,
+      "age": "now",
+      "stereoInput": 1,
+      "decayS": 1.5104,
+      "sizeTimes": 1.2234,
+      "diffusion": 0.7,
+      "dampingHz": 20000,
+      "highDecayTimes": 0.8623,
+      "highCrossoverHz": 1491.8247,
+      "modDepthMs": 0,
+      "modSync": false,
+      "modDivision": "1/4",
+      "modRateHz": 0.7,
+      "filter1": {"cutoffHz": 20},
+      "filter2": {"cutoffHz": 20000}
+    },
+    {"kind": "utility", "gainDb": 1.5, "limiterOn": false, "ceilingDb": -1}
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "kind": "rack",
+  "description": "Wide seven-saw chord arpeggio, filter snapping each sixteenth, echoes and chorus.",
+  "rack": [
+    {
+      "kind": "midi",
+      "arp": {"on": true, "style": "up", "sync": true, "division": "1/16", "timeMs": 250, "gate": 1}
+    },
+    {
+      "kind": "core",
+      "level": 0.957664,
+      "voices": 24,
+      "stack": 2,
+      "stackCents": 3,
+      "stackSpread": 0.62,
+      "osc1": {"fineCents": 1.5, "unison": 7, "detuneCents": 45, "width": 0},
+      "osc2": {"level": 0.55, "tuneSemitones": 12, "fineCents": -8.5, "unison": 7, "detuneCents": 15, "width": 0, "unisonBlend": 0.3},
+      "ampEnv": {
+        "attackMs": 4,
+        "decayMs": 600,
+        "sustain": 0.257,
+        "releaseMs": 850,
+        "velocityAmount": 0.24,
+        "decayBend": -0.4,
+        "releaseBend": -0.39
+      },
+      "filter": {
+        "on": true,
+        "mode": "ladder",
+        "slopeDbPerOctave": 24,
+        "oversample": 2,
+        "cutoffHz": 1250,
+        "envAmount": 1.03,
+        "env": {
+          "attackMs": 12,
+          "decayMs": 250,
+          "sustain": 0.37,
+          "releaseMs": 2500,
+          "velocityAmount": 0.4,
+          "decayBend": -0.5,
+          "releaseBend": -0.5
+        }
+      },
+      "motion": {
+        "lfo2": {"target": "pitch2", "amount": 0.0167, "shape": "triangle", "rateHz": 9.85, "mode": "run"},
+        "env1": {
+          "target": "amp",
+          "amount": 0.25,
+          "env": {"attackMs": 12, "decayMs": 250, "sustain": 0.37, "releaseMs": 2500, "decayBend": -0.5, "releaseBend": -0.5}
+        }
+      }
+    },
+    {
+      "kind": "eq",
+      "bands": [
+        {},
+        {"on": true, "shape": "high-shelf-q", "channel": "stereo", "frequencyHz": 10000, "gainDb": -2.5, "q": 0.7},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "delay",
+      "wet": 0.19,
+      "mode": "clean",
+      "leftSync": false,
+      "leftTimeMs": 300,
+      "leftDivision": "1/4",
+      "rightSync": false,
+      "rightTimeMs": 275,
+      "rightDivision": "1/4",
+      "centerTimeMs": 250,
+      "centerLevel": 0.88,
+      "feedback": 0.03,
+      "filter1": {"cutoffHz": 550},
+      "filter2": {"cutoffHz": 3300},
+      "drive": 0,
+      "modDepth": 0.15,
+      "modFlutter": 0,
+      "width": 1.3,
+      "wetTrimDb": 8
+    },
+    {
+      "kind": "motion",
+      "wet": 0.9,
+      "bandCount": 1,
+      "bands": [
+        {
+          "mode": "chorus",
+          "chorus": {"mode": "classic", "sync": false, "division": "1/4", "rateHz": 0.7, "depth": 0.15, "centerMs": 2.1, "filter2": {"cutoffHz": 10000}, "width": 1.5}
+        },
+        {},
+        {},
+        {}
+      ]
+    },
+    {"kind": "utility", "gainDb": -5.5, "limiterOn": false, "ceilingDb": -1}
+  ],
+  "lfos": [
+    {
+      "row": 1,
+      "param": "filter.cutoffHz",
+      "amount": 0.578,
+      "center": 1250,
+      "tempoSync": false,
+      "rateHz": 0.1166,
+      "shape": "triangle"
+    }
+  ]
+}

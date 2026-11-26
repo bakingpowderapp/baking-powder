@@ -1,0 +1,170 @@
+{
+  "kind": "rack",
+  "description": "Gliding resonant pulse-wave sequence from one held key",
+  "author": "Aiyn Zahev",
+  "website": "https://www.aiynzahev-sounds.com/",
+  "rack": [
+    {
+      "kind": "midi",
+      "arp": {
+        "on": true,
+        "stepMode": true,
+        "fixedVelocity": true,
+        "style": "up",
+        "sync": true,
+        "division": "1/16",
+        "timeMs": 250,
+        "gate": 0.5,
+        "pattern": {
+          "length": 8,
+          "steps": [
+            {},
+            {"semitones": 7},
+            {"rest": true},
+            {"semitones": 12, "octaveShift": 1, "gate": 1},
+            {"rest": true},
+            {"gate": 1},
+            {"semitones": 3, "octaveShift": 1, "gate": 1, "slide": true},
+            {"rest": true}
+          ]
+        }
+      }
+    },
+    {
+      "kind": "core",
+      "level": 0.4063,
+      "voices": 1,
+      "osc1": {"levels": [0, 1, 0, 0], "fineCents": 20.6, "freeRunning": true},
+      "ampEnv": {
+        "attackMs": 1.5,
+        "decayMs": 434.2,
+        "sustain": 0.69,
+        "releaseMs": 87.6,
+        "velocityAmount": 0,
+        "decayBend": -1,
+        "releaseBend": -0.41
+      },
+      "filter": {
+        "on": true,
+        "mode": "ladder",
+        "slopeDbPerOctave": 24,
+        "cutoffHz": 511,
+        "resonance": 0.205,
+        "envAmount": 0.181,
+        "keyTrack": 0.435,
+        "env": {
+          "attackMs": 1.2,
+          "decayMs": 209.7,
+          "sustain": 0,
+          "releaseMs": 28,
+          "velocityAmount": 0,
+          "decayBend": -1,
+          "releaseBend": -1
+        }
+      },
+      "mono": {"glideMs": 60, "glideCurve": "octave"},
+      "motion": {
+        "env1": {
+          "target": "resonance",
+          "amount": 0.33,
+          "env": {"attackMs": 40, "decayMs": 720, "sustain": 0, "releaseMs": 720, "attackBend": 0.7, "decayBend": -1, "releaseBend": -1}
+        },
+        "env2": {
+          "target": "amp",
+          "amount": -0.2,
+          "env": {"attackMs": 0.25, "decayMs": 20, "sustain": 0, "releaseMs": 20, "decayBend": -0.5}
+        }
+      }
+    },
+    {
+      "kind": "reverb",
+      "wet": 0.1,
+      "tank": "plate",
+      "preDelayMs": 112,
+      "earlyPattern": "scatter",
+      "age": "now",
+      "decayS": 0.65,
+      "sizeTimes": 1,
+      "dampingHz": 2478,
+      "modDepthMs": 0,
+      "modSync": false,
+      "modDivision": "1/4",
+      "modRateHz": 0.7,
+      "filter1": {"cutoffHz": 70},
+      "filter2": {"cutoffHz": 10000},
+      "width": 1.4,
+      "forwardLevel": 0.71
+    },
+    {
+      "kind": "eq",
+      "bands": [
+        {},
+        {"on": true, "shape": "low-shelf", "channel": "stereo", "frequencyHz": 91.3, "gainDb": 4.75, "q": 0.71},
+        {"on": true, "shape": "low-shelf", "channel": "stereo", "frequencyHz": 325, "gainDb": 4.75, "q": 0.71},
+        {},
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "delay",
+      "wet": 0.22,
+      "mode": "clean",
+      "leftSync": true,
+      "leftTimeMs": 375,
+      "leftDivision": "1/8",
+      "rightSync": true,
+      "rightTimeMs": 500,
+      "rightDivision": "1/16",
+      "feedback": 0.115,
+      "pingPong": 1,
+      "evenPingPong": true,
+      "filter1": {"on": false},
+      "filter2": {"cutoffHz": 20000},
+      "drive": 0,
+      "width": 1
+    },
+    {
+      "kind": "freak",
+      "bandCount": 1,
+      "driveDb": 18.06,
+      "outputDb": -10.75,
+      "filter1": {"on": true, "cutoffHz": 60},
+      "biasLfoDepth": 0.48,
+      "biasLfoStartPhase": 0.5,
+      "bands": [
+        {"curve": "fold", "foldRipples": 0.111, "foldRippleCount": 3},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "freak",
+      "bandCount": 1,
+      "driveDb": 6,
+      "outputDb": -5.6,
+      "bands": [
+        {"curve": "soft"},
+        {},
+        {},
+        {}
+      ]
+    },
+    {"kind": "utility", "gainDb": 0.89, "limiterOn": true, "ceilingDb": -1}
+  ],
+  "lfos": [
+    {
+      "row": 1,
+      "param": "osc1.pulseWidth",
+      "amount": 0.08,
+      "center": 0.5,
+      "tempoSync": true,
+      "division": "1/16",
+      "startPhase": 0.75,
+      "shape": "triangle"
+    }
+  ]
+}

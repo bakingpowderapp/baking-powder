@@ -1,0 +1,137 @@
+{
+  "kind": "rack",
+  "description": "Gritty legato mono square lead with ping-pong echoes and hall",
+  "rack": [
+    {
+      "kind": "core",
+      "voices": 1,
+      "osc1": {"levels": [0, 1, 0, 0]},
+      "osc2": {"levels": [0, 0, 0, 1], "level": 0.25, "tuneSemitones": 12},
+      "ampEnv": {
+        "attackMs": 1,
+        "decayMs": 80.7,
+        "sustain": 0.611,
+        "releaseMs": 24.3,
+        "velocityAmount": 0,
+        "decayBend": -0.55,
+        "releaseBend": -0.55
+      },
+      "motion": {
+        "lfo1": {"target": "pitch", "amount": 0.0016, "shape": "square", "sync": true, "division": "1/12"},
+        "lfo2": {"target": "pitch", "amount": 0.001375, "shape": "triangle", "sync": true, "division": "1/12", "phase": 0.25}
+      }
+    },
+    {
+      "kind": "freak",
+      "wet": 0.857,
+      "bandCount": 1,
+      "driveDb": 22.7,
+      "outputDb": -11.15,
+      "bands": [
+        {"curve": "soft"},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "motion",
+      "wet": 0.181,
+      "bandCount": 1,
+      "bands": [
+        {
+          "mode": "chorus",
+          "chorus": {
+            "mode": "standard",
+            "sync": false,
+            "division": "1/4",
+            "rateHz": 4.014,
+            "depth": 0.077,
+            "centerMs": 40,
+            "spread": 0.5,
+            "startPhase": 0.326,
+            "width": 0.481,
+            "crossfade": true,
+            "dual": true
+          }
+        },
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "eq",
+      "bands": [
+        {},
+        {"on": true, "shape": "low-shelf", "channel": "stereo", "frequencyHz": 138, "gainDb": 3.02, "q": 0.71},
+        {"on": true, "shape": "bell", "channel": "stereo", "frequencyHz": 269, "gainDb": -0.98, "q": 0.85},
+        {"on": true, "shape": "bell", "channel": "stereo", "frequencyHz": 1435, "gainDb": -2.07, "q": 0.86},
+        {},
+        {},
+        {"on": true, "shape": "high-shelf", "channel": "stereo", "frequencyHz": 872, "gainDb": 7.88, "q": 0.71},
+        {}
+      ],
+      "trimDb": -1.45
+    },
+    {
+      "kind": "delay",
+      "wet": 0.4557,
+      "mode": "clean",
+      "leftSync": true,
+      "leftTimeMs": 375,
+      "leftDivision": "1/4",
+      "rightSync": true,
+      "rightTimeMs": 500,
+      "rightDivision": "1/4",
+      "feedback": 0.628,
+      "pingPong": 1,
+      "inputLean": -0.5,
+      "filter1": {"on": false},
+      "filter2": {"cutoffHz": 306},
+      "drive": 0,
+      "width": 0.795,
+      "wetTrimDb": -6.02
+    },
+    {
+      "kind": "reverb",
+      "wet": 0.191,
+      "tank": "plate",
+      "preDelayMs": 7,
+      "earlyPattern": "scatter",
+      "age": "now",
+      "decayS": 5.6,
+      "sizeTimes": 1,
+      "dampingHz": 20000,
+      "modDepthMs": 0,
+      "modSync": false,
+      "modDivision": "1/4",
+      "modRateHz": 0.7,
+      "filter1": {"cutoffHz": 20},
+      "filter2": {"cutoffHz": 20000},
+      "forwardLevel": 0.4
+    }
+  ],
+  "lfos": [
+    {
+      "row": 0,
+      "param": "osc1.fineCents",
+      "amount": 0.27,
+      "center": 0,
+      "tempoSync": false,
+      "rateHz": 800,
+      "shape": "walk",
+      "audioRate": true
+    },
+    {
+      "row": 0,
+      "param": "osc1.tuneSemitones",
+      "amount": 0.002656,
+      "center": 0,
+      "tempoSync": false,
+      "rateHz": 80,
+      "shape": "walk",
+      "audioRate": true
+    }
+  ]
+}

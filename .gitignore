@@ -1,0 +1,6 @@
+/target
+.DS_Store
+.claude/worktrees/
+/exports/
+/index.md
+/export.sh

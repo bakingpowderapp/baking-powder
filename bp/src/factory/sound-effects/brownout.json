@@ -1,0 +1,343 @@
+{
+  "kind": "rack",
+  "description": "Power-down fall with a sliding sub and stuttering filter scream",
+  "rack": [
+    {
+      "kind": "core",
+      "level": 0.982896,
+      "freshVoice": true,
+      "osc1": {"level": 0},
+      "noise": {"on": true, "color": "white", "level": 0, "width": 0.8},
+      "ampEnv": {
+        "attackMs": 160.3,
+        "decayMs": 4700,
+        "sustain": 0,
+        "releaseMs": 3900,
+        "velocityAmount": 0.1,
+        "attackBend": 0.9,
+        "decayBend": 0,
+        "releaseBend": -0.5
+      },
+      "filter": {
+        "on": true,
+        "mode": "ladder",
+        "slopeDbPerOctave": 24,
+        "cutoffHz": 140.5,
+        "resonance": 1,
+        "drive": 1,
+        "envAmount": 0.1786,
+        "env": {"attackMs": 0.25, "decayMs": 1, "sustain": 1, "releaseMs": 30000, "releaseBend": 1}
+      },
+      "motion": {
+        "lfo1": {"target": "cutoff", "amount": 0.227, "shape": "square", "rateHz": 10.0082},
+        "lfo2": {"target": "cutoff", "amount": 0.227, "shape": "square", "rateHz": 20.0164},
+        "env1": {
+          "target": "cutoff",
+          "amount": 0.7535,
+          "env": {"attackMs": 0.27, "decayMs": 2380, "sustain": 0, "releaseMs": 2857, "attackBend": 0.18}
+        },
+        "env2": {
+          "target": "noise",
+          "amount": 1,
+          "env": {
+            "attackMs": 168,
+            "decayMs": 3000,
+            "sustain": 0,
+            "releaseMs": 30000,
+            "attackBend": 0.24,
+            "decayBend": -0.7,
+            "releaseBend": 1
+          }
+        }
+      }
+    },
+    {
+      "kind": "core",
+      "level": 0.405829,
+      "freshVoice": true,
+      "osc1": {"levels": [0, 0, 0, 1], "tuneSemitones": -12},
+      "osc2": {
+        "levels": [0, 0, 0, 1],
+        "level": 0.884,
+        "tuneSemitones": -12,
+        "fineCents": 36,
+        "unison": 2,
+        "detuneCents": 7.15,
+        "unisonAlternate": true
+      },
+      "phaseRandom": 0,
+      "ampEnv": {
+        "attackMs": 160.3,
+        "decayMs": 4122.5,
+        "sustain": 0,
+        "releaseMs": 4404.8,
+        "velocityAmount": 0.06,
+        "decayBend": -0.55,
+        "releaseBend": -0.55
+      },
+      "filter": {
+        "on": true,
+        "mode": "ladder",
+        "slopeDbPerOctave": 12,
+        "cutoffHz": 449.8,
+        "resonance": 0.699,
+        "envAmount": 0.1786,
+        "env": {"attackMs": 0.25, "decayMs": 1, "sustain": 1, "releaseMs": 30000, "releaseBend": 1}
+      },
+      "motion": {
+        "lfo1": {"target": "pitch", "amount": 1, "shape": "saw", "rateHz": 0.4202, "mode": "once"},
+        "lfo2": {"target": "pan", "amount": 0.798, "rateHz": 4.963, "phase": 0.89},
+        "env1": {
+          "target": "cutoff",
+          "amount": 0.7535,
+          "env": {"attackMs": 0.27, "decayMs": 2380, "sustain": 0, "releaseMs": 2857, "attackBend": 0.18}
+        },
+        "env2": {
+          "target": "amp",
+          "amount": -1,
+          "env": {"attackMs": 1, "decayMs": 82.6, "sustain": 0, "releaseMs": 30000, "decayBend": -0.317}
+        }
+      }
+    },
+    {"kind": "utility", "gainDb": 3.9, "limiterOn": false, "ceilingDb": -1},
+    {
+      "kind": "freak",
+      "bandCount": 1,
+      "driveDb": 31.75,
+      "outputDb": -4.5,
+      "bands": [
+        {"curve": "tape", "wet": 0.22},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "motion",
+      "wet": 0.5,
+      "bandCount": 1,
+      "bands": [
+        {
+          "mode": "chorus",
+          "chorus": {
+            "mode": "standard",
+            "sync": true,
+            "division": "16/1",
+            "rateHz": 0.05,
+            "depth": 0.1858,
+            "centerMs": 24.89,
+            "spread": 0.5,
+            "startPhase": 0.2,
+            "feedback": 0.353,
+            "width": 0.78,
+            "crossfade": true,
+            "dual": true
+          }
+        },
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "eq",
+      "bands": [
+        {},
+        {"on": true, "shape": "low-shelf", "channel": "stereo", "frequencyHz": 311.3, "gainDb": 15.03, "q": 0.71},
+        {"on": true, "shape": "bell", "channel": "stereo", "frequencyHz": 179.5, "gainDb": -4.35, "q": 0.3},
+        {"on": true, "shape": "low-shelf", "channel": "stereo", "frequencyHz": 951.8, "gainDb": 4.34, "q": 0.71},
+        {},
+        {},
+        {},
+        {}
+      ],
+      "trimDb": -4.83
+    },
+    {
+      "kind": "delay",
+      "wet": 0.142,
+      "mode": "clean",
+      "leftSync": true,
+      "leftTimeMs": 375,
+      "leftDivision": "1/8",
+      "rightSync": true,
+      "rightTimeMs": 500,
+      "rightDivision": "1/12",
+      "feedback": 0.4906,
+      "pingPong": 1,
+      "inputLean": -1,
+      "filter1": {"cutoffHz": 210.2},
+      "filter2": {"cutoffHz": 14494.1},
+      "drive": 0,
+      "width": 0.543,
+      "wetTrimDb": -7.69
+    }
+  ],
+  "lfos": [
+    {
+      "row": 0,
+      "param": "motion.lfo1.rateHz",
+      "amount": 0.118766,
+      "center": 4.73574258638,
+      "tempoSync": false,
+      "rateHz": 0.111111,
+      "retrigger": true,
+      "once": true,
+      "shape": "saw"
+    },
+    {
+      "row": 0,
+      "param": "motion.lfo1.rateHz",
+      "amount": 0.031079,
+      "center": 4.73574258638,
+      "tempoSync": false,
+      "rateHz": 0.5,
+      "retrigger": true,
+      "once": true,
+      "shape": "saw"
+    },
+    {
+      "row": 0,
+      "param": "motion.lfo1.rateHz",
+      "amount": 0.062409,
+      "center": 4.73574258638,
+      "tempoSync": false,
+      "rateHz": 0.2,
+      "retrigger": true,
+      "once": true,
+      "shape": "saw"
+    },
+    {
+      "row": 0,
+      "param": "motion.lfo2.rateHz",
+      "amount": 0.118766,
+      "center": 9.47148517276,
+      "tempoSync": false,
+      "rateHz": 0.111111,
+      "retrigger": true,
+      "once": true,
+      "shape": "saw"
+    },
+    {
+      "row": 0,
+      "param": "motion.lfo2.rateHz",
+      "amount": 0.031079,
+      "center": 9.47148517276,
+      "tempoSync": false,
+      "rateHz": 0.5,
+      "retrigger": true,
+      "once": true,
+      "shape": "saw"
+    },
+    {
+      "row": 0,
+      "param": "motion.lfo2.rateHz",
+      "amount": 0.062409,
+      "center": 9.47148517276,
+      "tempoSync": false,
+      "rateHz": 0.2,
+      "retrigger": true,
+      "once": true,
+      "shape": "saw"
+    },
+    {
+      "row": 0,
+      "param": "motion.lfo1.amount",
+      "amount": 0.060896,
+      "center": 0.118750755926,
+      "tempoSync": false,
+      "rateHz": 0.111111,
+      "retrigger": true,
+      "once": true,
+      "shape": "saw"
+    },
+    {
+      "row": 0,
+      "param": "motion.lfo1.amount",
+      "amount": 0.014843,
+      "center": 0.118750755926,
+      "tempoSync": false,
+      "rateHz": 0.5,
+      "retrigger": true,
+      "once": true,
+      "shape": "saw"
+    },
+    {
+      "row": 0,
+      "param": "motion.lfo1.amount",
+      "amount": 0.030441,
+      "center": 0.118750755926,
+      "tempoSync": false,
+      "rateHz": 0.2,
+      "retrigger": true,
+      "once": true,
+      "shape": "saw"
+    },
+    {
+      "row": 0,
+      "param": "motion.lfo2.amount",
+      "amount": 0.060896,
+      "center": 0.118750755926,
+      "tempoSync": false,
+      "rateHz": 0.111111,
+      "retrigger": true,
+      "once": true,
+      "shape": "saw"
+    },
+    {
+      "row": 0,
+      "param": "motion.lfo2.amount",
+      "amount": 0.014843,
+      "center": 0.118750755926,
+      "tempoSync": false,
+      "rateHz": 0.5,
+      "retrigger": true,
+      "once": true,
+      "shape": "saw"
+    },
+    {
+      "row": 0,
+      "param": "motion.lfo2.amount",
+      "amount": 0.030441,
+      "center": 0.118750755926,
+      "tempoSync": false,
+      "rateHz": 0.2,
+      "retrigger": true,
+      "once": true,
+      "shape": "saw"
+    },
+    {
+      "row": 0,
+      "param": "filter.cutoffHz",
+      "amount": 0.054995,
+      "center": 97.0090823225,
+      "tempoSync": false,
+      "rateHz": 0.111111,
+      "retrigger": true,
+      "once": true,
+      "shape": "ramp"
+    },
+    {
+      "row": 0,
+      "param": "filter.cutoffHz",
+      "amount": 0.013404,
+      "center": 97.0090823225,
+      "tempoSync": false,
+      "rateHz": 0.5,
+      "retrigger": true,
+      "once": true,
+      "shape": "ramp"
+    },
+    {
+      "row": 0,
+      "param": "filter.cutoffHz",
+      "amount": 0.027491,
+      "center": 97.0090823225,
+      "tempoSync": false,
+      "rateHz": 0.2,
+      "retrigger": true,
+      "once": true,
+      "shape": "ramp"
+    }
+  ]
+}

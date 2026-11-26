@@ -1,0 +1,35 @@
+{
+  "kind": "freak",
+  "description": "Hot buzzing chord crusher for a wall of distortion",
+  "bandCount": 3,
+  "crossoversHz": [198.1, 17930, 20000],
+  "crossoverSlope": "30",
+  "oversample": false,
+  "driveDb": 24,
+  "outputDb": -9.94,
+  "bands": [
+    {
+      "curve": "hard-clip",
+      "driveDb": -13.09,
+      "thresholdDb": -20.3,
+      "lift": 0.81,
+      "rangeDb": 47,
+      "attackMs": 2,
+      "releaseMs": 48,
+      "outputDb": -9.91
+    },
+    {
+      "curve": "diode",
+      "stereo": "mid-side",
+      "driveDb": 1.11,
+      "thresholdDb": -15.4,
+      "sharpen": 0.415,
+      "rangeDb": 6.06,
+      "attackMs": 2,
+      "releaseMs": 56,
+      "outputDb": -8.885
+    },
+    {"curve": "limit", "driveDb": -24, "attackMs": 2},
+    {}
+  ]
+}

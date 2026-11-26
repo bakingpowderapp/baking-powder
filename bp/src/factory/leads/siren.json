@@ -1,0 +1,143 @@
+{
+  "kind": "rack",
+  "description": "Hard buzzing mono rave lead with minor-third stabs for hardtekk",
+  "rack": [
+    {
+      "kind": "core",
+      "level": 0.3935,
+      "voices": 1,
+      "freshVoice": true,
+      "osc1": {"fmAmount": 0.026, "bright": true},
+      "osc2": {"level": 1, "tuneSemitones": 3, "bright": true},
+      "noise": {"on": true, "color": "white", "level": 0.1875, "width": 0.54},
+      "ampEnv": {
+        "attackMs": 1,
+        "decayMs": 617.17,
+        "sustain": 1,
+        "releaseMs": 26.19,
+        "velocityAmount": 0,
+        "decayBend": -0.44,
+        "releaseBend": -0.42
+      },
+      "mono": {"retrigger": true}
+    },
+    {
+      "kind": "freak",
+      "bandCount": 1,
+      "oversample": false,
+      "driveDb": 6.38,
+      "outputDb": -1.61,
+      "bands": [
+        {"inputDb": 13.94, "curve": "hard-clip"},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "freak",
+      "bandCount": 3,
+      "crossoversHz": [120, 2500, 20000],
+      "oversample": false,
+      "subCutHz": 12,
+      "subCutSlope": "6",
+      "ceilingKneeDb": 3,
+      "bands": [
+        {
+          "order": "post",
+          "squeeze": {"ratio": 3, "gainDb": 10.73, "attackMs": 10, "releaseMs": 100, "upDepth": 0, "downDepth": 1, "detectMs": 1}
+        },
+        {
+          "order": "post",
+          "squeeze": {
+            "thresholdDb": -21.77,
+            "ratio": 3.448,
+            "gainDb": 11.12,
+            "attackMs": 0.54,
+            "releaseMs": 157.7,
+            "upDepth": 0,
+            "downDepth": 1,
+            "detectMs": 1
+          }
+        },
+        {
+          "order": "post",
+          "squeeze": {
+            "thresholdDb": -22.4,
+            "ratio": 18.58,
+            "gainDb": 9.91,
+            "attackMs": 0.677,
+            "releaseMs": 49.7,
+            "upDepth": 0,
+            "downDepth": 1,
+            "detectMs": 1
+          }
+        },
+        {}
+      ]
+    },
+    {
+      "kind": "reverb",
+      "wet": 0.1536,
+      "tank": "plate",
+      "preDelayMs": 0,
+      "earlyPattern": "scatter",
+      "age": "now",
+      "decayS": 2.134,
+      "sizeTimes": 1,
+      "diffusion": 0.5586,
+      "dampingHz": 18873,
+      "lowDecayTimes": 1.013,
+      "highDecayTimes": 1.2,
+      "highCrossoverHz": 6193,
+      "modDepthMs": 0.0833,
+      "modSync": false,
+      "modDivision": "1/4",
+      "modRateHz": 0.7,
+      "filter1": {"cutoffHz": 161},
+      "filter2": {"on": false},
+      "width": 0.961
+    },
+    {
+      "kind": "motion",
+      "wet": 0.1452,
+      "bandCount": 1,
+      "bands": [
+        {
+          "mode": "chorus",
+          "chorus": {
+            "mode": "standard",
+            "sync": false,
+            "division": "1/4",
+            "rateHz": 0.841,
+            "depth": 0.675,
+            "centerMs": 12.48,
+            "farCenterMs": 20.85,
+            "spread": 0.5,
+            "startPhase": 0.19,
+            "width": 0.7,
+            "crossfade": true
+          }
+        },
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "eq",
+      "bands": [
+        {"on": true, "shape": "high-pass", "channel": "stereo", "frequencyHz": 258.6, "gainDb": 0, "q": 0.908},
+        {"on": true, "shape": "high-shelf-q", "channel": "stereo", "frequencyHz": 3198.9, "gainDb": 2.737, "q": 0.788},
+        {"on": true, "shape": "high-shelf", "channel": "stereo", "frequencyHz": 8000, "gainDb": 0.5, "q": 0.707},
+        {"on": true, "shape": "bell", "channel": "stereo", "frequencyHz": 1100, "gainDb": -0.45, "q": 0.4},
+        {},
+        {},
+        {},
+        {}
+      ],
+      "trimDb": -10.17
+    },
+    {"kind": "utility", "gainDb": 1.05, "limiterOn": true, "ceilingDb": -1}
+  ]
+}

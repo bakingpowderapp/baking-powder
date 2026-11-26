@@ -1,0 +1,62 @@
+{
+  "kind": "freak",
+  "description": "Strong three-band maximiser for synths and buses, full and bright",
+  "bandCount": 3,
+  "crossoversHz": [152.5, 6080, 20000],
+  "crossoverSlope": "12",
+  "oversample": false,
+  "subCutHz": 8.5,
+  "subCutSlope": "48",
+  "ceiling": true,
+  "ceilingKneeDb": 2.53,
+  "ceilingTrimDb": -0.525,
+  "ceilingOnMix": true,
+  "bands": [
+    {
+      "order": "post",
+      "invert": true,
+      "squeeze": {
+        "thresholdDb": -8.51,
+        "ratio": 20,
+        "gainDb": 10.22,
+        "attackMs": 0.1,
+        "releaseMs": 20,
+        "upDepth": 0,
+        "downDepth": 1,
+        "softClip": 1.319,
+        "detectMode": "peak"
+      }
+    },
+    {
+      "order": "post",
+      "invert": true,
+      "squeeze": {
+        "thresholdDb": -2.39,
+        "ratio": 20,
+        "gainDb": 4.254,
+        "attackMs": 0.1,
+        "releaseMs": 20,
+        "upDepth": 0,
+        "downDepth": 1,
+        "softClip": 1.315,
+        "detectMode": "peak"
+      }
+    },
+    {
+      "order": "post",
+      "invert": true,
+      "squeeze": {
+        "thresholdDb": -8.71,
+        "ratio": 20,
+        "gainDb": 10.261,
+        "attackMs": 0.1,
+        "releaseMs": 20,
+        "upDepth": 0,
+        "downDepth": 1,
+        "softClip": 1.351,
+        "detectMode": "peak"
+      }
+    },
+    {}
+  ]
+}

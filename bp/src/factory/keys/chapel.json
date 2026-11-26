@@ -1,0 +1,145 @@
+{
+  "kind": "rack",
+  "description": "Soft sine drawbar organ with chorus warble, echoes and room",
+  "rack": [
+    {
+      "kind": "core",
+      "level": 0.241,
+      "freshVoice": true,
+      "osc1": {"levels": [0, 0, 0, 1], "unison": 8, "detuneCents": 2.19, "width": 0.48, "unisonAlternate": true},
+      "osc2": {
+        "levels": [0, 0, 0, 1],
+        "level": 1,
+        "tuneSemitones": 12,
+        "unison": 8,
+        "detuneCents": 23.73,
+        "width": 0.468,
+        "unisonAlternate": true
+      },
+      "osc3": {
+        "levels": [0, 0, 0, 1],
+        "level": 1,
+        "tuneSemitones": 24,
+        "unison": 8,
+        "detuneCents": 25.53,
+        "width": 0.52,
+        "unisonAlternate": true
+      },
+      "osc4": {
+        "levels": [0, 0, 0, 1],
+        "level": 1,
+        "tuneSemitones": 36,
+        "unison": 8,
+        "detuneCents": 11.01,
+        "width": 0.471,
+        "unisonAlternate": true
+      },
+      "ampEnv": {
+        "attackMs": 5.2,
+        "decayMs": 1,
+        "sustain": 1,
+        "releaseMs": 8,
+        "velocityAmount": 0,
+        "decayBend": -0.55,
+        "releaseBend": -0.55
+      },
+      "motion": {
+        "lfo1": {"target": "pitch", "amount": 0.002417, "shape": "random", "rateHz": 0.05},
+        "env1": {
+          "target": "amp",
+          "amount": 1,
+          "env": {"attackMs": 1, "decayMs": 1, "sustain": 1, "releaseMs": 30000, "velocityAmount": 1}
+        },
+        "env2": {
+          "target": "amp",
+          "amount": 0.6667,
+          "env": {"attackMs": 1, "decayMs": 1, "sustain": 1, "releaseMs": 30000, "velocityAmount": 1}
+        }
+      }
+    },
+    {
+      "kind": "motion",
+      "wet": 0.78,
+      "bandCount": 1,
+      "bands": [
+        {
+          "mode": "chorus",
+          "chorus": {
+            "mode": "classic",
+            "sync": false,
+            "division": "1/4",
+            "rateHz": 1.927,
+            "depth": 0.0776,
+            "centerMs": 6.743,
+            "spread": 0.5,
+            "filter2": {"cutoffHz": 20000},
+            "crossfade": true
+          }
+        },
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "eq",
+      "bands": [
+        {},
+        {"on": true, "shape": "bell", "channel": "stereo", "frequencyHz": 560.7, "gainDb": -6.27, "q": 0.286},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {}
+      ],
+      "trimDb": 3.61
+    },
+    {
+      "kind": "delay",
+      "wet": 0.1935,
+      "mode": "clean",
+      "leftSync": true,
+      "leftTimeMs": 375,
+      "leftDivision": "1/4",
+      "rightSync": true,
+      "rightTimeMs": 500,
+      "rightDivision": "1/6",
+      "feedback": 0.2949,
+      "pingPong": 1,
+      "filter1": {"on": false},
+      "filter2": {"cutoffHz": 3812},
+      "drive": 0,
+      "width": 1,
+      "wetTrimDb": -8.32
+    },
+    {
+      "kind": "reverb",
+      "wet": 0.276,
+      "tank": "plate",
+      "preDelayMs": 43.3,
+      "earlyPattern": "scatter",
+      "age": "now",
+      "decayS": 1,
+      "sizeTimes": 1,
+      "dampingHz": 6000,
+      "modDepthMs": 0,
+      "modSync": false,
+      "modDivision": "1/4",
+      "modRateHz": 0.7,
+      "filter2": {"cutoffHz": 20000},
+      "forwardLevel": 0.357
+    },
+    {
+      "kind": "compressor",
+      "autoReleaseMakeup": false,
+      "thresholdDb": -24.34,
+      "ratio": 3.379,
+      "kneeDb": 0,
+      "attackMs": 37.32,
+      "releaseMs": 50.78,
+      "makeupDb": 5.17
+    },
+    {"kind": "utility", "gainDb": -2.47, "limiterOn": true, "ceilingDb": -1.2}
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "kind": "rack",
+  "description": "Warm mono sine bass with soft attack and tube drive",
+  "rack": [
+    {
+      "kind": "core",
+      "level": 0.456693,
+      "voices": 1,
+      "osc1": {"levels": [0, 0, 0, 1], "fmAmount": 0.42},
+      "osc2": {"levels": [0, 0, 0, 1], "tuneSemitones": 12},
+      "ampEnv": {"attackMs": 5, "decayMs": 105, "sustain": 0.48, "releaseMs": 30},
+      "filter": {
+        "on": true,
+        "mode": "ladder",
+        "slopeDbPerOctave": 24,
+        "cutoffHz": 236,
+        "resonance": 0.4,
+        "drive": 0.12,
+        "envAmount": 0.23,
+        "env": {"attackMs": 5, "decayMs": 66, "sustain": 0.07, "releaseMs": 30}
+      },
+      "mono": {"retrigger": true}
+    },
+    {
+      "kind": "core",
+      "level": 0.645669,
+      "voices": 1,
+      "osc1": {"levels": [0, 0, 0, 1]},
+      "ampEnv": {"attackMs": 3, "decayMs": 714, "sustain": 0.35, "releaseMs": 30},
+      "mono": {"retrigger": true}
+    },
+    {
+      "kind": "freak",
+      "bandCount": 1,
+      "driveDb": 6,
+      "bands": [
+        {"curve": "tube", "bias": 0.8},
+        {},
+        {},
+        {}
+      ]
+    },
+    {"kind": "utility", "gainDb": 6.5, "limiterOn": true, "ceilingDb": -1}
+  ]
+}

@@ -1,0 +1,167 @@
+{
+  "kind": "rack",
+  "description": "Dark resonant sixteenth-note bass sequence from one held key",
+  "author": "Aiyn Zahev",
+  "website": "https://www.aiynzahev-sounds.com/",
+  "rack": [
+    {
+      "kind": "midi",
+      "arp": {
+        "on": true,
+        "stepMode": true,
+        "fixedVelocity": true,
+        "style": "up",
+        "sync": true,
+        "division": "1/16",
+        "timeMs": 250,
+        "gate": 0.5,
+        "pattern": {
+          "length": 8,
+          "steps": [
+            {"velocity": 0.71},
+            {"semitones": 5, "octaveShift": 1, "velocity": 0.71},
+            {"velocity": 0.71},
+            {"velocity": 0.71},
+            {"semitones": 7, "octaveShift": 1, "velocity": 0.71},
+            {},
+            {"semitones": 8, "octaveShift": 1},
+            {"velocity": 0.89}
+          ]
+        }
+      }
+    },
+    {
+      "kind": "core",
+      "voices": 1,
+      "osc1": {"tuneSemitones": -12, "fineCents": -11.92},
+      "osc2": {"level": 0.741, "tuneSemitones": -12, "fineCents": 20.34, "phase": 0.914},
+      "osc3": {"levels": [0, 1, 0, 0], "level": 0.749, "tuneSemitones": -12, "fineCents": -11.92},
+      "ampEnv": {
+        "delayMs": 1.75,
+        "attackMs": 1.2,
+        "decayMs": 362,
+        "sustain": 1,
+        "releaseMs": 230,
+        "velocityAmount": 0,
+        "decayBend": -1,
+        "releaseBend": -0.41
+      },
+      "filter": {
+        "on": true,
+        "mode": "ladder",
+        "slopeDbPerOctave": 24,
+        "cutoffHz": 292,
+        "feedback": 0.186,
+        "envAmount": 0.578,
+        "keyTrack": 1.005,
+        "env": {
+          "delayMs": 1.75,
+          "attackMs": 1.2,
+          "decayMs": 362,
+          "sustain": 0,
+          "releaseMs": 11151.2,
+          "velocityAmount": 0.86,
+          "decayBend": -1,
+          "releaseBend": -1
+        }
+      }
+    },
+    {
+      "kind": "freak",
+      "bandCount": 1,
+      "driveDb": 9,
+      "outputDb": -8.6,
+      "filter1": {"on": true, "cutoffHz": 21},
+      "biasLfoDepth": 1.25,
+      "bands": [
+        {"inputDb": 1.15, "curve": "tube"},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "reverb",
+      "wet": 0.106,
+      "tank": "plate",
+      "preDelayMs": 110,
+      "earlyPattern": "scatter",
+      "age": "now",
+      "decayS": 4.8,
+      "sizeTimes": 1,
+      "dampingHz": 2350,
+      "modDepthMs": 0,
+      "modSync": false,
+      "modDivision": "1/4",
+      "modRateHz": 0.7,
+      "filter1": {"cutoffHz": 60},
+      "filter2": {"cutoffHz": 10000},
+      "forwardLevel": 0.71
+    },
+    {
+      "kind": "delay",
+      "wet": 0.28,
+      "mode": "clean",
+      "leftSync": true,
+      "leftTimeMs": 375,
+      "leftDivision": "1/16",
+      "rightSync": true,
+      "rightTimeMs": 500,
+      "rightDivision": "1/16",
+      "feedback": 0.28,
+      "pingPong": 1,
+      "evenPingPong": true,
+      "filter1": {"on": false},
+      "filter2": {"cutoffHz": 20000},
+      "feedbackFilter": {"on": true, "cutoffHz": 3800},
+      "drive": 0,
+      "width": 1
+    },
+    {
+      "kind": "eq",
+      "bands": [
+        {"on": true, "shape": "low-shelf", "channel": "stereo", "frequencyHz": 143, "gainDb": -3.51, "q": 0.71},
+        {"on": true, "shape": "low-shelf", "channel": "stereo", "frequencyHz": 398, "gainDb": -5.06, "q": 0.71},
+        {"on": true, "shape": "bell", "channel": "stereo", "frequencyHz": 1498, "gainDb": 1.82, "q": 0.61},
+        {},
+        {},
+        {},
+        {},
+        {}
+      ],
+      "trimDb": 0.59
+    },
+    {
+      "kind": "utility",
+      "gainDb": 9,
+      "width": 0.745,
+      "plainWidth": true,
+      "limiterOn": true,
+      "ceilingDb": -1
+    }
+  ],
+  "lfos": [
+    {
+      "row": 1,
+      "param": "filter.cutoffHz",
+      "amount": 0.096,
+      "center": 292.000000001,
+      "tempoSync": false,
+      "rateHz": 0.0944,
+      "startPhase": 0.25,
+      "retrigger": true,
+      "shape": "triangle"
+    },
+    {
+      "row": 1,
+      "param": "osc3.pulseWidth",
+      "amount": 0.0862,
+      "center": 0.5,
+      "tempoSync": false,
+      "rateHz": 0.0944,
+      "startPhase": 0.75,
+      "retrigger": true,
+      "shape": "triangle"
+    }
+  ]
+}

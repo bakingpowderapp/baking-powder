@@ -1,0 +1,158 @@
+{
+  "kind": "rack",
+  "description": "Wobbling hard-sync sixteenth-note sequence from one held key",
+  "author": "Aiyn Zahev",
+  "website": "https://www.aiynzahev-sounds.com/",
+  "rack": [
+    {
+      "kind": "midi",
+      "arp": {
+        "on": true,
+        "stepMode": true,
+        "fixedVelocity": true,
+        "style": "up",
+        "sync": true,
+        "division": "1/16",
+        "timeMs": 250,
+        "gate": 0.5,
+        "pattern": {
+          "length": 8,
+          "steps": [
+            {"tie": true},
+            {"rest": true},
+            {"velocity": 0.18, "gate": 1},
+            {"tie": true},
+            {},
+            {"velocity": 0.34, "gate": 1},
+            {"tie": true},
+            {"velocity": 0.71, "gate": 1}
+          ]
+        }
+      }
+    },
+    {
+      "kind": "core",
+      "voices": 1,
+      "osc1": {"level": 0.24, "tuneSemitones": 12, "fineCents": 60, "hardSync": true, "bright": true},
+      "osc2": {"levels": [0.9343, 0, 1, 0], "level": 0.4516, "tuneSemitones": -12, "invert": true},
+      "noise": {"on": true, "color": "white", "level": 0.085, "tone": 0.2},
+      "ampEnv": {
+        "attackMs": 2.6,
+        "decayMs": 1078.8,
+        "sustain": 0,
+        "releaseMs": 1933.2,
+        "velocityAmount": 0,
+        "decayBend": -1,
+        "releaseBend": -0.41
+      },
+      "filter": {
+        "on": true,
+        "mode": "ladder",
+        "slopeDbPerOctave": 24,
+        "cutoffHz": 415.4,
+        "resonance": 0.15,
+        "fmAmount": 0.11,
+        "envAmount": 0.766,
+        "keyTrack": 0.307,
+        "env": {
+          "attackMs": 25,
+          "decayMs": 1417.4,
+          "sustain": 0,
+          "releaseMs": 9512.4,
+          "velocityAmount": 0.43,
+          "decayBend": -1,
+          "releaseBend": -1
+        }
+      },
+      "mono": {"glideMs": 199.3, "glideCurve": "octave"}
+    },
+    {
+      "kind": "eq",
+      "bandPass": {
+        "on": true,
+        "bands": [
+          {"frequencyHz": 207.6, "q": 0.739, "level": 0.015},
+          {"frequencyHz": 272.4, "q": 0.739, "level": 0.39},
+          {"frequencyHz": 1191.6, "q": 0.739, "level": 0.36}
+        ],
+        "trimDb": 12.05
+      }
+    },
+    {
+      "kind": "delay",
+      "wet": 0.16,
+      "mode": "clean",
+      "leftSync": true,
+      "leftTimeMs": 375,
+      "leftDivision": "1/8.",
+      "leftSyncScale": 1.0003,
+      "rightSync": true,
+      "rightTimeMs": 500,
+      "rightDivision": "1/16",
+      "feedback": 0.335,
+      "pingPong": 1,
+      "evenPingPong": true,
+      "filter1": {"on": false},
+      "filter2": {"cutoffHz": 7500},
+      "drive": 0,
+      "modDepth": 0.361,
+      "modRateHz": 0.3,
+      "modFlutter": 0,
+      "modSpread": 0.125,
+      "modStartPhase": 0.697,
+      "width": 1
+    },
+    {"kind": "utility", "gainDb": 15.52, "limiterOn": false, "ceilingDb": -1},
+    {
+      "kind": "freak",
+      "bandCount": 1,
+      "driveDb": 6,
+      "outputDb": -4.76,
+      "bands": [
+        {"curve": "soft"},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "eq",
+      "bands": [
+        {"on": true, "shape": "low-shelf", "channel": "stereo", "frequencyHz": 45, "gainDb": -4, "q": 0.71},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {"kind": "utility", "limiterOn": true, "hardClip": true, "ceilingDb": -1}
+  ],
+  "lfos": [
+    {
+      "row": 1,
+      "param": "osc1.tuneSemitones",
+      "amount": 0.059312,
+      "center": 12,
+      "tempoSync": false,
+      "rateHz": 1.43,
+      "startPhase": 0.25,
+      "retrigger": true,
+      "shape": "triangle",
+      "audioRate": true
+    },
+    {
+      "row": 1,
+      "param": "filter.cutoffHz",
+      "amount": 0.118556,
+      "center": 428.860000002,
+      "tempoSync": false,
+      "rateHz": 1.43,
+      "startPhase": 0.25,
+      "retrigger": true,
+      "shape": "triangle"
+    }
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "kind": "rack",
+  "description": "Dark accented sixteenth-note saw sequence from one held key",
+  "author": "Aiyn Zahev",
+  "website": "https://www.aiynzahev-sounds.com/",
+  "rack": [
+    {
+      "kind": "midi",
+      "arp": {
+        "on": true,
+        "stepMode": true,
+        "fixedVelocity": true,
+        "style": "up",
+        "sync": true,
+        "division": "1/16",
+        "timeMs": 250,
+        "gate": 0.5,
+        "pattern": {
+          "length": 12,
+          "steps": [
+            {},
+            {"semitones": 12, "octaveShift": 1, "velocity": 0.71, "gate": 1},
+            {"tie": true},
+            {"velocity": 0.72},
+            {"semitones": 3, "octaveShift": 2, "velocity": 0.71, "gate": 1},
+            {"tie": true},
+            {"velocity": 0.71},
+            {"semitones": 7, "octaveShift": 1, "velocity": 0.71, "gate": 1},
+            {"tie": true},
+            {},
+            {"semitones": 8, "octaveShift": 1, "velocity": 0.71, "gate": 1},
+            {"tie": true}
+          ]
+        }
+      }
+    },
+    {
+      "kind": "core",
+      "level": 0.806387,
+      "voices": 1,
+      "osc1": {"level": 0.5, "tuneSemitones": 12, "carryPhase": true},
+      "osc2": {"level": 0.3488, "fineCents": 3.9, "carryPhase": true, "invert": true, "phase": 0.75},
+      "osc3": {"levels": [0, 1, 0, 0], "level": 0.4213, "tuneSemitones": 12, "pulseWidth": 0.548, "carryPhase": true, "invert": true},
+      "ampEnv": {
+        "attackMs": 1.7,
+        "decayMs": 434.2,
+        "sustain": 0.33,
+        "releaseMs": 343.1,
+        "decayBend": -1,
+        "releaseBend": -0.41
+      },
+      "filter": {
+        "on": true,
+        "mode": "ladder",
+        "slopeDbPerOctave": 24,
+        "cutoffHz": 224.9,
+        "resonance": 0.4,
+        "feedback": 0.05,
+        "envAmount": 0.765,
+        "keyTrack": 0.138,
+        "env": {
+          "attackMs": 2.1,
+          "decayMs": 1750,
+          "sustain": 0,
+          "releaseMs": 6300,
+          "velocityAmount": 0.25,
+          "decayBend": -1,
+          "releaseBend": -1
+        }
+      }
+    },
+    {"kind": "utility", "gainDb": 6.02, "limiterOn": false, "ceilingDb": -1},
+    {
+      "kind": "eq",
+      "bandPass": {
+        "on": true,
+        "bands": [
+          {"frequencyHz": 108.4, "q": 0.5, "level": 0.495},
+          {"frequencyHz": 659.3, "q": 0.5, "level": 0.59},
+          {"frequencyHz": 3370.4, "q": 0.5, "level": 0.635}
+        ],
+        "trimDb": 12
+      }
+    },
+    {
+      "kind": "freak",
+      "bandCount": 1,
+      "driveDb": 6,
+      "outputDb": -12.7,
+      "biasLfoRateHz": 0.3,
+      "biasLfoDepth": 0.72,
+      "bands": [
+        {"curve": "diode"},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "reverb",
+      "wet": 0.106,
+      "tank": "plate",
+      "preDelayMs": 0,
+      "earlyPattern": "scatter",
+      "age": "now",
+      "decayS": 1.69,
+      "sizeTimes": 1,
+      "dampingHz": 2350,
+      "modDepthMs": 0,
+      "modSync": false,
+      "modDivision": "1/4",
+      "modRateHz": 0.7,
+      "filter1": {"cutoffHz": 120},
+      "filter2": {"cutoffHz": 10000},
+      "forwardLevel": 0.71
+    },
+    {
+      "kind": "delay",
+      "wet": 0.44,
+      "mode": "clean",
+      "leftSync": true,
+      "leftTimeMs": 375,
+      "leftDivision": "1/8",
+      "rightSync": true,
+      "rightTimeMs": 500,
+      "rightDivision": "1/8",
+      "feedback": 0,
+      "pingPong": 1,
+      "evenPingPong": true,
+      "filter1": {"on": false},
+      "filter2": {"cutoffHz": 20000},
+      "drive": 0,
+      "modDepth": 0.438,
+      "modRateHz": 1,
+      "modFlutter": 0,
+      "modSpread": -0.5,
+      "modStartPhase": 0.136,
+      "width": 1,
+      "wetTrimDb": 0.4
+    },
+    {"kind": "utility", "gainDb": 6.8, "limiterOn": true, "ceilingDb": -1}
+  ],
+  "lfos": [
+    {
+      "row": 1,
+      "param": "osc3.pulseWidth",
+      "amount": 0.5267,
+      "center": 0.548,
+      "tempoSync": false,
+      "rateHz": 1.343,
+      "startPhase": 0.75,
+      "retrigger": true,
+      "shape": "triangle"
+    }
+  ]
+}

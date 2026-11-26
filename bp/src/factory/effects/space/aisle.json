@@ -1,0 +1,10 @@
+{
+  "kind": "space",
+  "description": "Spectral sidechain duck on chords from the lead's signal",
+  "depthDb": 10,
+  "q": 8,
+  "attackMs": 5,
+  "recoveryMs": 50,
+  "lowHz": 180,
+  "highHz": 8000
+}

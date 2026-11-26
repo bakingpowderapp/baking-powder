@@ -1,0 +1,96 @@
+{
+  "kind": "rack",
+  "description": "Slow sine and noise riser for an eight-bar build",
+  "rack": [
+    {
+      "kind": "core",
+      "voices": 3,
+      "freshVoice": true,
+      "osc1": {"levels": [0, 0, 0, 1], "level": 0.18205, "tuneSemitones": -12},
+      "phaseRandom": 0,
+      "noise": {"on": true, "color": "white", "level": 0, "width": 1},
+      "ampEnv": {"attackMs": 2709.5, "decayMs": 1, "sustain": 1, "releaseMs": 3426.7, "velocityAmount": 0, "attackBend": 0.25},
+      "filter": {
+        "on": true,
+        "mode": "ladder",
+        "slopeDbPerOctave": 24,
+        "oversample": 2,
+        "cutoffHz": 334,
+        "resonance": 0.617,
+        "envAmount": 1.18,
+        "env": {
+          "attackMs": 10595.9,
+          "decayMs": 4796.9,
+          "sustain": 0.718391,
+          "releaseMs": 6091.9,
+          "velocityAmount": 0,
+          "attackBend": 0.25
+        }
+      },
+      "motion": {
+        "lfo1": {"target": "pitch", "amount": 1, "shape": "ramp", "rateHz": 0.09438, "mode": "once"},
+        "env1": {
+          "target": "noise",
+          "amount": 0.1334,
+          "env": {"attackMs": 2709.5, "decayMs": 1, "sustain": 1, "releaseMs": 3426.7, "attackBend": 0.25}
+        },
+        "env2": {
+          "target": "pitch",
+          "amount": 1,
+          "env": {"attackMs": 10595.9, "decayMs": 4796.9, "sustain": 0.718391, "releaseMs": 6091.9, "attackBend": 0.25}
+        }
+      }
+    },
+    {
+      "kind": "freak",
+      "bandCount": 1,
+      "driveDb": 36,
+      "outputDb": -23.2,
+      "bands": [
+        {"inputDb": 10, "curve": "soft"},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "eq",
+      "bands": [
+        {},
+        {"on": true, "shape": "low-shelf", "channel": "stereo", "frequencyHz": 673.4, "gainDb": -3.25, "q": 0.71},
+        {},
+        {"on": true, "shape": "bell", "channel": "stereo", "frequencyHz": 698.1, "gainDb": -3.29, "q": 0.308},
+        {},
+        {},
+        {"on": true, "shape": "high-shelf", "channel": "stereo", "frequencyHz": 1386.1, "gainDb": 2.5, "q": 0.71},
+        {}
+      ],
+      "trimDb": 3.77
+    },
+    {
+      "kind": "reverb",
+      "wet": 0.353,
+      "tank": "plate",
+      "preDelayMs": 8,
+      "earlyPattern": "scatter",
+      "age": "now",
+      "stereoInput": 1,
+      "decayS": 10.0592,
+      "sizeTimes": 1,
+      "dampingHz": 20000,
+      "lowDecayTimes": 1.041,
+      "lowCrossoverHz": 235.87,
+      "highDecayTimes": 4,
+      "highCrossoverHz": 7581.9,
+      "modDepthMs": 0,
+      "modSync": false,
+      "modDivision": "1/4",
+      "modRateHz": 0.7,
+      "filter1": {"cutoffHz": 20},
+      "filter2": {"cutoffHz": 20000},
+      "width": 1.13,
+      "forwardLevel": 0.42
+    },
+    {"kind": "utility", "gainDb": 5, "limiterOn": false, "ceilingDb": -1}
+  ]
+}

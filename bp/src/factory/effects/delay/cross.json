@@ -1,0 +1,38 @@
+{
+  "kind": "delay",
+  "description": "Dotted-eighth delay with a sweeping resonant filter and auto-pan",
+  "wet": 0.5,
+  "mode": "clean",
+  "leftSync": true,
+  "leftTimeMs": 375,
+  "leftDivision": "1/8.",
+  "rightSync": true,
+  "rightTimeMs": 500,
+  "rightDivision": "1/8.",
+  "feedback": 0.3523,
+  "filter1": {"on": false},
+  "filter2": {"slopeDb": "12", "cutoffHz": 2000, "resonant": true, "q": 3.98},
+  "width": 0,
+  "dry": 1,
+  "lfos": [
+    {
+      "row": 0,
+      "param": "filter2.cutoffHz",
+      "amount": 0.46178603973,
+      "center": 2000,
+      "tempoSync": true,
+      "division": "4/1",
+      "startPhase": 0.25433,
+      "shape": "triangle"
+    },
+    {
+      "row": 0,
+      "param": "wetPan",
+      "amount": 0.75168,
+      "center": 0,
+      "tempoSync": true,
+      "division": "1/1.",
+      "startPhase": 0.01088
+    }
+  ]
+}

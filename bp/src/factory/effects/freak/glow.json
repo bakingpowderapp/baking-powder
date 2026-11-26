@@ -1,0 +1,39 @@
+{
+  "kind": "freak",
+  "description": "Parallel chord warmth with fuller body and softened upper mids",
+  "wet": 0.1418,
+  "bandCount": 2,
+  "crossoversHz": [67.69, 800, 5000],
+  "crossoverSlope": "30",
+  "oversample": false,
+  "driveDb": 1.65,
+  "crossfade": true,
+  "dryPlain": true,
+  "filter2": {"on": true, "cutoffHz": 17000},
+  "bands": [
+    {
+      "curve": "hard-clip",
+      "driveDb": 24,
+      "thresholdDb": -21.7,
+      "lift": 0.9,
+      "rangeDb": 45,
+      "attackMs": 0.6,
+      "releaseMs": 70,
+      "linked": false,
+      "outputDb": -16.39
+    },
+    {
+      "curve": "diode",
+      "driveDb": -3.7,
+      "thresholdDb": -15.67,
+      "sharpen": 0.42,
+      "rangeDb": 6.02,
+      "attackMs": 0.6,
+      "releaseMs": 70,
+      "linked": false,
+      "outputDb": -6.69
+    },
+    {},
+    {}
+  ]
+}

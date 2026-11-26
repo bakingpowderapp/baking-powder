@@ -1,0 +1,113 @@
+{
+  "kind": "rack",
+  "description": "Deep, diving kick that sweeps into the sub",
+  "rack": [
+    {
+      "kind": "core",
+      "voices": 8,
+      "freshVoice": true,
+      "osc1": {
+        "levels": [0, 0, 0, 1],
+        "tuneSemitones": 12
+      },
+      "ampEnv": {"attackMs": 0.25, "decayMs": 200, "sustain": 1, "releaseMs": 460.64, "releaseBend": 1},
+      "motion": {
+        "lfo1": {
+          "target": "amp",
+          "amount": 1,
+          "shape": "drawn",
+          "rateHz": 4.77601,
+          "mode": "once",
+          "points": [
+            {"x": 0, "y": 0, "bend": 0},
+            {"x": 0.00019, "y": 0.11086, "bend": 0},
+            {"x": 0.00038, "y": 0.19716, "bend": 0},
+            {"x": 0.00057, "y": 0.26434, "bend": 0},
+            {"x": 0.00076, "y": 0.31663, "bend": 0},
+            {"x": 0.00096, "y": 0.35734, "bend": 0},
+            {"x": 0.00115, "y": 0.38903, "bend": 0},
+            {"x": 0.00134, "y": 0.4137, "bend": 0},
+            {"x": 0.00153, "y": 0.4329, "bend": 0},
+            {"x": 0.00172, "y": 0.44785, "bend": 0},
+            {"x": 0.0021, "y": 0.46855, "bend": 0},
+            {"x": 0.00248, "y": 0.48109, "bend": 0},
+            {"x": 0.00287, "y": 0.48869, "bend": 0},
+            {"x": 0.00382, "y": 0.49703, "bend": 0},
+            {"x": 0.00554, "y": 0.49999, "bend": 0},
+            {"x": 0.14883, "y": 0.45415, "bend": 0},
+            {"x": 0.28582, "y": 0.40393, "bend": 0},
+            {"x": 0.41689, "y": 0.34918, "bend": 0},
+            {"x": 0.54261, "y": 0.28969, "bend": 0},
+            {"x": 0.66335, "y": 0.22527, "bend": 0},
+            {"x": 0.77971, "y": 0.1556, "bend": 0},
+            {"x": 0.89186, "y": 0.08055, "bend": 0},
+            {"x": 1, "y": 0, "bend": 0}
+          ]
+        },
+        "lfo2": {
+          "target": "pitch",
+          "amount": 1,
+          "shape": "drawn",
+          "rateHz": 4.77601,
+          "mode": "once",
+          "points": [
+            {"x": 0, "y": 1, "bend": 0},
+            {"x": 0.07814, "y": 1, "bend": 0},
+            {"x": 0.0812, "y": 0.98446, "bend": 0},
+            {"x": 0.10088, "y": 0.93038, "bend": 0},
+            {"x": 0.15017, "y": 0.80759, "bend": 0},
+            {"x": 0.19469, "y": 0.71067, "bend": 0},
+            {"x": 0.24131, "y": 0.62162, "bend": 0},
+            {"x": 0.28831, "y": 0.54312, "bend": 0},
+            {"x": 0.33741, "y": 0.47166, "bend": 0},
+            {"x": 0.389, "y": 0.40669, "bend": 0},
+            {"x": 0.44326, "y": 0.34797, "bend": 0},
+            {"x": 0.49866, "y": 0.29673, "bend": 0},
+            {"x": 0.55732, "y": 0.25067, "bend": 0},
+            {"x": 0.61941, "y": 0.20967, "bend": 0},
+            {"x": 0.68533, "y": 0.17343, "bend": 0},
+            {"x": 0.75564, "y": 0.14164, "bend": 0},
+            {"x": 0.83091, "y": 0.11401, "bend": 0},
+            {"x": 0.99981, "y": 0.07, "bend": 0},
+            {"x": 1, "y": 0, "bend": 0}
+          ]
+        },
+        "env1": {
+          "target": "pitch",
+          "amount": 1,
+          "env": {"attackMs": 0.25, "decayMs": 16.436, "sustain": 0, "releaseMs": 16.436, "decayBend": -0.15}
+        },
+        "env2": {
+          "target": "pitch",
+          "amount": 1,
+          "env": {"attackMs": 0.25, "decayMs": 16.436, "sustain": 0, "releaseMs": 16.436, "decayBend": -0.15}
+        }
+      }
+    },
+    {
+      "kind": "eq",
+      "bands": [
+        {"on": true, "shape": "high-pass", "channel": "stereo", "frequencyHz": 33.84, "gainDb": 0, "q": 1.09},
+        {"on": true, "shape": "bell", "channel": "stereo", "frequencyHz": 491.22, "gainDb": -18, "q": 0.867},
+        {"on": true, "shape": "bell", "channel": "stereo", "frequencyHz": 209.55, "gainDb": 8.332, "q": 1.063},
+        {},
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "freak",
+      "bandCount": 1,
+      "driveDb": 8.15,
+      "bands": [
+        {"curve": "soft"},
+        {},
+        {},
+        {}
+      ]
+    },
+    {"kind": "utility", "gainDb": 9.8, "limiterOn": true, "ceilingDb": -0.1, "releaseMs": 172.59}
+  ]
+}

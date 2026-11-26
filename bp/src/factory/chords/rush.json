@@ -1,0 +1,119 @@
+{
+  "kind": "rack",
+  "description": "Big bright trance saw-stack chord stab with ping-pong echoes",
+  "rack": [
+    {
+      "kind": "core",
+      "level": 0.4766,
+      "voices": 8,
+      "freshVoice": true,
+      "osc1": {
+        "level": 0.8133,
+        "fineCents": -18,
+        "unison": 8,
+        "detuneCents": 32.25,
+        "width": 0.707,
+        "unisonAlternate": true,
+        "bright": true,
+        "freeRunning": true
+      },
+      "osc2": {
+        "level": 1,
+        "fineCents": 25.1,
+        "unison": 8,
+        "detuneCents": 37.48,
+        "unisonAlternate": true,
+        "bright": true,
+        "freeRunning": true
+      },
+      "osc3": {
+        "level": 0.6786,
+        "tuneSemitones": 12,
+        "fineCents": -6,
+        "unison": 4,
+        "detuneCents": 24.87,
+        "width": 0.571,
+        "unisonAlternate": true,
+        "bright": true,
+        "freeRunning": true
+      },
+      "osc4": {
+        "level": 0.8049,
+        "tuneSemitones": 12,
+        "fineCents": 5.7,
+        "unison": 4,
+        "detuneCents": 25.87,
+        "unisonAlternate": true,
+        "bright": true,
+        "freeRunning": true
+      },
+      "ampEnv": {
+        "attackMs": 1,
+        "decayMs": 1,
+        "sustain": 1,
+        "releaseMs": 27,
+        "velocityAmount": 0,
+        "decayBend": -0.55,
+        "releaseBend": -0.55
+      },
+      "motion": {
+        "lfo1": {"target": "pitch1", "amount": 0.00675, "sync": true, "division": "1/3"},
+        "lfo2": {"target": "pitch2", "amount": 0.00675, "sync": true, "division": "1/3"}
+      }
+    },
+    {
+      "kind": "eq",
+      "bands": [
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {"on": true, "shape": "high-shelf", "channel": "stereo", "frequencyHz": 355.7, "gainDb": 4.25, "q": 0.71},
+        {}
+      ],
+      "trimDb": 2.38
+    },
+    {
+      "kind": "delay",
+      "wet": 0.297,
+      "mode": "clean",
+      "leftSync": true,
+      "leftTimeMs": 375,
+      "leftDivision": "1/8",
+      "rightSync": true,
+      "rightTimeMs": 500,
+      "rightDivision": "1/8",
+      "feedback": 0.4962,
+      "pingPong": 1,
+      "inputLean": -0.41,
+      "filter1": {"on": false},
+      "filter2": {"cutoffHz": 5950},
+      "drive": 0,
+      "width": 1,
+      "wetTrimDb": -6.02
+    },
+    {
+      "kind": "reverb",
+      "wet": 0.19,
+      "tank": "plate",
+      "preDelayMs": 70,
+      "earlyLevel": 0.15,
+      "earlySpanMs": 100,
+      "earlyPattern": "scatter",
+      "age": "now",
+      "decayS": 3.5,
+      "sizeTimes": 1.2,
+      "diffusion": 0.15,
+      "dampingHz": 8500,
+      "modDepthMs": 1,
+      "modSync": false,
+      "modDivision": "1/4",
+      "modRateHz": 0.3,
+      "filter1": {"cutoffHz": 100},
+      "filter2": {"cutoffHz": 14000},
+      "forwardLevel": 0.45
+    }
+  ]
+}

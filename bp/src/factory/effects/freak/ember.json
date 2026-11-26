@@ -1,0 +1,44 @@
+{
+  "kind": "freak",
+  "description": "Warm chord saturator adding low weight, upper grit and air",
+  "bandCount": 2,
+  "crossoversHz": [506.83, 800, 5000],
+  "oversample": false,
+  "outputDb": -1.069,
+  "ceiling": true,
+  "ceilingDb": -0.3,
+  "ceilingReleaseMs": 80,
+  "ceilingAttackMs": 0.1,
+  "bands": [
+    {
+      "inputDb": 2.046,
+      "curve": "diode",
+      "driveDb": -2.854,
+      "sharpen": 0.343,
+      "rangeDb": 6.174,
+      "attackMs": 0.5,
+      "releaseMs": 63,
+      "wet": 0.19792,
+      "outputDb": -7.601,
+      "bassDb": 4.96,
+      "midDb": 1.78
+    },
+    {
+      "inputDb": 2.046,
+      "curve": "op-amp",
+      "driveDb": 11.89,
+      "thresholdDb": -12,
+      "lift": 0.287,
+      "rangeDb": 10.332,
+      "attackMs": 0.5,
+      "releaseMs": 63,
+      "wet": 0.14927,
+      "outputDb": -2.423,
+      "midDb": 2.2,
+      "trebleDb": 0.79,
+      "presenceDb": 3.72
+    },
+    {},
+    {}
+  ]
+}

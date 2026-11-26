@@ -1,0 +1,81 @@
+{
+ "kind": "rack",
+ "description": "Wide snappy six-saw pluck with noise and quarter-note ping-pong echoes",
+ "rack": [
+  {
+   "kind": "core",
+   "level": 0.7646,
+   "freshVoice": true,
+   "osc1": {
+    "unison": 6,
+    "detuneCents": 23,
+    "unisonAlternate": true
+   },
+   "noise": {
+    "on": true,
+    "color": "white",
+    "level": 0.38,
+    "tone": -0.23,
+    "width": 1
+   },
+   "ampEnv": {
+    "attackMs": 1,
+    "decayMs": 400,
+    "sustain": 0,
+    "releaseMs": 15,
+    "velocityAmount": 0,
+    "decayBend": -0.48
+   },
+   "filter": {
+    "on": true,
+    "mode": "ladder",
+    "slopeDbPerOctave": 12,
+    "cutoffHz": 189,
+    "resonance": 0.23,
+    "envAmount": 0.601,
+    "env": {
+     "attackMs": 1.8,
+     "decayMs": 230,
+     "sustain": 0,
+     "releaseMs": 15,
+     "velocityAmount": 0,
+     "decayBend": -0.48
+    }
+   }
+  },
+  {
+   "kind": "reverb",
+   "wet": 0.12,
+   "preDelayMs": 20,
+   "attackMs": 20,
+   "decayS": 0.9,
+   "sizeTimes": 0.8,
+   "diffusion": 0.6,
+   "dampingHz": 20000,
+   "modSync": false,
+   "modDivision": "1/4",
+   "modRateHz": 0.7,
+   "filter1": {"cutoffHz": 20},
+   "filter2": {"cutoffHz": 20000},
+   "dry": 1
+  },
+  {
+   "kind": "delay",
+   "wet": 0.147,
+   "mode": "clean",
+   "leftSync": true,
+   "leftTimeMs": 375,
+   "leftDivision": "1/4",
+   "rightSync": true,
+   "rightTimeMs": 500,
+   "rightDivision": "1/4",
+   "feedback": 0.27,
+   "pingPong": 1,
+   "evenPingPong": true,
+   "filter1": {"cutoffHz": 380},
+   "filter2": {"cutoffHz": 20000},
+   "width": 1,
+   "wetTrimDb": 8.6
+  }
+ ]
+}

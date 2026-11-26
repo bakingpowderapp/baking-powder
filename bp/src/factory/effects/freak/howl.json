@@ -1,0 +1,43 @@
+{
+  "kind": "freak",
+  "description": "Thick two-band fuzz with buzzing lows for chords and pads",
+  "bandCount": 2,
+  "crossoversHz": [76.66, 800, 5000],
+  "crossoverSlope": "30",
+  "oversample": false,
+  "driveDb": 30.518,
+  "ceiling": true,
+  "ceilingDb": -0.3,
+  "ceilingReleaseMs": 80,
+  "ceilingAttackMs": 0.1,
+  "bands": [
+    {
+      "inputDb": 3.798,
+      "curve": "hard-clip",
+      "driveDb": -2.504,
+      "biasPre": true,
+      "thresholdDb": -20.48,
+      "lift": 0.816,
+      "rangeDb": 47,
+      "attackMs": 0.1,
+      "releaseMs": 58.87,
+      "linked": false,
+      "outputDb": -15.991
+    },
+    {
+      "inputDb": 3.798,
+      "curve": "soft",
+      "stereo": "mid-side",
+      "driveDb": 2.504,
+      "bias": -0.4231,
+      "biasPre": true,
+      "attackMs": 0.1,
+      "linked": false,
+      "wet": 0.8766,
+      "invertCopy": true,
+      "outputDb": -6.487
+    },
+    {},
+    {}
+  ]
+}

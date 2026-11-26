@@ -1,0 +1,16 @@
+{
+  "kind": "repeat",
+  "description": "Short stutter burst every two beats, fading out, for vocal echoes",
+  "interval": "1/2",
+  "offsetSixteenths": 2,
+  "grid": "1/32",
+  "gateSixteenths": 4,
+  "chance": 1,
+  "variation": 0.9,
+  "vary": "auto",
+  "filter1": {"on": true, "cutoffHz": 250},
+  "filter2": {"on": true, "cutoffHz": 4000},
+  "mixMode": "insert",
+  "outputDb": 4.75,
+  "levelDecay": 0.3543
+}

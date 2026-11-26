@@ -1,0 +1,104 @@
+{
+  "kind": "rack",
+  "description": "Pulsing dotted-eighth saw sequence from one held key",
+  "author": "Aiyn Zahev",
+  "website": "https://www.aiynzahev-sounds.com/",
+  "rack": [
+    {
+      "kind": "midi",
+      "arp": {"on": true, "style": "up", "sync": true, "division": "1/8.", "timeMs": 250, "gate": 1}
+    },
+    {
+      "kind": "core",
+      "level": 0.62,
+      "voices": 1,
+      "osc1": {"tuneSemitones": 19, "fineCents": 4.2},
+      "osc2": {"level": 0.7, "tuneSemitones": -12},
+      "ampEnv": {
+        "attackMs": 2,
+        "decayMs": 375,
+        "sustain": 0.35,
+        "releaseMs": 13,
+        "velocityAmount": 0,
+        "decayBend": 0,
+        "releaseBend": -0.41
+      },
+      "filter": {
+        "on": true,
+        "mode": "ladder",
+        "slopeDbPerOctave": 24,
+        "cutoffHz": 590,
+        "envAmount": 0.87,
+        "env": {
+          "attackMs": 2.2,
+          "decayMs": 470,
+          "sustain": 0,
+          "releaseMs": 30,
+          "velocityAmount": 0,
+          "attackBend": -0.5,
+          "decayBend": -0.95,
+          "releaseBend": -0.41
+        }
+      }
+    },
+    {
+      "kind": "freak",
+      "bandCount": 1,
+      "driveDb": 15,
+      "outputDb": -14.3,
+      "bands": [
+        {"curve": "fold"},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "delay",
+      "wet": 0.235,
+      "mode": "clean",
+      "leftSync": true,
+      "leftTimeMs": 248.8,
+      "leftDivision": "1/8",
+      "rightSync": true,
+      "rightTimeMs": 248.8,
+      "rightDivision": "1/8",
+      "feedback": 0.645,
+      "pingPong": 1,
+      "inputLean": -1,
+      "filter1": {"on": false},
+      "filter2": {"slopeDb": "12", "cutoffHz": 8000},
+      "drive": 0,
+      "width": 1,
+      "wetTrimDb": -9.3
+    },
+    {
+      "kind": "eq",
+      "bands": [
+        {},
+        {"on": true, "shape": "low-shelf", "channel": "stereo", "frequencyHz": 185, "gainDb": 0.62, "q": 0.71},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "reverb",
+      "wet": 0.107,
+      "preDelayMs": 152,
+      "decayS": 1.4,
+      "sizeTimes": 1,
+      "dampingHz": 2500,
+      "modDepthMs": 0.0208333333333,
+      "modSync": false,
+      "modDivision": "1/4",
+      "modRateHz": 0.7,
+      "filter1": {"cutoffHz": 20},
+      "forwardLevel": 0.71
+    },
+    {"kind": "utility", "gainDb": 8.7, "limiterOn": false, "ceilingDb": -1}
+  ]
+}

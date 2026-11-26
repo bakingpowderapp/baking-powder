@@ -1,0 +1,16 @@
+{
+  "kind": "freak",
+  "description": "Subtle three-band harmonic sheen for chords, basses or master",
+  "bandCount": 3,
+  "crossoversHz": [100.29, 3253.36, 5000],
+  "crossoverSlope": "linear",
+  "oversample": false,
+  "subCutHz": 12.75,
+  "subCutSlope": "6",
+  "bands": [
+    {"curve": "diode", "driveDb": 3.833, "bias": 0.041, "wet": 0.06324, "outputDb": -1.107, "knee": 0.172},
+    {"curve": "diode", "driveDb": 4.731, "bias": 0.051, "wet": 0.05203, "outputDb": -1.024, "knee": 0.303},
+    {"curve": "diode", "driveDb": 2.964, "bias": 0.03, "wet": 0.0654, "outputDb": -1.306, "knee": 0.267},
+    {}
+  ]
+}

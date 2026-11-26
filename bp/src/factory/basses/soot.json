@@ -1,0 +1,279 @@
+{
+  "kind": "rack",
+  "description": "Growling mid-bass with ducking echoes, to layer over a sub",
+  "rack": [
+    {
+      "kind": "core",
+      "osc1": {
+        "levels": [0, 0, 0, 1],
+        "level": 0.39,
+        "fineCents": -15,
+        "unison": 9,
+        "width": 0.9,
+        "unisonAlternate": true,
+        "freeRunning": true
+      },
+      "osc2": {
+        "levels": [1, 0, 0, 0.235],
+        "level": 1,
+        "tuneSemitones": -12,
+        "fineCents": -15,
+        "unison": 16,
+        "width": 0.8,
+        "unisonAlternate": true,
+        "bright": true
+      },
+      "osc3": {
+        "levels": [0, 1, 0, 0],
+        "level": 0.1,
+        "fineCents": -15,
+        "unison": 16,
+        "width": 0.8,
+        "unisonAlternate": true,
+        "bright": true,
+        "freeRunning": true
+      },
+      "ampEnv": {"attackMs": 0.25, "decayMs": 200, "sustain": 1, "releaseMs": 1, "velocityAmount": 0}
+    },
+    {
+      "kind": "freak",
+      "wet": 0.29,
+      "bandCount": 1,
+      "driveDb": 18,
+      "bands": [
+        {"curve": "tube", "bias": 4},
+        {},
+        {},
+        {}
+      ]
+    },
+    {"kind": "utility", "gainDb": 4.24, "limiterOn": false, "ceilingDb": -1},
+    {
+      "kind": "freak",
+      "bandCount": 2,
+      "crossoversHz": [167.36, 800, 5000],
+      "filter2": {"on": true, "cutoffHz": 18037.2, "q": 0.796},
+      "bands": [
+        {
+          "curve": "diode",
+          "driveDb": -3.929,
+          "dynamics": 0.093,
+          "thresholdDb": 0,
+          "lift": 0.1246,
+          "rangeDb": 3.753,
+          "attackMs": 0.1,
+          "releaseMs": 296.6,
+          "wet": 0.4608,
+          "outputDb": -6.404,
+          "bassDb": 4.96,
+          "midDb": 1.78
+        },
+        {
+          "curve": "op-amp",
+          "driveDb": -2.062,
+          "dynamics": 0.3228,
+          "thresholdDb": 0,
+          "lift": 0.3351,
+          "rangeDb": 17.627,
+          "attackMs": 0.1,
+          "releaseMs": 39.9,
+          "outputDb": -2.87,
+          "midDb": 1.906,
+          "trebleDb": 4.082,
+          "presenceDb": 1.246
+        },
+        {},
+        {}
+      ]
+    },
+    {"kind": "utility", "limiterOn": true, "hardClip": true, "ceilingDb": 0},
+    {
+      "kind": "freak",
+      "bandCount": 3,
+      "crossoversHz": [95.19, 5313.7, 20000],
+      "crossoverSlope": "30",
+      "oversample": false,
+      "driveDb": 1.6636,
+      "bands": [
+        {
+          "inputDb": 3,
+          "curve": "hard-clip",
+          "driveDb": 24,
+          "thresholdDb": -20.453,
+          "lift": 0.8125,
+          "rangeDb": 48,
+          "attackMs": 1.762,
+          "releaseMs": 27.58,
+          "linked": false,
+          "outputDb": -19.897
+        },
+        {
+          "inputDb": 3,
+          "curve": "diode",
+          "driveDb": 9.79,
+          "thresholdDb": -15.967,
+          "sharpen": 0.4199,
+          "rangeDb": 6.02,
+          "attackMs": 0.55,
+          "releaseMs": 84.55,
+          "linked": false,
+          "outputDb": -13.821
+        },
+        {
+          "inputDb": 3,
+          "curve": "limit",
+          "driveDb": -24,
+          "thresholdDb": 0,
+          "sharpen": 2,
+          "rangeDb": 48,
+          "linked": false,
+          "outputDb": -24
+        },
+        {}
+      ]
+    },
+    {
+      "kind": "delay",
+      "mode": "clean",
+      "leftSync": true,
+      "leftTimeMs": 375,
+      "leftDivision": "1/4",
+      "rightSync": true,
+      "rightTimeMs": 500,
+      "rightDivision": "1/4",
+      "feedback": 0.4485,
+      "rightFeedback": 0,
+      "rightPingPong": 0,
+      "filter1": {"slopeDb": "12", "cutoffHz": 56},
+      "filter2": {"slopeDb": "12", "cutoffHz": 14400, "resonant": true, "q": 0.72},
+      "width": 0,
+      "followRangeDb": 60,
+      "followReleaseMs": 7.5,
+      "followFeedback": 0.56,
+      "followWet": -0.765,
+      "followDry": 1.94,
+      "wetTrimDb": 3.76
+    },
+    {
+      "kind": "delay",
+      "mode": "clean",
+      "leftSync": true,
+      "leftTimeMs": 375,
+      "leftDivision": "1/2",
+      "rightSync": true,
+      "rightTimeMs": 500,
+      "rightDivision": "1/8",
+      "feedback": 0.3261,
+      "rightFeedback": 0,
+      "rightPingPong": 1,
+      "filter1": {"slopeDb": "12", "cutoffHz": 56},
+      "filter2": {"slopeDb": "12", "cutoffHz": 15300, "resonant": true, "q": 0.74},
+      "width": 0,
+      "followRangeDb": 60,
+      "followReleaseMs": 7.5,
+      "followFeedback": -0.677,
+      "followRightCross": 1.11,
+      "followWet": -0.675,
+      "followDry": 1.94,
+      "wetTrimDb": 2.72
+    },
+    {
+      "kind": "eq",
+      "bands": [
+        {"on": true, "shape": "bell", "channel": "stereo", "frequencyHz": 20, "gainDb": -1.4386, "q": 0.1573},
+        {"on": true, "shape": "bell", "channel": "stereo", "frequencyHz": 205.24, "gainDb": 5.7503, "q": 0.7233},
+        {"on": true, "shape": "bell", "channel": "stereo", "frequencyHz": 620.26, "gainDb": -3.4953, "q": 0.5613},
+        {"on": true, "shape": "bell", "channel": "stereo", "frequencyHz": 7648.97, "gainDb": 1.8796, "q": 0.6294},
+        {"on": true, "shape": "bell", "channel": "stereo", "frequencyHz": 17015.5, "gainDb": 0.8211, "q": 0.1927},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "compressor",
+      "lookahead": "5ms",
+      "autoReleaseMakeup": false,
+      "thresholdDb": -24.2,
+      "ratio": 1.84,
+      "kneeDb": 0,
+      "attackMs": 2,
+      "releaseMs": 35.72
+    },
+    {
+      "kind": "utility",
+      "gainDb": 8.428,
+      "limiterOn": true,
+      "ceilingDb": 0,
+      "releaseMs": 1,
+      "holdMs": 2.35,
+      "tailMs": 100,
+      "tailShare": 0.15,
+      "lookaheadMs": 2.4,
+      "lookaheadCurve": "smooth"
+    },
+    {
+      "kind": "eq",
+      "bands": [
+        {"on": true, "shape": "high-pass-steep", "channel": "stereo", "frequencyHz": 86, "gainDb": 0, "q": 0.6938},
+        {"on": true, "shape": "bell", "channel": "stereo", "frequencyHz": 3410.64, "gainDb": -12.77, "q": 18},
+        {"on": true, "shape": "bell", "channel": "stereo", "frequencyHz": 2789.51, "gainDb": -10, "q": 18},
+        {"on": true, "shape": "notch", "channel": "stereo", "frequencyHz": 4340, "gainDb": 0, "q": 7.5752},
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "freak",
+      "bandCount": 1,
+      "outputDb": -7.9,
+      "filter1": {"on": true, "slopeDb": "6", "cutoffHz": 107, "resonant": false},
+      "filter2": {"on": true, "q": 0.93},
+      "bands": [
+        {
+          "curve": "soft",
+          "driveDb": 6.9,
+          "bias": 0.0025,
+          "biasPre": true,
+          "bassDb": 9.297,
+          "midDb": 7.951,
+          "trebleDb": 14.15,
+          "presenceDb": -9.455
+        },
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "eq",
+      "bands": [
+        {"on": true, "shape": "bell", "channel": "stereo", "frequencyHz": 3740, "gainDb": -10, "q": 18},
+        {"on": true, "shape": "bell", "channel": "stereo", "frequencyHz": 5098.62, "gainDb": -12.5, "q": 18},
+        {"on": true, "shape": "bell", "channel": "stereo", "frequencyHz": 3001.07, "gainDb": -5, "q": 18},
+        {"on": true, "shape": "high-pass-steep", "channel": "stereo", "frequencyHz": 80, "gainDb": 0, "q": 0.7201},
+        {"on": true, "shape": "bell", "channel": "stereo", "frequencyHz": 4170, "gainDb": -3.5, "q": 18},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "eq",
+      "bypass": true,
+      "bands": [
+        {"on": true, "shape": "low-pass", "channel": "stereo", "frequencyHz": 3074.31, "gainDb": 0, "q": 1},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {"kind": "utility", "gainDb": -9.2, "limiterOn": true, "ceilingDb": -1}
+  ]
+}

@@ -1,0 +1,172 @@
+{
+  "kind": "rack",
+  "description": "Spacious legato octave-leaping saw sequence from one held key",
+  "author": "Aiyn Zahev",
+  "website": "https://www.aiynzahev-sounds.com/",
+  "rack": [
+    {
+      "kind": "midi",
+      "arp": {
+        "on": true,
+        "stepMode": true,
+        "fixedVelocity": true,
+        "style": "up",
+        "sync": true,
+        "division": "1/16",
+        "timeMs": 250,
+        "gate": 0.5,
+        "pattern": {
+          "length": 8,
+          "steps": [
+            {"velocity": 0.71, "gate": 1, "tie": true},
+            {"semitones": 10, "octaveShift": 1, "gate": 1, "tie": true},
+            {"semitones": 3, "octaveShift": 2, "gate": 1, "tie": true},
+            {"semitones": 12, "tie": true},
+            {"velocity": 0.71, "gate": 1},
+            {"semitones": 3, "octaveShift": 2, "tie": true},
+            {"velocity": 0.71, "gate": 1},
+            {"semitones": 2, "octaveShift": 2, "gate": 1, "tie": true}
+          ]
+        }
+      }
+    },
+    {
+      "kind": "core",
+      "level": 0.609,
+      "voices": 1,
+      "osc1": {"level": 0.5804, "tuneSemitones": -12, "carryPhase": true},
+      "osc2": {"level": 1, "fineCents": 7.7, "carryPhase": true, "phase": 0.5625},
+      "ampEnv": {
+        "attackMs": 1.8,
+        "decayMs": 362,
+        "sustain": 0.865,
+        "releaseMs": 7.2,
+        "velocityAmount": 0,
+        "decayBend": -1,
+        "releaseBend": -0.41
+      },
+      "filter": {
+        "on": true,
+        "mode": "ladder",
+        "slopeDbPerOctave": 24,
+        "cutoffHz": 662.9,
+        "feedback": 0.174,
+        "envAmount": 0.392,
+        "keyTrack": 0.402,
+        "env": {
+          "attackMs": 1.2,
+          "decayMs": 362,
+          "sustain": 0,
+          "releaseMs": 28,
+          "velocityAmount": 0,
+          "decayBend": -1,
+          "releaseBend": -1
+        }
+      }
+    },
+    {
+      "kind": "reverb",
+      "wet": 0.203,
+      "tank": "plate",
+      "preDelayMs": 68,
+      "earlyLevel": 0.4,
+      "earlySpanMs": 150,
+      "earlyPattern": "hall",
+      "earlyOwnLevel": true,
+      "age": "now",
+      "decayS": 0.45,
+      "sizeTimes": 0.79,
+      "dampingHz": 1500,
+      "modDepthMs": 0,
+      "modSync": false,
+      "modDivision": "1/4",
+      "modRateHz": 0.7,
+      "filter1": {"cutoffHz": 133},
+      "filter2": {"cutoffHz": 10000},
+      "forwardLevel": 0.5
+    },
+    {
+      "kind": "freak",
+      "bandCount": 1,
+      "driveDb": 14,
+      "outputDb": -13.1,
+      "bands": [
+        {"curve": "fold", "foldRipples": 0.05, "foldRippleCount": 6},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "delay",
+      "wet": 0.405,
+      "mode": "clean",
+      "leftSync": true,
+      "leftTimeMs": 375,
+      "leftDivision": "1/8",
+      "rightSync": true,
+      "rightTimeMs": 500,
+      "rightDivision": "1/16",
+      "feedback": 0.159,
+      "pingPong": 1,
+      "evenPingPong": true,
+      "filter1": {"on": false},
+      "filter2": {"cutoffHz": 20000},
+      "feedbackFilter": {"on": true, "cutoffHz": 2800},
+      "drive": 0,
+      "modDepth": 0.51,
+      "modRateHz": 0.6,
+      "modFlutter": 0,
+      "modSpread": -0.25,
+      "modStartPhase": 0.18,
+      "width": 1
+    },
+    {
+      "kind": "eq",
+      "bands": [
+        {},
+        {"on": true, "shape": "low-shelf", "channel": "stereo", "frequencyHz": 195, "gainDb": -2.1, "q": 0.71},
+        {},
+        {"on": true, "shape": "bell", "channel": "stereo", "frequencyHz": 900, "gainDb": 0.4, "q": 0.7},
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "utility",
+      "gainDb": 3.76,
+      "width": 0.75,
+      "plainWidth": true,
+      "limiterOn": true,
+      "ceilingDb": -1
+    }
+  ],
+  "lfos": [
+    {
+      "row": 3,
+      "param": "driveDb",
+      "amount": 0.03,
+      "center": 18.5,
+      "tempoSync": false,
+      "rateHz": 0.37198,
+      "startPhase": 0.5,
+      "once": true,
+      "shape": "square"
+    },
+    {
+      "row": 3,
+      "param": "driveDb",
+      "amount": 0.0277777777778,
+      "center": 0,
+      "tempoSync": false,
+      "rateHz": 0.807,
+      "startPhase": 0.01614,
+      "retrigger": true,
+      "legato": true,
+      "shape": "saw",
+      "fadeMs": 1239.2
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "kind": "rack",
+  "description": "Dark wide saw-stack lead with ping-pong echoes and long hall",
+  "rack": [
+    {
+      "kind": "core",
+      "level": 0.562,
+      "voices": 8,
+      "freshVoice": true,
+      "osc1": {"fineCents": -4, "unison": 8, "detuneCents": 38.95, "unisonAlternate": true, "phase": 0.5},
+      "osc2": {"level": 0.817, "unison": 8, "detuneCents": 13.6, "width": 0.809, "unisonAlternate": true, "phase": 0.5},
+      "osc3": {
+        "level": 0.464,
+        "tuneSemitones": 12,
+        "unison": 8,
+        "detuneCents": 38.2,
+        "width": 0.996,
+        "unisonAlternate": true,
+        "phase": 0.5
+      },
+      "ampEnv": {
+        "attackMs": 10,
+        "decayMs": 1225,
+        "sustain": 1,
+        "releaseMs": 110,
+        "velocityAmount": 0,
+        "decayBend": -0.55,
+        "releaseBend": -0.55
+      },
+      "filter": {
+        "on": true,
+        "mode": "ladder",
+        "slopeDbPerOctave": 24,
+        "cutoffHz": 130,
+        "resonance": 0.165,
+        "drive": 0.18,
+        "envAmount": 0.5344,
+        "keyTrack": 0.47,
+        "env": {"attackMs": 1, "decayMs": 1, "sustain": 1, "releaseMs": 30000}
+      },
+      "motion": {
+        "lfo1": {"target": "pitch", "amount": 0.002417, "shape": "random", "rateHz": 0.05}
+      }
+    },
+    {
+      "kind": "eq",
+      "bands": [
+        {},
+        {"on": true, "shape": "low-shelf", "channel": "stereo", "frequencyHz": 213.8, "gainDb": 1.5, "q": 0.71},
+        {},
+        {},
+        {},
+        {},
+        {"on": true, "shape": "high-shelf", "channel": "stereo", "frequencyHz": 1414.2, "gainDb": 1.1, "q": 0.71},
+        {}
+      ],
+      "trimDb": -0.33
+    },
+    {
+      "kind": "delay",
+      "wet": 0.391,
+      "mode": "clean",
+      "leftSync": true,
+      "leftTimeMs": 375,
+      "leftDivision": "1/4",
+      "rightSync": true,
+      "rightTimeMs": 500,
+      "rightDivision": "1/4",
+      "feedback": 0.448,
+      "pingPong": 1,
+      "inputLean": -1,
+      "filter1": {"on": false},
+      "filter2": {"cutoffHz": 4400},
+      "drive": 0,
+      "width": 1,
+      "wetTrimDb": -6.8
+    },
+    {
+      "kind": "reverb",
+      "wet": 0.266,
+      "tank": "plate",
+      "preDelayMs": 50,
+      "earlyPattern": "scatter",
+      "age": "now",
+      "stereoInput": 1,
+      "decayS": 5.86,
+      "sizeTimes": 1,
+      "dampingHz": 20000,
+      "modDepthMs": 0,
+      "modSync": false,
+      "modDivision": "1/4",
+      "modRateHz": 0.7,
+      "filter1": {"cutoffHz": 20},
+      "filter2": {"cutoffHz": 12436},
+      "forwardLevel": 0.45
+    },
+    {
+      "kind": "compressor",
+      "sumDetector": true,
+      "autoReleaseMakeup": false,
+      "thresholdDb": -19,
+      "ratio": 2.983,
+      "kneeDb": 0,
+      "attackMs": 15.15,
+      "releaseMs": 40.64,
+      "makeupDb": 1.76
+    },
+    {"kind": "utility", "gainDb": 4.92, "limiterOn": true, "ceilingDb": -1}
+  ]
+}

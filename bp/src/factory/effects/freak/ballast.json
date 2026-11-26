@@ -1,0 +1,23 @@
+{
+  "kind": "freak",
+  "description": "Sub-bass thickener keeping sine subs audible on small speakers",
+  "bandCount": 2,
+  "crossoversHz": [100, 800, 5000],
+  "bands": [
+    {
+      "curve": "tube",
+      "driveDb": 7,
+      "bias": 1.2,
+      "thresholdDb": -12,
+      "lift": 0.1,
+      "rangeDb": 18,
+      "attackMs": 16,
+      "releaseMs": 16,
+      "wet": 0.76,
+      "invertCopy": true
+    },
+    {"curve": "soft", "wet": 0},
+    {},
+    {}
+  ]
+}

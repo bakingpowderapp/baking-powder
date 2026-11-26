@@ -1,0 +1,9 @@
+{
+  "kind": "space",
+  "description": "Low-end sidechain duck on a bass from the kick's signal",
+  "depthDb": 12,
+  "q": 4,
+  "attackMs": 5,
+  "recoveryMs": 20,
+  "highHz": 250
+}

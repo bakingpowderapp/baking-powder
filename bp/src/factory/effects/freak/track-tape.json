@@ -1,0 +1,14 @@
+{
+  "kind": "freak",
+  "description": "Gentle tape-like track warmth with fuller bass and smooth top",
+  "bandCount": 2,
+  "crossoversHz": [100, 800, 5000],
+  "outputDb": 3.7,
+  "filter1": {"on": true, "cutoffHz": 40, "q": 1},
+  "bands": [
+    {"inputDb": -3.7, "curve": "soft", "driveDb": 4.3, "outputDb": -3.7},
+    {"inputDb": -3.7, "curve": "soft", "trebleDb": 1.2, "presenceDb": 1.2},
+    {},
+    {}
+  ]
+}

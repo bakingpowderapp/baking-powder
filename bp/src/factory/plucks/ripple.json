@@ -1,0 +1,98 @@
+{
+  "kind": "rack",
+  "description": "Wide house saw pluck with click and dotted-eighth ping-pong echoes",
+  "rack": [
+    {
+      "kind": "core",
+      "level": 0.517,
+      "voices": 12,
+      "freshVoice": true,
+      "osc1": {"unison": 3, "detuneCents": 3, "bright": true},
+      "osc2": {"level": 0.724, "unison": 4, "detuneCents": 8.4, "unisonAlternate": true, "bright": true},
+      "analog": {"driftCents": 2.9},
+      "noise": {"on": true, "color": "white", "level": 0.4, "width": 1},
+      "ampEnv": {
+        "attackMs": 1,
+        "decayMs": 1,
+        "sustain": 1,
+        "releaseMs": 18.4,
+        "velocityAmount": 0,
+        "decayBend": -0.55,
+        "releaseBend": -0.55
+      },
+      "filter": {
+        "on": true,
+        "mode": "ladder",
+        "slopeDbPerOctave": 24,
+        "cutoffHz": 835.7,
+        "resonance": 0.136,
+        "envAmount": 0.914,
+        "env": {
+          "attackMs": 1,
+          "decayMs": 496.2,
+          "sustain": 0,
+          "releaseMs": 496.2,
+          "velocityAmount": 0,
+          "decayBend": -0.225,
+          "releaseBend": -0.225
+        }
+      },
+      "motion": {
+        "env1": {
+          "target": "pitch",
+          "amount": 1,
+          "env": {"attackMs": 0.27, "decayMs": 4.5, "sustain": 0, "releaseMs": 1}
+        },
+        "env2": {
+          "target": "pitch",
+          "amount": 1,
+          "env": {"attackMs": 0.27, "decayMs": 4.5, "sustain": 0, "releaseMs": 1}
+        }
+      }
+    },
+    {
+      "kind": "eq",
+      "bands": [
+        {},
+        {"on": true, "shape": "low-shelf", "channel": "stereo", "frequencyHz": 173.1, "gainDb": 2.43, "q": 0.71},
+        {},
+        {},
+        {},
+        {},
+        {"on": true, "shape": "high-shelf", "channel": "stereo", "frequencyHz": 1044.7, "gainDb": 6.51, "q": 0.71},
+        {}
+      ],
+      "trimDb": -0.75
+    },
+    {
+      "kind": "delay",
+      "wet": 0.153,
+      "mode": "clean",
+      "leftSync": true,
+      "leftTimeMs": 375,
+      "leftDivision": "1/8.",
+      "rightSync": true,
+      "rightTimeMs": 500,
+      "rightDivision": "1/4",
+      "feedback": 0.3524,
+      "pingPong": 1,
+      "inputLean": -0.5,
+      "filter1": {"cutoffHz": 58},
+      "filter2": {"cutoffHz": 10000},
+      "drive": 0,
+      "width": 0.5,
+      "wetTrimDb": -5.4
+    },
+    {
+      "kind": "compressor",
+      "autoReleaseMakeup": false,
+      "thresholdDb": -19.71,
+      "ratio": 2.664,
+      "kneeDb": 0,
+      "attackMs": 12.24,
+      "releaseMs": 30,
+      "makeupDb": 3.15
+    },
+    {"kind": "utility", "gainDb": -3, "limiterOn": true, "ceilingDb": -1}
+  ]
+}

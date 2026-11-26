@@ -1,0 +1,57 @@
+{
+  "kind": "rack",
+  "description": "Dark, rough house pluck into a long blurred hall",
+  "rack": [
+    {
+      "kind": "core",
+      "osc1": {"bright": true, "phase": 0.5},
+      "noise": {"on": true, "color": "white", "level": 0.0599, "width": 1},
+      "ampEnv": {
+        "attackMs": 1,
+        "decayMs": 261.75,
+        "sustain": 0.0065,
+        "releaseMs": 435.05,
+        "velocityAmount": 0,
+        "attackBend": 0.29,
+        "decayBend": -0.273,
+        "releaseBend": -0.245
+      },
+      "filter": {"on": true, "mode": "ladder", "slopeDbPerOctave": 12, "cutoffHz": 2254},
+      "motion": {
+        "lfo1": {"target": "pitch1", "amount": 0.0101, "shape": "triangle", "rateHz": 44.29, "mode": "run"}
+      }
+    },
+    {
+      "kind": "reverb",
+      "wet": 0.2171,
+      "preDelayMs": 64.375,
+      "decayS": 7.591,
+      "sizeTimes": 1,
+      "diffusion": 0.0401,
+      "dampingHz": 20000,
+      "lowDecayTimes": 2.0259,
+      "lowCrossoverHz": 694.6175,
+      "modDepthMs": 8,
+      "modSync": false,
+      "modDivision": "1/4",
+      "modRateHz": 0.3336,
+      "filter1": {"on": false},
+      "filter2": {"cutoffHz": 12300}
+    },
+    {
+      "kind": "eq",
+      "bands": [
+        {"on": true, "shape": "low-shelf", "channel": "stereo", "frequencyHz": 375, "gainDb": -18, "q": 0.71},
+        {"on": true, "shape": "bell", "channel": "stereo", "frequencyHz": 800, "gainDb": -1.9355, "q": 0.7},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {}
+      ],
+      "gainScale": 1.29167
+    },
+    {"kind": "utility", "gainDb": 14.2, "limiterOn": true, "ceilingDb": -1}
+  ]
+}

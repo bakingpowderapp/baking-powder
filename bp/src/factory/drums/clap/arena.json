@@ -1,0 +1,161 @@
+{
+  "kind": "rack",
+  "description": "Hard, wide clap with a long, dark tail",
+  "rack": [
+    {
+      "kind": "core",
+      "voices": 8,
+      "freshVoice": true,
+      "osc1": {"level": 0},
+      "noise": {"on": true, "color": "pink", "level": 0.17, "highPassHz": 600, "lowPassHz": 10500},
+      "ampEnv": {"attackMs": 0.25, "decayMs": 200, "sustain": 1, "releaseMs": 209, "velocityAmount": 0.8, "releaseBend": 1},
+      "motion": {
+        "lfo1": {
+          "target": "amp",
+          "amount": 1,
+          "shape": "drawn",
+          "rateHz": 10.52632,
+          "mode": "once",
+          "points": [
+            {"x": 0, "y": 0, "bend": 0},
+            {"x": 0.29474, "y": 0, "bend": 0},
+            {"x": 0.30526, "y": 0.5, "bend": 0},
+            {"x": 0.40884, "y": 0.45778, "bend": 0},
+            {"x": 0.50653, "y": 0.41041, "bend": 0},
+            {"x": 0.59916, "y": 0.35747, "bend": 0},
+            {"x": 0.68716, "y": 0.2987, "bend": 0},
+            {"x": 0.77095, "y": 0.23379, "bend": 0},
+            {"x": 0.85053, "y": 0.16281, "bend": 0},
+            {"x": 0.92674, "y": 0.08505, "bend": 0},
+            {"x": 1, "y": 0, "bend": 0}
+          ]
+        }
+      }
+    },
+    {
+      "kind": "core",
+      "voices": 8,
+      "freshVoice": true,
+      "osc1": {"level": 0},
+      "noise": {"on": true, "color": "white", "level": 0.70711, "lowPassHz": 6498.7},
+      "ampEnv": {"attackMs": 0.25, "decayMs": 200, "sustain": 1, "releaseMs": 97.9, "velocityAmount": 0.8, "releaseBend": 1},
+      "motion": {
+        "lfo1": {
+          "target": "amp",
+          "amount": 1,
+          "shape": "drawn",
+          "rateHz": 22.47191,
+          "mode": "once",
+          "points": [
+            {"x": 0, "y": 0.5, "bend": 0},
+            {"x": 0.02068, "y": 0.40451, "bend": 0},
+            {"x": 0.04227, "y": 0.32425, "bend": 0},
+            {"x": 0.06655, "y": 0.25283, "bend": 0},
+            {"x": 0.09263, "y": 0.19355, "bend": 0},
+            {"x": 0.1205, "y": 0.14546, "bend": 0},
+            {"x": 0.15198, "y": 0.10536, "bend": 0},
+            {"x": 0.22752, "y": 0.04859, "bend": 0},
+            {"x": 0.2464, "y": 0.04004, "bend": 0},
+            {"x": 0.2473, "y": 0.49943, "bend": 0},
+            {"x": 0.26888, "y": 0.40034, "bend": 0},
+            {"x": 0.29227, "y": 0.31505, "bend": 0},
+            {"x": 0.31835, "y": 0.24118, "bend": 0},
+            {"x": 0.34622, "y": 0.18125, "bend": 0},
+            {"x": 0.3768, "y": 0.1325, "bend": 0},
+            {"x": 0.41097, "y": 0.09336, "bend": 0},
+            {"x": 0.49371, "y": 0.03999, "bend": 0},
+            {"x": 0.4946, "y": 0.49886, "bend": 0},
+            {"x": 0.51079, "y": 0.42262, "bend": 0},
+            {"x": 0.52698, "y": 0.35803, "bend": 0},
+            {"x": 0.56385, "y": 0.24538, "bend": 0},
+            {"x": 0.60612, "y": 0.15913, "bend": 0},
+            {"x": 0.65468, "y": 0.09675, "bend": 0},
+            {"x": 0.70953, "y": 0.05515, "bend": 0},
+            {"x": 0.77788, "y": 0.02738, "bend": 0},
+            {"x": 1, "y": 0, "bend": 0}
+          ]
+        }
+      }
+    },
+    {
+      "kind": "eq",
+      "bands": [
+        {"on": true, "shape": "high-pass", "channel": "stereo", "frequencyHz": 950, "gainDb": 0, "q": 1.4},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "reverb",
+      "wet": 0.2,
+      "tank": "plate",
+      "preDelayMs": 1,
+      "earlyPattern": "scatter",
+      "age": "now",
+      "decayS": 0.2,
+      "sizeTimes": 0.2,
+      "diffusion": 0.6,
+      "dampingHz": 3000,
+      "modSync": false,
+      "modDivision": "1/4",
+      "modRateHz": 0.7,
+      "filter1": {"cutoffHz": 300},
+      "filter2": {"cutoffHz": 3500},
+      "width": 0
+    },
+    {
+      "kind": "reverb",
+      "wet": 0.08,
+      "tank": "plate",
+      "preDelayMs": 5,
+      "earlyPattern": "scatter",
+      "age": "now",
+      "decayS": 1.7,
+      "sizeTimes": 0.8,
+      "diffusion": 0.6,
+      "dampingHz": 3000,
+      "modSync": false,
+      "modDivision": "1/4",
+      "modRateHz": 0.7,
+      "filter1": {"cutoffHz": 150},
+      "filter2": {"cutoffHz": 2000},
+      "width": 0
+    },
+    {
+      "kind": "delay",
+      "wet": 0.33,
+      "mode": "clean",
+      "leftSync": false,
+      "leftTimeMs": 1,
+      "leftDivision": "1/4",
+      "rightSync": false,
+      "rightTimeMs": 2,
+      "rightDivision": "1/4",
+      "feedback": 0,
+      "filter1": {"cutoffHz": 300},
+      "drive": 0,
+      "diffusion": 1,
+      "width": 1.5,
+      "duckGate": 0.65,
+      "duckAttackMs": 20,
+      "duckReleaseMs": 15
+    },
+    {
+      "kind": "freak",
+      "bandCount": 1,
+      "driveDb": 33.13,
+      "bands": [
+        {"curve": "hard-clip"},
+        {},
+        {},
+        {}
+      ]
+    },
+    {"kind": "utility", "limiterOn": true, "hardClip": true, "ceilingDb": -1}
+  ]
+}

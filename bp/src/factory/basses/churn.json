@@ -1,0 +1,180 @@
+{
+  "kind": "rack",
+  "description": "Restless detuned mono bass, drawn wave over a steady sub",
+  "rack": [
+    {
+      "kind": "core",
+      "voices": 1,
+      "osc1": {
+        "shapes": ["drawn", "square", "triangle", "sine"],
+        "points": [
+          {"x": 0, "y": 0.5, "bend": 0},
+          {"x": 0.08, "y": 0.95, "bend": -0.06},
+          {"x": 0.29, "y": 0.68, "bend": 0},
+          {"x": 0.39, "y": 0.2, "bend": 0.06},
+          {"x": 0.5, "y": 0.44, "bend": 0},
+          {"x": 0.61, "y": 0.08, "bend": 0},
+          {"x": 0.71, "y": 0.56, "bend": 0.06},
+          {"x": 0.85, "y": 0.8, "bend": 0},
+          {"x": 0.855, "y": 0.6, "bend": 0},
+          {"x": 0.93, "y": 0.55, "bend": 0},
+          {"x": 0.9325, "y": 0.98, "bend": 0},
+          {"x": 0.935, "y": 0.54, "bend": 0},
+          {"x": 1, "y": 0.5, "bend": 0}
+        ],
+        "unison": 2,
+        "detuneCents": 7,
+        "width": 0,
+        "fmAmount": 0.03
+      },
+      "osc2": {
+        "levels": [0, 0, 0, 1],
+        "tuneSemitones": 19,
+        "fineCents": 2
+      },
+      "ampEnv": {"attackMs": 4, "decayMs": 200, "sustain": 1, "releaseMs": 60, "velocityAmount": 0.3},
+      "filter": {
+        "on": true,
+        "mode": "svf-low-pass",
+        "slopeDbPerOctave": 12,
+        "cutoffHz": 2800,
+        "resonance": 0.15,
+        "drive": 0.2,
+        "keyTrack": 0.3
+      },
+      "mono": {"glideMs": 42},
+      "motion": {
+        "lfo1": {"target": "cutoff", "amount": 0.4, "shape": "walk", "rateHz": 3.4, "mode": "run"},
+        "lfo2": {"target": "fm1", "amount": 0.06, "shape": "walk", "rateHz": 1.9, "mode": "run"}
+      }
+    },
+    {
+      "kind": "eq",
+      "bands": [
+        {"on": true, "shape": "high-pass-steep", "channel": "stereo", "frequencyHz": 110, "gainDb": 0, "q": 0.71},
+        {"on": true, "shape": "high-shelf", "channel": "stereo", "frequencyHz": 450, "gainDb": -5, "q": 0.71},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "motion",
+      "wet": 0.5,
+      "bandCount": 1,
+      "bands": [
+        {
+          "mode": "phaser",
+          "phaser": {
+            "stages": 4,
+            "sync": false,
+            "division": "1/4",
+            "rateHz": 0.11,
+            "depthOctaves": 0.6,
+            "centerHz": 1300,
+            "spread": 0.3,
+            "feedback": 0.2
+          }
+        },
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "motion",
+      "wet": 0.5,
+      "bandCount": 1,
+      "bands": [
+        {
+          "mode": "flanger",
+          "flanger": {
+            "mode": "standard",
+            "peakPolarity": true,
+            "sync": false,
+            "division": "1/4",
+            "rateHz": 0.07,
+            "depth": 0,
+            "centerMs": 1.25,
+            "spread": 0.2,
+            "feedback": 0.3
+          }
+        },
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "freak",
+      "bandCount": 1,
+      "driveDb": 2,
+      "bands": [
+        {"curve": "tube", "bias": 0.3},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "reverb",
+      "wet": 0.2,
+      "tank": "plate",
+      "preDelayMs": 8,
+      "earlyPattern": "scatter",
+      "age": "now",
+      "decayS": 0.9,
+      "sizeTimes": 0.6,
+      "dampingHz": 6000,
+      "modSync": false,
+      "modDivision": "1/4",
+      "modRateHz": 0.7,
+      "filter1": {"cutoffHz": 140},
+      "filter2": {"cutoffHz": 10000}
+    },
+    {"kind": "utility", "gainDb": 3.7, "limiterOn": true, "ceilingDb": -3.5},
+    {
+      "kind": "bus",
+      "levels": [1, 1]
+    },
+    {
+      "kind": "core",
+      "level": 0.4746,
+      "voices": 1,
+      "osc1": {
+        "levels": [0, 0, 0, 1]
+      },
+      "osc2": {
+        "levels": [0, 0, 0, 1],
+        "level": 1,
+        "tuneSemitones": 12
+      },
+      "ampEnv": {"attackMs": 4, "decayMs": 200, "sustain": 1, "releaseMs": 60, "velocityAmount": 0.3},
+      "mono": {"glideMs": 42}
+    }
+  ],
+  "lfos": [
+    {
+      "row": 2,
+      "param": "bands[0].phaser.centerHz",
+      "amount": 0.29,
+      "center": 1300,
+      "tempoSync": false,
+      "rateHz": 0.9,
+      "shape": "walk"
+    },
+    {
+      "row": 3,
+      "param": "bands[0].flanger.centerMs",
+      "amount": 0.32,
+      "center": 1.25,
+      "tempoSync": false,
+      "rateHz": 1.3,
+      "shape": "walk"
+    },
+    {"row": 5, "param": "wet", "amount": 0.2, "center": 0.2, "tempoSync": false, "rateHz": 2.2, "shape": "walk"}
+  ]
+}

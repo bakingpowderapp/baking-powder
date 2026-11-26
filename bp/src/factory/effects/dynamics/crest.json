@@ -1,0 +1,13 @@
+{
+  "kind": "utility",
+  "description": "Gentle look-ahead limiter adding 1.3 dB to synths and buses",
+  "gainDb": 1.29482624,
+  "limiterOn": true,
+  "ceilingDb": -0.26119402,
+  "releaseMs": 1,
+  "holdMs": 2.35,
+  "tailMs": 100,
+  "tailShare": 0.15,
+  "lookaheadMs": 2.4,
+  "lookaheadCurve": "smooth"
+}

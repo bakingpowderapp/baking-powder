@@ -1,0 +1,100 @@
+{
+  "kind": "rack",
+  "description": "Wide bright trance saw chord with ping-pong echoes and hall",
+  "rack": [
+    {
+      "kind": "core",
+      "level": 0.591,
+      "voices": 12,
+      "freshVoice": true,
+      "osc1": {"level": 0.606, "fineCents": -4, "unison": 8, "detuneCents": 21.09, "unisonAlternate": true, "phase": 0.5522},
+      "osc2": {"level": 1, "unison": 8, "detuneCents": 15.88, "width": 0.81, "unisonAlternate": true, "freeRunning": true},
+      "phaseRandom": 0,
+      "ampEnv": {
+        "attackMs": 1,
+        "decayMs": 1225.1,
+        "sustain": 1,
+        "releaseMs": 18.6,
+        "velocityAmount": 0,
+        "decayBend": -0.55,
+        "releaseBend": -0.55
+      },
+      "filter": {
+        "on": true,
+        "mode": "svf-low-pass",
+        "slopeDbPerOctave": 12,
+        "cutoffHz": 5000,
+        "envAmount": 0.45,
+        "env": {"attackMs": 4, "decayMs": 1, "sustain": 1, "releaseMs": 30000, "velocityAmount": 0}
+      },
+      "motion": {
+        "lfo1": {"target": "pitch", "amount": 0.002417, "shape": "random", "rateHz": 0.05}
+      }
+    },
+    {
+      "kind": "eq",
+      "bands": [
+        {},
+        {"on": true, "shape": "high-shelf", "channel": "stereo", "frequencyHz": 12000, "gainDb": 3.2, "q": 0.71},
+        {},
+        {},
+        {},
+        {},
+        {"on": true, "shape": "high-shelf", "channel": "stereo", "frequencyHz": 671, "gainDb": 6.5, "q": 0.71},
+        {}
+      ],
+      "trimDb": -1.56
+    },
+    {
+      "kind": "delay",
+      "wet": 0.296,
+      "mode": "clean",
+      "leftSync": true,
+      "leftTimeMs": 375,
+      "leftDivision": "1/8",
+      "rightSync": true,
+      "rightTimeMs": 500,
+      "rightDivision": "1/4",
+      "feedback": 0.6,
+      "pingPong": 1,
+      "inputLean": -0.29,
+      "filter1": {"on": false},
+      "filter2": {"cutoffHz": 3051.8},
+      "drive": 0,
+      "diffusion": 0.127,
+      "width": 1,
+      "wetTrimDb": -7
+    },
+    {
+      "kind": "reverb",
+      "wet": 0.265,
+      "tank": "plate",
+      "preDelayMs": 82.7,
+      "earlyPattern": "scatter",
+      "age": "now",
+      "decayS": 6.37,
+      "sizeTimes": 1,
+      "dampingHz": 20000,
+      "highCrossoverHz": 9000,
+      "modDepthMs": 1,
+      "modSync": false,
+      "modDivision": "1/4",
+      "modRateHz": 0.7,
+      "filter1": {"cutoffHz": 20},
+      "filter2": {"cutoffHz": 20000},
+      "forwardLevel": 0.45
+    },
+    {
+      "kind": "compressor",
+      "sumDetector": true,
+      "autoReleaseMakeup": false,
+      "thresholdDb": -21.65,
+      "ratio": 5.5,
+      "kneeDb": 0,
+      "attackMs": 0.1,
+      "releaseMs": 42.35,
+      "makeupDb": 3.62
+    },
+    {"kind": "utility", "gainDb": -1, "limiterOn": true, "ceilingDb": -1}
+  ]
+}

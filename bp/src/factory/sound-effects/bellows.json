@@ -1,0 +1,104 @@
+{
+  "kind": "rack",
+  "description": "Eight-bar white-noise downlifter pumping on every quarter note",
+  "rack": [
+    {
+      "kind": "core",
+      "level": 0.846,
+      "voices": 3,
+      "freshVoice": true,
+      "osc1": {"level": 0},
+      "noise": {"on": true, "color": "white", "level": 1, "width": 0.551},
+      "ampEnv": {
+        "attackMs": 0.96,
+        "decayMs": 1,
+        "sustain": 1,
+        "releaseMs": 1.8,
+        "velocityAmount": 0,
+        "decayBend": -0.55,
+        "releaseBend": -0.55
+      },
+      "filter": {
+        "on": true,
+        "mode": "ladder",
+        "slopeDbPerOctave": 24,
+        "cutoffHz": 20000,
+        "resonance": 0.8,
+        "envAmount": -2,
+        "env": {
+          "attackMs": 14300,
+          "decayMs": 13634.3,
+          "sustain": 0.8448,
+          "releaseMs": 12578,
+          "velocityAmount": 0,
+          "attackBend": 0.2375,
+          "decayBend": -0.225,
+          "releaseBend": -0.225
+        }
+      },
+      "motion": {
+        "lfo1": {"target": "noise", "amount": 0.659, "shape": "ramp", "sync": true, "phase": 0.5},
+        "env1": {
+          "target": "cutoff",
+          "amount": 0.098,
+          "env": {"attackMs": 0.25, "decayMs": 1, "sustain": 1, "releaseMs": 30000}
+        }
+      }
+    },
+    {
+      "kind": "eq",
+      "bands": [
+        {},
+        {"on": true, "shape": "high-shelf", "channel": "stereo", "frequencyHz": 710, "gainDb": 2.93, "q": 0.71},
+        {"on": true, "shape": "high-shelf", "channel": "stereo", "frequencyHz": 2034, "gainDb": 7.71, "q": 0.71},
+        {},
+        {},
+        {"on": true, "shape": "high-shelf", "channel": "stereo", "frequencyHz": 5220, "gainDb": 4, "q": 0.71},
+        {"on": true, "shape": "high-shelf", "channel": "stereo", "frequencyHz": 11000, "gainDb": 2, "q": 0.71},
+        {}
+      ],
+      "trimDb": -5.91
+    },
+    {
+      "kind": "reverb",
+      "wet": 0.293,
+      "tank": "plate",
+      "preDelayMs": 110,
+      "earlyPattern": "scatter",
+      "age": "now",
+      "stereoInput": 1,
+      "decayS": 6,
+      "sizeTimes": 1,
+      "dampingHz": 20000,
+      "lowDecayTimes": 1.12,
+      "lowCrossoverHz": 200,
+      "highDecayTimes": 4,
+      "highCrossoverHz": 12000,
+      "modDepthMs": 0,
+      "modSync": false,
+      "modDivision": "1/4",
+      "modRateHz": 0.7,
+      "filter1": {"cutoffHz": 20},
+      "filter2": {"cutoffHz": 20000},
+      "forwardLevel": 0.45
+    },
+    {
+      "kind": "compressor",
+      "sumDetector": true,
+      "autoReleaseMakeup": false,
+      "thresholdDb": -17,
+      "ratio": 3.883,
+      "kneeDb": 0,
+      "attackMs": 15.1,
+      "releaseMs": 150.7,
+      "makeupDb": 2.75
+    },
+    {
+      "kind": "utility",
+      "gainDb": 4.2,
+      "limiterOn": true,
+      "hardClip": true,
+      "ceilingDb": -1
+    }
+  ]
+}

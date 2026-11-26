@@ -1,0 +1,9 @@
+{
+  "kind": "space",
+  "description": "Low-end sidechain pump on chords from the kick's signal",
+  "depthDb": 15,
+  "q": 6,
+  "attackMs": 5,
+  "recoveryMs": 50,
+  "highHz": 300
+}

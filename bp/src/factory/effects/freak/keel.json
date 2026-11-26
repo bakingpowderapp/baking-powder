@@ -1,0 +1,14 @@
+{
+  "kind": "freak",
+  "description": "Hard, dense bass drive with a thick, even bite",
+  "bandCount": 1,
+  "subCutHz": 38.17,
+  "driveDb": 7.6,
+  "outputDb": -2.93,
+  "bands": [
+    {"curve": "diode"},
+    {},
+    {},
+    {}
+  ]
+}

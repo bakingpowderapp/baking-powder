@@ -1,0 +1,37 @@
+{
+  "kind": "freak",
+  "description": "Hard wide lead distortion with a square, buzzing low body",
+  "bandCount": 2,
+  "crossoversHz": [322.9, 800, 5000],
+  "crossoverSlope": "30",
+  "oversample": false,
+  "driveDb": 36,
+  "outputDb": -4.97,
+  "bands": [
+    {
+      "inputDb": 3.55,
+      "curve": "hard-clip",
+      "driveDb": -9,
+      "dynamics": -1,
+      "thresholdDb": -24,
+      "lift": 0.9,
+      "rangeDb": 48,
+      "attackMs": 0.1,
+      "releaseMs": 10,
+      "linked": false,
+      "outputDb": -16.21
+    },
+    {
+      "inputDb": 3.55,
+      "curve": "limit",
+      "stereo": "mid-side",
+      "attackMs": 0.1,
+      "releaseMs": 1,
+      "linked": false,
+      "invert": true,
+      "outputDb": -10.8
+    },
+    {},
+    {}
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "kind": "freak",
+  "description": "Dense squared bass drive with a dark, biting midrange",
+  "bandCount": 3,
+  "crossoversHz": [95.19, 5313.7, 20000],
+  "crossoverSlope": "30",
+  "oversample": false,
+  "driveDb": 1.65,
+  "bands": [
+    {
+      "curve": "hard-clip",
+      "driveDb": 24,
+      "thresholdDb": -19.8,
+      "lift": 0.815,
+      "rangeDb": 47.3,
+      "attackMs": 0.5,
+      "releaseMs": 67,
+      "linked": false,
+      "outputDb": -19.92
+    },
+    {
+      "curve": "diode",
+      "driveDb": 9.85,
+      "thresholdDb": -14.3,
+      "sharpen": 0.415,
+      "rangeDb": 6.02,
+      "attackMs": 0.55,
+      "releaseMs": 60,
+      "linked": false,
+      "outputDb": -13.01
+    },
+    {"curve": "limit", "driveDb": -24, "linked": false, "outputDb": -24},
+    {}
+  ]
+}

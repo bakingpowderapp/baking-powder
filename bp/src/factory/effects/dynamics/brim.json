@@ -1,0 +1,11 @@
+{
+  "kind": "utility",
+  "description": "Master peak limiter at 0 dBFS with no added gain",
+  "limiterOn": true,
+  "ceilingDb": 0,
+  "releaseMs": 1,
+  "holdMs": 1,
+  "tailMs": 175,
+  "tailShare": 0.93,
+  "lookaheadMs": 1.3333
+}

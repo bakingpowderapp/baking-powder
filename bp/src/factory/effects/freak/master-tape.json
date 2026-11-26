@@ -1,0 +1,14 @@
+{
+  "kind": "freak",
+  "description": "Gentle tape-like finish for the master bus, before the limiter",
+  "bandCount": 2,
+  "crossoversHz": [100, 800, 5000],
+  "outputDb": 2.38,
+  "filter1": {"on": true, "cutoffHz": 36, "q": 0.9},
+  "bands": [
+    {"inputDb": -5.9, "curve": "op-amp", "driveDb": 0.7, "outputDb": -0.4},
+    {"inputDb": -5.9, "curve": "op-amp", "trebleDb": 0.3, "presenceDb": 0.8},
+    {},
+    {}
+  ]
+}

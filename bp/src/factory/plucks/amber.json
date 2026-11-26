@@ -1,0 +1,133 @@
+{
+  "kind": "rack",
+  "description": "Bright detuned trance pluck for fast runs and short chords",
+  "rack": [
+    {
+      "kind": "core",
+      "freshVoice": true,
+      "osc1": {"level": 0.5, "unison": 8, "detuneCents": 4.95, "unisonAlternate": true, "bright": true, "phase": 0.5},
+      "phaseRandom": 0,
+      "ampEnv": {
+        "attackMs": 1,
+        "decayMs": 1000,
+        "sustain": 0,
+        "releaseMs": 253.17,
+        "velocityAmount": 0,
+        "decayBend": -0.44,
+        "releaseBend": -0.46
+      },
+      "filter": {
+        "on": true,
+        "mode": "ladder",
+        "slopeDbPerOctave": 12,
+        "cutoffHz": 17.5,
+        "resonance": 0.24,
+        "envAmount": 1.575,
+        "env": {
+          "attackMs": 0.52,
+          "decayMs": 887.56,
+          "sustain": 0,
+          "releaseMs": 946.77,
+          "velocityAmount": 0,
+          "decayBend": -0.44,
+          "releaseBend": -0.42
+        }
+      }
+    },
+    {
+      "kind": "utility",
+      "gainDb": 11.4,
+      "swap": true,
+      "limiterOn": false,
+      "ceilingDb": -1
+    },
+    {
+      "kind": "compressor",
+      "autoReleaseMakeup": false,
+      "thresholdDb": -7.6,
+      "ratio": 4,
+      "kneeDb": 2,
+      "attackMs": 70,
+      "releaseMs": 30,
+      "makeupDb": 4.22
+    },
+    {
+      "kind": "eq",
+      "bands": [
+        {"on": true, "shape": "high-pass", "channel": "stereo", "frequencyHz": 178.8, "gainDb": 0, "q": 0.77},
+        {"on": true, "shape": "bell", "channel": "stereo", "frequencyHz": 5313.1, "gainDb": 4.44, "q": 0.598},
+        {"on": true, "shape": "high-shelf", "channel": "stereo", "frequencyHz": 10000, "gainDb": 1.5, "q": 0.71},
+        {},
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "motion",
+      "wet": 0.69928,
+      "bandCount": 1,
+      "bands": [
+        {
+          "mode": "chorus",
+          "chorus": {
+            "mode": "standard",
+            "sync": true,
+            "division": "16/1",
+            "rateHz": 0.5,
+            "depth": 2.7666,
+            "centerMs": 18.31,
+            "farCenterMs": 33.73,
+            "spread": 0.5,
+            "startPhase": 0.99922,
+            "filter2": {"cutoffHz": 20000},
+            "trimDb": -3.912,
+            "crossfade": true
+          }
+        },
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "delay",
+      "wet": 0.459,
+      "mode": "clean",
+      "leftSync": true,
+      "leftTimeMs": 375,
+      "leftDivision": "1/8",
+      "rightSync": true,
+      "rightTimeMs": 500,
+      "rightDivision": "1/8.",
+      "feedback": 0.25,
+      "pingPong": 1,
+      "evenPingPong": true,
+      "filter1": {"type": "band-pass", "slopeDb": "12", "cutoffHz": 1083.1, "q": 0.268},
+      "filter2": {"on": false},
+      "width": 1,
+      "wetTrimDb": 3.38
+    },
+    {
+      "kind": "reverb",
+      "wet": 0.3,
+      "tank": "plate",
+      "preDelayMs": 260,
+      "attackMs": 50,
+      "earlyPattern": "scatter",
+      "age": "now",
+      "decayS": 2,
+      "sizeTimes": 1,
+      "dampingHz": 8000,
+      "modDepthMs": 0.0833,
+      "modSync": false,
+      "modDivision": "1/4",
+      "modRateHz": 0.7,
+      "filter1": {"cutoffHz": 100},
+      "filter2": {"cutoffHz": 20000},
+      "dry": 1
+    },
+    {"kind": "utility", "gainDb": -6.77, "limiterOn": true, "ceilingDb": -1}
+  ]
+}

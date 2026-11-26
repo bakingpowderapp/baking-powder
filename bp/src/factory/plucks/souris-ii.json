@@ -1,0 +1,87 @@
+{
+  "kind": "rack",
+  "description": "Short wide saw pluck with a sine two octaves up, echoes, plate",
+  "rack": [
+    {
+      "kind": "core",
+      "freshVoice": true,
+      "osc1": {"level": 0.75, "unison": 16, "detuneCents": 17, "unisonAlternate": true, "bright": true},
+      "osc2": {
+        "levels": [0, 0, 0, 1],
+        "level": 0.62,
+        "tuneSemitones": 24,
+        "unison": 2,
+        "detuneCents": 3,
+        "unisonAlternate": true
+      },
+      "ampEnv": {"attackMs": 1, "decayMs": 2000, "sustain": 0, "releaseMs": 15, "velocityAmount": 0, "decayBend": 0.5},
+      "filter": {
+        "on": true,
+        "mode": "ladder",
+        "slopeDbPerOctave": 12,
+        "cutoffHz": 16.5,
+        "resonance": 0.08,
+        "envAmount": 1.76,
+        "env": {
+          "attackMs": 0.5,
+          "decayMs": 585,
+          "sustain": 0,
+          "releaseMs": 585,
+          "velocityAmount": 0,
+          "decayBend": -0.35,
+          "releaseBend": -0.35
+        }
+      },
+      "motion": {
+        "lfo1": {"target": "level1", "amount": 0.25, "shape": "random", "rateHz": 0.05}
+      }
+    },
+    {
+      "kind": "freak",
+      "bandCount": 1,
+      "driveDb": 12,
+      "outputDb": -9,
+      "bands": [
+        {"curve": "tube"},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "delay",
+      "wet": 0.42,
+      "mode": "clean",
+      "leftSync": true,
+      "leftTimeMs": 375,
+      "leftDivision": "1/4",
+      "rightSync": true,
+      "rightTimeMs": 500,
+      "rightDivision": "1/4",
+      "feedback": 0.267,
+      "pingPong": 1,
+      "evenPingPong": true,
+      "filter1": {"cutoffHz": 300},
+      "filter2": {"on": false},
+      "width": 1
+    },
+    {"kind": "compressor", "autoReleaseMakeup": false, "thresholdDb": -18, "ratio": 4, "attackMs": 70, "releaseMs": 100},
+    {
+      "kind": "reverb",
+      "wet": 0.36,
+      "tank": "plate",
+      "preDelayMs": 10,
+      "earlyPattern": "scatter",
+      "age": "now",
+      "decayS": 2.5,
+      "sizeTimes": 1,
+      "dampingHz": 5000,
+      "modSync": false,
+      "modDivision": "1/4",
+      "modRateHz": 0.7,
+      "filter1": {"cutoffHz": 350},
+      "filter2": {"cutoffHz": 8000}
+    },
+    {"kind": "utility", "gainDb": 3, "limiterOn": true, "ceilingDb": -1}
+  ]
+}

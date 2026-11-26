@@ -1,0 +1,16 @@
+{
+  "kind": "repeat",
+  "description": "Constant sixteenth-note stutter with scattered slice lengths for drums and vocals",
+  "interval": "1/8",
+  "offsetSixteenths": 4,
+  "grid": "1/16",
+  "gateSixteenths": 7,
+  "chance": 1,
+  "variation": 0.9,
+  "vary": "auto",
+  "filter1": {"on": true, "cutoffHz": 250},
+  "filter2": {"on": true, "cutoffHz": 4000},
+  "mixMode": "insert",
+  "outputDb": 4.75,
+  "levelDecay": 0.3543
+}

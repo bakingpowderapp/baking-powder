@@ -1,0 +1,98 @@
+{
+  "kind": "rack",
+  "description": "Soft dark triangle pluck sequence from one held key",
+  "author": "Aiyn Zahev",
+  "website": "https://www.aiynzahev-sounds.com/",
+  "rack": [
+    {
+      "kind": "midi",
+      "arp": {
+        "on": true,
+        "stepMode": true,
+        "fixedVelocity": true,
+        "style": "up",
+        "sync": true,
+        "division": "1/16",
+        "timeMs": 250,
+        "gate": 0.5,
+        "pattern": {
+          "length": 8,
+          "steps": [
+            {"semitones": -12, "velocity": 0.71},
+            {"velocity": 0.71},
+            {"semitones": 5, "velocity": 0.71},
+            {"semitones": 7, "velocity": 0.71},
+            {"semitones": 3, "octaveShift": 1, "velocity": 0.71},
+            {"semitones": 5, "velocity": 0.71},
+            {"velocity": 0.71},
+            {"semitones": 7, "velocity": 0.71}
+          ]
+        }
+      }
+    },
+    {
+      "kind": "core",
+      "voices": 1,
+      "osc1": {"level": 0},
+      "osc2": {"levels": [0, 0, 1, 0], "level": 1, "tuneSemitones": 12},
+      "ampEnv": {
+        "attackMs": 18,
+        "decayMs": 570.5,
+        "sustain": 0,
+        "releaseMs": 150,
+        "velocityAmount": 0,
+        "attackBend": -0.2,
+        "decayBend": -1,
+        "releaseBend": -0.41
+      },
+      "filter": {"on": true, "mode": "ladder", "slopeDbPerOctave": 24, "cutoffHz": 1197.2}
+    },
+    {
+      "kind": "freak",
+      "bandCount": 1,
+      "driveDb": 17,
+      "outputDb": -8.5,
+      "biasLfoRateHz": 0.6,
+      "biasLfoDepth": 1.663,
+      "biasLfoStartPhase": 0.5,
+      "bands": [
+        {"curve": "tube"},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "eq",
+      "bands": [
+        {"on": true, "shape": "high-pass", "channel": "stereo", "frequencyHz": 40, "gainDb": 0, "q": 0.71},
+        {"on": true, "shape": "low-shelf", "channel": "stereo", "frequencyHz": 315.7, "gainDb": -5.76, "q": 0.71},
+        {"on": true, "shape": "low-shelf", "channel": "stereo", "frequencyHz": 854.8, "gainDb": -6.35, "q": 0.71},
+        {"on": true, "shape": "bell", "channel": "stereo", "frequencyHz": 3242.9, "gainDb": 1.54, "q": 0.7},
+        {"on": true, "shape": "high-shelf", "channel": "stereo", "frequencyHz": 5407.4, "gainDb": -0.68, "q": 0.71},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "reverb",
+      "wet": 0.38,
+      "tank": "plate",
+      "preDelayMs": 32,
+      "earlyPattern": "scatter",
+      "age": "now",
+      "decayS": 1.23,
+      "sizeTimes": 1,
+      "dampingHz": 2350,
+      "modDepthMs": 0,
+      "modSync": false,
+      "modDivision": "1/4",
+      "modRateHz": 0.7,
+      "filter2": {"cutoffHz": 10000},
+      "width": 0.92,
+      "forwardLevel": 0.57
+    },
+    {"kind": "utility", "gainDb": 10.7, "limiterOn": true, "ceilingDb": -1}
+  ]
+}

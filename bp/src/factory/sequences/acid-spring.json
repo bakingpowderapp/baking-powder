@@ -1,0 +1,132 @@
+{
+  "kind": "rack",
+  "description": "Resonant band-pass acid sequence from one held key",
+  "author": "Aiyn Zahev",
+  "website": "https://www.aiynzahev-sounds.com/",
+  "rack": [
+    {
+      "kind": "midi",
+      "arp": {
+        "on": true,
+        "stepMode": true,
+        "fixedVelocity": true,
+        "style": "up",
+        "sync": true,
+        "division": "1/16",
+        "timeMs": 250,
+        "gate": 0.5,
+        "pattern": {
+          "length": 16,
+          "steps": [
+            {"semitones": -12, "velocity": 0.71, "tie": true},
+            {"semitones": -2, "velocity": 0.71},
+            {"semitones": -2, "velocity": 0.71, "tie": true},
+            {"semitones": -2, "velocity": 0.32},
+            {"velocity": 0.56},
+            {"velocity": 0.57, "tie": true},
+            {"velocity": 0.57},
+            {"semitones": -12, "velocity": 0.53},
+            {"semitones": -12, "velocity": 0.71, "tie": true},
+            {"semitones": -2, "velocity": 0.71},
+            {"semitones": -2, "velocity": 0.71, "tie": true},
+            {"semitones": -2, "velocity": 0.71},
+            {"velocity": 0.71},
+            {"velocity": 0.71, "tie": true},
+            {"velocity": 0.71, "tie": true},
+            {"semitones": -12, "velocity": 0.71}
+          ]
+        }
+      }
+    },
+    {
+      "kind": "core",
+      "level": 0.373,
+      "voices": 1,
+      "osc1": {"level": 0.5425},
+      "osc2": {"levels": [0, 1, 0, 0], "level": 1},
+      "ampEnv": {
+        "attackMs": 2.5,
+        "decayMs": 200,
+        "sustain": 1,
+        "releaseMs": 45,
+        "velocityAmount": 0,
+        "decayBend": -1,
+        "releaseBend": -1
+      },
+      "filter": {
+        "on": true,
+        "mode": "svf-band-pass",
+        "slopeDbPerOctave": 12,
+        "cutoffHz": 335,
+        "resonance": 0.8,
+        "envAmount": 0.226,
+        "env": {"attackMs": 1.3, "decayMs": 775, "sustain": 0.17, "releaseMs": 650, "decayBend": -1, "releaseBend": -0.41}
+      },
+      "mono": {"glideMs": 30, "glideCurve": "octave"},
+      "motion": {
+        "lfo1": {
+          "target": "pulseWidth2",
+          "amount": 0.2111,
+          "shape": "triangle",
+          "rateHz": 3.1,
+          "keyTrack": 1,
+          "phase": 0.75,
+          "mode": "run"
+        }
+      }
+    },
+    {
+      "kind": "freak",
+      "bandCount": 1,
+      "driveDb": 18,
+      "outputDb": -15.1,
+      "bands": [
+        {"curve": "tape"},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "motion",
+      "wet": 0.33,
+      "bandCount": 1,
+      "bands": [
+        {
+          "mode": "chorus",
+          "chorus": {
+            "mode": "standard",
+            "sync": false,
+            "division": "1/4",
+            "rateHz": 0.29,
+            "depth": 0.35,
+            "centerMs": 4.6,
+            "spread": 0.5,
+            "feedback": 0.9,
+            "width": 0.8
+          }
+        },
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "kind": "reverb",
+      "wet": 0.11,
+      "tank": "plate",
+      "preDelayMs": 182,
+      "earlyPattern": "scatter",
+      "age": "now",
+      "decayS": 0.88,
+      "sizeTimes": 1,
+      "diffusion": 0.391,
+      "dampingHz": 2200,
+      "modSync": false,
+      "modDivision": "1/4",
+      "modRateHz": 0.7,
+      "filter1": {"cutoffHz": 120}
+    },
+    {"kind": "utility", "gainDb": 5.9, "limiterOn": false, "ceilingDb": -1}
+  ]
+}

@@ -25,8 +25,6 @@ A multi-platform DAW in Rust. Every rule here is 35 words at most.
 
 14. Drawing is rect fills in five tones: white, black, and black at .25/.5/.75 (`Tone`).
 15. Out of face room: add a view, three at most, A, B and C.
-16. Faces float: an unused slot draws no border, only the panel's outline; a blank framed square is a control asleep.
-17. A box shows its kind: drag boxes plain, on/off switches in corner brackets and lit when on, list boxes with a down arrow.
 
 ## Sound
 
